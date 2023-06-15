@@ -6,8 +6,8 @@ function Footer() {
     return <>
 
         <Grid container spacing={0}>
-            <Grid item xs={5} />
-            <Grid item xs={1} display="flex" alignItems="center" justifyContent="center">
+            <Grid item xs={3} md={5} />
+            <Grid item xs={3} md={1} display="flex" alignItems="center" justifyContent="center">
                 <Tooltip title="Check out source code!">
                     <a href="https://github.com/Gargant0373/TheGrill" style={{
                         textDecoration: "none", color: "white",
@@ -15,7 +15,7 @@ function Footer() {
                     }}><GitHubIcon /> GitHub</a>
                 </Tooltip>
             </Grid>
-            <Grid item xs={1} display="flex" alignItems="center" justifyContent="center">
+            <Grid item xs={3} md={1} display="flex" alignItems="center" justifyContent="center">
                 <Tooltip title="Call me!">
                     <a href="tel:+40772269013" style={{
                         textDecoration: "none", color: "white",
@@ -23,7 +23,7 @@ function Footer() {
                     }}><PermContactCalendarIcon /> Call</a>
                 </Tooltip>
             </Grid>
-            <Grid item xs={5} />
+            <Grid item xs={3} md={5} />
         </Grid>
     </>
 }
