@@ -1,4 +1,4 @@
-import { Grid, Paper } from "@mui/material";
+import { Button, Grid, Paper } from "@mui/material";
 import "../styles/PostArea.css"
 
 function PostArea(props: { marginTop: string }) {
@@ -6,6 +6,15 @@ function PostArea(props: { marginTop: string }) {
         <Grid container xs={12} marginTop={props.marginTop}>
             <Grid xs={1} md={2} />
             <Grid container xs={10} md={8} spacing={2}>
+                    <Grid item xs={12} md={6} display="flex" alignItems="center" justifyContent="center">
+                        <img src="new_year.jpeg" className="post-image" />
+                    </Grid>
+                <Grid item xs={12} md={6} display="flex" alignItems="center" justifyContent="center">
+                    <Post post ={{
+                        title: "New Year's Grill", description: "Celebrate the new academic year by grilling and drinking beer. The event will take place on the 16th of September 16:30 @ Delftse Hout, in the Hondenstandje area. Bring your own meat, drinks and grill (if you have one). Bring your friends and checkout the Facebook event.",
+                        imageUrl: "new_year.jpeg", link: "https://fb.me/e/1AiIt1I9F", linkText: "Facebook Event"
+                    }} />  {/* not workin0g img url */}
+                </Grid>
                 <Grid item xs={12} md={6} display="flex" alignItems="center" justifyContent="center">
                     <Post post={{
                         title: "The Grill",
@@ -42,6 +51,13 @@ function Post(props: { post: PostProps }) {
                 <Grid item xs={12}>
                     <p className="post-text">{props.post.description}</p>
                 </Grid>
+                {props.post.link !== undefined && 
+                    <Grid item xs={12}>
+                        <Button sx={{
+                            marginTop: "5px", marginLeft: "3px"
+                        }} className="post-button" variant="outlined" href={props.post.link}> {props.post.linkText !== undefined ? props.post.linkText : "External Page"} </Button>
+                    </Grid>
+                }
             </Paper>
         </Grid>
     </>
@@ -51,6 +67,8 @@ interface PostProps {
     title: string;
     description: string;
     imageUrl: string | null;
+    link?: string;
+    linkText?: string;
 }
 
 export default PostArea;

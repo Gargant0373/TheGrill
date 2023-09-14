@@ -20,6 +20,7 @@
     .post-text {
         font-size: 16px;
     }
+
     .heading {
         font-size: 30px;
         margin-bottom: 14px;
@@ -30,6 +31,7 @@
     .post-text {
         font-size: 22px;
     }
+
     .heading {
         font-size: 30px;
         margin-bottom: 16px;
@@ -40,9 +42,9 @@
     .post-text {
         font-size: 25px;
     }
+
     .heading {
         font-size: 30px;
         margin-bottom: 20px;
     }
 }
-

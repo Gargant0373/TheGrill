@@ -4,7 +4,7 @@ import "../styles/Timer.css";
 
 function Timer() {
     const [time, setTime] = useState(Date.now());
-    const date = 1687284000000;
+    const date = 1694874600000;
 
     useEffect(() => {
         const interval = setInterval(() => setTime(Date.now()), 1000);
