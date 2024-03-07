@@ -1,6 +1,7 @@
 
 # TheGrill
-Page created as (at the moment) an invitation to the TU Delft grill. Plan is to take it to the next level by creating a backend to post events and update grill times.
+Page created as (at the moment) an invitation to the TU Delft grill. 
+The plan is to redesign the website with a clean and cool design.
 
 ## Contribute
 To run the website locally you must run `npm run dev` in the terminal. 
