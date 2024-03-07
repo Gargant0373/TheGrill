@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 import Slider from "react-slick";
 import "../styles/Pictures.css";
 
@@ -25,10 +25,10 @@ function Pictures() {
         <>
             <Grid container className="pictures" id="pictures">
                 <Grid item xs={12} className="ptitle">
-                    <Typography variant="h4" align="center">Pictures</Typography>
+                    <div className="chtitle" id="pictures">PICTURES</div>
                 </Grid>
                 <Grid item md={1} />
-                <Grid item md={4} xs={8} className="pcontainer">
+                <Grid item md={6} xs={8} className="pcontainer">
                     <Slider {...settings}>
                         {images.map((image, index) => {
                             return (
@@ -39,11 +39,15 @@ function Pictures() {
                         })}
                     </Slider>
                 </Grid>
-                <Grid item md={2} xs={0} />
-                <Grid item md={4} xs={8} className="pcontainer">
-                    <Typography variant="body1">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc nec odio
-                    </Typography>
+                <Grid item md={1} xs={0} />
+                <Grid item md={3} xs={8} className="pcontainer">
+                    <Card>
+                        <CardContent className="card">
+                            <div className="chtext">
+                                Here is a collection of pictures from previous grills. If you want to add your own pictures to the collection feel free to create a Pull Request.
+                            </div>
+                        </CardContent>
+                    </Card>
                 </Grid>
                 <Grid item md={1} xs={0} />
             </Grid>

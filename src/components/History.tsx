@@ -12,7 +12,7 @@ function History() {
                         image="6.jpeg"
                         title="start" />
                     <CardContent>
-                        <Typography className="title" gutterBottom variant="h5" component="div">
+                        {/* <Typography className="title" gutterBottom variant="h5" component="div">
                             How it all started...
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
@@ -20,7 +20,7 @@ function History() {
                             The first grill took place on a sunny day in May, by a small group of students wanting to celebrate the 1st of May.
                             This day has a big place in the hearth of every Romanian as every year, family and friends gather together to celebrate and forget
                             about their daily worries. The first grill was a success and it was decided that it should become a tradition.
-                        </Typography>
+                        </Typography> */}
 
                     </CardContent>
 

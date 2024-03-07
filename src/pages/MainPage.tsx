@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import History from "../components/History";
 import Pictures from "../components/Pictures";
 import { Divider } from "@mui/material";
+import Footer from "../components/Footer";
 
 function MainPage() {
     return (
@@ -10,6 +11,7 @@ function MainPage() {
             <History />
             <Divider />
             <Pictures />
+            <Footer />
         </>
     );
 }

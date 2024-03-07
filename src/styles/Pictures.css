@@ -16,4 +16,8 @@
     #pictures .pcontainer {
         margin-top: 50px;
     }
+
+    #pictures .pcontainer .pimg img {
+        height: 300px;
+    }
 }

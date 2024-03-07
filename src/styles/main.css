@@ -4,4 +4,34 @@ body {
 
     background: rgb(254, 250, 224);
     background: radial-gradient(circle, rgba(254, 250, 224, 1) 0%, rgba(217, 204, 119, 1) 100%);
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.chtitle {
+    margin: 20px 0;
+    font-size: 30px;
+
+    background: #BC6C25;
+    background: linear-gradient(to right, #BC6C25 0%, #f9ad6b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+
+    border-bottom: 1px solid rgb(96, 108, 56);;
+}
+
+.chtext {
+    font-size: 20px;
+
+    
+}
+
+.card {
+    background: rgb(96, 108, 56);
+    background: linear-gradient(90deg, rgba(96, 108, 56, 0.8435968137254902) 0%, rgba(40, 54, 24, 0.6391150210084033) 100%);
+
+    color: #fefae0;
 }
