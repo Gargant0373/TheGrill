@@ -16,7 +16,7 @@ function Navbar() {
     return <>
         <Grid container className="navbar">
             <Grid item xs={12} className="node">
-                <img src="6.jpeg" className="bg" />
+                <img src="6.jpeg" className="bg" alt="background" />
             </Grid>
             <Grid item xs={12} className="node ttl">
                 <div className="fire">THE GRILL</div>

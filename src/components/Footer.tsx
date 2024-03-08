@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Tooltip } from "@mui/material";
 import "../styles/Footer.css";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/Github';
@@ -10,8 +10,16 @@ function Footer() {
                 <Grid item xs={4} md={3}><div className="line" /></Grid>
 
                 <Grid item xs={3} md={1} className="social">
-                    <FacebookIcon className="icon" />
-                    <GitHubIcon className="icon" />
+                    <a href="https://fb.me/e/6LMXKsHgr">
+                        <Tooltip title="Facebook Event">
+                            <FacebookIcon className="icon" />
+                        </Tooltip>
+                    </a>
+                    <a href="https://github.com/Gargant0373/TheGrill">
+                        <Tooltip title="GitHub Repository">
+                            <GitHubIcon className="icon" />
+                        </Tooltip>
+                    </a>
                 </Grid>
 
                 <Grid item xs={4} md={3}><div className="line" /></Grid>
