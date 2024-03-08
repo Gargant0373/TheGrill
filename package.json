@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://{gargant0373}.github.io/{TheGrill}",
+  "homepage": "https://thegrill.gargant.dev",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
