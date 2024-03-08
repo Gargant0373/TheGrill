@@ -15,18 +15,21 @@ function Navbar() {
 
     return <>
         <Grid container className="navbar">
-            <Grid item xs={12} md={3} className="node">
-                <img src="logo.png" />
+            <Grid item xs={12} className="node">
+                <img src="6.jpeg" className="bg" />
+            </Grid>
+            <Grid item xs={12} className="node ttl">
+                <div className="fire">THE GRILL</div>
             </Grid>
             <Grid item xs={12} md={9} className="node text">
                 <a onClick={() => scrollTo("history")}>
-                    <Typography variant="h6" className="item">HISTORY</Typography>
+                    <div className="item">HISTORY</div>
                 </a>
                 <a onClick={() => scrollTo("pictures")}>
-                    <Typography variant="h6" className="item">PICTURES</Typography>
+                    <div className="item">PICTURES</div>
                 </a>
                 <a onClick={() => scrollTo("rules")}>
-                    <Typography variant="h6" className="item">RULES</Typography>
+                    <div className="item">RULES</div>
                 </a>
             </Grid>
         </Grid>

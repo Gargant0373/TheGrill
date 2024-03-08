@@ -8,7 +8,6 @@ function MainPage() {
     return (
         <>
             <Navbar />
-            <History />
             <Divider />
             <Pictures />
             <Footer />
