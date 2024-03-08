@@ -1,11 +1,18 @@
 .footer {
-    margin-top: 50px;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+
+    background: rgb(96, 108, 56);
+    background: -moz-linear-gradient(90deg, rgba(96, 108, 56, 1) 0%, rgba(40, 54, 24, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(96, 108, 56, 1) 0%, rgba(40, 54, 24, 1) 100%);
+    background: linear-gradient(90deg, rgba(96, 108, 56, 1) 0%, rgba(40, 54, 24, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#606c38", endColorstr="#283618", GradientType=1);
 }
 
 .footer .row {
@@ -18,7 +25,7 @@
     margin-top: 10px;
 
     background: #5B5B5B;
-    background: linear-gradient(to right, #5B5B5B 0%, #000000 100%);
+    background: linear-gradient(to right, #ffffff 0%, #fff8a6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -34,10 +41,12 @@
 .footer .row .social .icon {
     margin-left: 10px;
     margin-right: 10px;
+
+    color: #fefae0;
 }
 
 .footer .line {
     height: 1px;
 
-    border-top: 1px solid #BC6C25;
+    border-top: 1px solid #fefae0;
 }

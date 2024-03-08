@@ -1,6 +1,8 @@
 #pictures {
     display: flex;
     justify-content: center;
+
+    margin-bottom: 40px;
 }
 
 #pictures .pcontainer .pimg img {

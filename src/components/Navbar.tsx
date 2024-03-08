@@ -1,5 +1,5 @@
-import { Grid, Typography } from '@mui/material';
-import '../styles/Navbar.css'
+import { Grid } from '@mui/material';
+import '../styles/Navbar.css';
 
 function Navbar() {
 
