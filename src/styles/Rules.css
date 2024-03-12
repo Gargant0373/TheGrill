@@ -3,11 +3,40 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    margin-bottom: 40px;
 }
 
-.rules .left {
+.rules .node {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.rules .node.left {
+    padding-right: 10px;
+}
+
+.rules .node.right {
+    border-left: 5px solid #BC6C25;
+
+    padding-left: 10px;
+}
+
+.rule {
+    margin-bottom: 15px;
+}
+
+.rule .subtitle {
+    font-size: 23px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+    color: #BC6C25;
+}
+
+.rule .text {
+    font-size: 18px;
 }
