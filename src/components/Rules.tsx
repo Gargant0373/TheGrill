@@ -1,6 +1,5 @@
-import { Card, CardContent, Grid, Paper } from '@mui/material';
+import { Grid } from '@mui/material';
 import '../styles/Rules.css';
-import { Diversity2 } from '@mui/icons-material';
 
 function Rules() {
     return <>
@@ -16,7 +15,8 @@ function Rules() {
                     <Grid item xs={12}>
                         <div className="chtext">
                             The Grill is not a place for rules. We do not want to have rules when the sun is shining and beer is flowing. <br />
-                            However, the last thing we want is to have the police or the fire department showing up. <br />
+                            However, the last thing we want is to have the police or the fire department showing up. We are not in Romania, be civilized.<br />
+                            Here's a list of "guidelines":
                         </div>
                     </Grid>
                 </div>
@@ -27,7 +27,7 @@ function Rules() {
                 <Rule title="NO STUDYING"
                     text="The Grill is a place for fun, not for studying. No laptops or notebooks. They are only allowed for writing poems." />
                 <Rule title="YOU BRING, YOU EAT"
-                    text="The balance of the grill relies on the fact that each individual contributes. If you bring something, you eat something. If you don't bring anything, you eat nothing. Only exception from this rule is people who cross the lake swimming." />
+                    text="The balance of the grill relies on the fact that each individual contributes. If you bring something, you eat something. If you don't bring anything, you eat nothing. Your 'meat' might be enough for your girlfriend, not for us. Only exception from this rule is people who cross the lake swimming." />
                 <Rule title="TRASH"
                     text="We are not savages. We clean up after ourselves. There are no trash cans around the lake so you're expected to bring some bags yourself." />
                 <Rule title="SMOKING KILLS"
