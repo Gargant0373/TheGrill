@@ -20,11 +20,14 @@ function History() {
                     <CardContent>
                         <div className="chsubtitle primary">1st of May</div>
                         <div className="chtext">
-                            Everything started on the 1st of May, 2023, the National Workers day in Romania. <br />
-                            Around 50 people gathered in Delftse Hout on one side of the lake and another 30 on the other side of the lake to enjoy an excellent grill with sunshine and beer. <br />
-                            Because of the "marketing" efforts in the TU Delft community, The Grill quickly became a meme on campus. <br />
-                            As everyoone enjoy the sunny day, nice atmosphere, the grill and the cold beer, the grill soon became a tradition for some of the students at TU Delft (but anyone else
-                            would also be more than welcomed to start taking part of this tradition).
+                            It all kicked off on the 1st of May, 2023, a day meant for honoring workers, but in Romania, it became the birthdate of something unexpected and delightful. Picture this: around 50
+                            eager souls gathered on one side of the lake in Delftse Hout, while another 30 claimed their spot on the opposite bank. What was the occasion, you ask? A grand
+                            celebration of grilling mastery paired with abundant sunshine and an endless flow of beer. <br />
+                            As the aroma of grilling meats filled the air, it marked the beginning of something extraordinary. Through clever promotion within the TU Delft community, what began as a simple <br />
+                            barbecue transformed into "The Grill," a campus-wide sensation embodying unity amidst academia. <br />
+                            With each delicious bite and refreshing sip, The Grill embedded itself deeper into TU Delft's culture. From a modest gathering, it blossomed into a cherished tradition, fostering
+                            connections and cherished memories for students and beyond. <br />
+                            As the sun set on that memorable May day, The Grill had become an integral part of TU Delft's identity, promising joy and camaraderie for years to come.
                         </div>
                     </CardContent>
                 </Card>
