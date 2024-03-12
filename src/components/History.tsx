@@ -6,16 +6,12 @@ function History() {
     return <>
         <Grid container className="history">
             <Grid item xs={12} className="ptitle">
-                <div className="chtitle" id="pictures">History</div>
+                <div className="chtitle">HISTORY</div>
             </Grid>
-            <Grid item xs={8} md={5}>
-                <Card className="card wmargin">
-                    <CardContent>
-                        <img src="7.jpeg" alt="" />
-                    </CardContent>
-                </Card>
+            <Grid item xs={10} md={4}>
+                <img src="7.jpeg" alt="" />
             </Grid>
-            <Grid item xs={8} md={5}>
+            <Grid item xs={11} md={7}>
                 <Card className="card wmargin">
                     <CardContent>
                         <div className="chsubtitle primary">1st of May</div>
@@ -32,33 +28,25 @@ function History() {
                     </CardContent>
                 </Card>
             </Grid>
-            <Grid item xs={8} md={5}>
+            <Grid item xs={11} md={7}>
                 <Card className="card wmargin">
                     <CardContent>
                         <div className="chsubtitle primary">Other Grills</div>
                         <div className="chtext">
                             Next month, another big celebration was planned, the 1st of June, the International Children's Day. How to enjoy these day better than with a grill next to the beautiful
-                            lake Delftsehout, that took all of us streight to our childhood. All memories from when we were little and we would as girls help our moms prepare the salads, and
-                            while the boys would bring wood for their dads, and help them with cooking the meet.<br />
+                            lake Delftsehout, that took all of us streight to our childhood? All memories from when we were little and we would as girls help our moms prepare the salads, and
+                            while the boys would bring wood for their dads, and help them with cooking the meet. Everyone is <br />
                         </div>
                     </CardContent>
                 </Card>
             </Grid>
-            <Grid item xs={8} md={5}>
-                <Card className="card wmargin">
-                    <CardContent>
-                        <img src="10.jpeg" alt="" />
-                    </CardContent>
-                </Card>
+            <Grid item xs={10} md={4}>
+                <img src="10.jpeg" alt="" />
             </Grid>
-            <Grid item xs={8} md={5}>
-                <Card className="card wmargin">
-                    <CardContent>
-                        <img src="9.jpeg" alt="" />
-                    </CardContent>
-                </Card>
+            <Grid item xs={10} md={4}>
+                <img src="9.jpeg" alt="" />
             </Grid>
-            <Grid item xs={8} md={5}>
+            <Grid item xs={11} md={7}>
                 <Card className="card wmargin">
                     <CardContent>
                         <div className="chsubtitle primary">Other Grills</div>
