@@ -20,18 +20,26 @@ body {
     -webkit-text-fill-color: transparent;
     font-weight: bold;
 
-    border-bottom: 1px solid rgb(96, 108, 56);;
+    border-bottom: 1px solid rgb(96, 108, 56);
+    ;
+}
+
+.chsubtitle {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fefae0;
 }
 
 .chtext {
     font-size: 20px;
-
-    
+    color: #fefae0;
 }
 
 .card {
     background: rgb(96, 108, 56);
     background: linear-gradient(90deg, rgba(96, 108, 56, 0.8435968137254902) 0%, rgba(40, 54, 24, 0.6391150210084033) 100%);
+}
 
-    color: #fefae0;
+.card.wmargin {
+    margin: 10px;
 }

@@ -1,29 +1,35 @@
-import { Card, CardContent, CardMedia, Grid } from "@mui/material";
+import { Card, CardContent, Grid } from "@mui/material";
 import "../styles/History.css";
 
 
 function History() {
     return <>
-        <Grid container spacing="2" id="history">
-            <Grid item xs={12} id="image">
-                {/* <Slideshow></Slideshow> */}
-                <Card className="mainCard">
-                    <CardMedia sx={{ height: 500 }}
-                        image="6.jpeg"
-                        title="start" />
+        <Grid container className="history">
+            <Grid item xs={12} className="ptitle">
+                <div className="chtitle" id="pictures">History</div>
+            </Grid>
+
+            <Grid item xs={8} md={5}>
+                <Card className="card wmargin">
                     <CardContent>
-                        {/* <Typography className="title" gutterBottom variant="h5" component="div">
-                            How it all started...
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            <h2>1 may</h2>
-                            The first grill took place on a sunny day in May, by a small group of students wanting to celebrate the 1st of May.
-                            This day has a big place in the hearth of every Romanian as every year, family and friends gather together to celebrate and forget
-                            about their daily worries. The first grill was a success and it was decided that it should become a tradition.
-                        </Typography> */}
-
+                        <div className="chsubtitle">1st of May</div>
+                        <div className="chtext">
+                            Everything started on the 1st of May, 2023, the National Workers day in Romania. <br />
+                            Around 50 people gathered in Delftse Hout on one side of the lake and another 30 on the other side of the lake to enjoy an excellent grill with sunshine and beer. <br />
+                            Because of the "marketing" efforts in the TU Delft community, The Grill quickly became a meme on campus.
+                        </div>
                     </CardContent>
-
+                </Card>
+            </Grid>
+            <Grid item xs={8} md={5}>
+                <Card className="card wmargin">
+                    <CardContent>
+                        <div className="chsubtitle">Other Grills</div>
+                        <div className="chtext">
+                            Obviously the legendary grill was the original one. Many followed, there were many drifting cars, wooden sticks picked up, fires extinguished.<br />
+                            At the end of the day one thing is certain though- many beers, laughs and mici have been consumed.
+                        </div>
+                    </CardContent>
                 </Card>
             </Grid>
         </Grid>
