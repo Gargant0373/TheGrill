@@ -10,9 +10,9 @@ body {
 }
 
 .chtitle {
+    padding-left: 20px;
     margin: 20px 0;
     font-size: 30px;
-    text-align: center;
 
     background: #BC6C25;
     background: linear-gradient(to right, #BC6C25 0%, #f9ad6b 100%);
@@ -22,12 +22,14 @@ body {
     font-weight: bold;
 
     border-bottom: 1px solid rgb(96, 108, 56);
-    ;
 }
 
 .chsubtitle {
     font-size: 25px;
     font-weight: bold;
+}
+
+.primary {
     color: #fefae0;
 }
 
