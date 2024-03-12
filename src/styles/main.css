@@ -12,6 +12,7 @@ body {
 .chtitle {
     margin: 20px 0;
     font-size: 30px;
+    text-align: center;
 
     background: #BC6C25;
     background: linear-gradient(to right, #BC6C25 0%, #f9ad6b 100%);
