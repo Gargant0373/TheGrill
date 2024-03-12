@@ -43,7 +43,7 @@ function Pictures() {
                 <Grid item md={2} xs={8} className="pcontainer">
                     <Card>
                         <CardContent className="card">
-                            <div className="chtext">
+                            <div className="chtext primary">
                                 Here's a collection of pictures from previous grills. {<br />} 
                                 We are looking to expand the collection with your pictures, feel free to send them to us! {<br />}
                             </div>
