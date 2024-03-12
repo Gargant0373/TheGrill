@@ -18,6 +18,12 @@
     padding-right: 10px;
 }
 
+@media (max-width: 768px) {
+    .rules .node.left {
+        margin-bottom: 20px;
+    }
+}
+
 .rules .node.right {
     border-left: 5px solid #BC6C25;
 
