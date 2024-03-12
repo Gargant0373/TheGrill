@@ -14,7 +14,7 @@ function History() {
             <Grid item xs={11} md={7}>
                 <Card className="card wmargin">
                     <CardContent>
-                        <div className="chsubtitle primary">1st of May</div>
+                        <div className="chsubtitle primary underlined">1st of May</div>
                         <div className="chtext">
                             It all kicked off on the 1st of May, 2023, a day meant for honoring workers, but in Romania, it became the birthdate of something unexpected and delightful. Picture this: around 50
                             eager souls gathered on one side of the lake in Delftse Hout, while another 30 claimed their spot on the opposite bank. What was the occasion, you ask? A grand
@@ -31,7 +31,7 @@ function History() {
             <Grid item xs={11} md={7}>
                 <Card className="card wmargin">
                     <CardContent>
-                        <div className="chsubtitle primary">Other Grills</div>
+                        <div className="chsubtitle primary underlined">Other Grills</div>
                         <div className="chtext">
                             Next month, another big celebration was planned, the 1st of June, the International Children's Day. How to enjoy these day better than with a grill next to the beautiful
                             lake Delftsehout, that took all of us streight to our childhood? All memories from when we were little and we would as girls help our moms prepare the salads, and
@@ -49,7 +49,7 @@ function History() {
             <Grid item xs={11} md={7}>
                 <Card className="card wmargin">
                     <CardContent>
-                        <div className="chsubtitle primary">Other Grills</div>
+                        <div className="chsubtitle primary underlined">Other Grills</div>
                         <div className="chtext">
                             Obviously the legendary grill was the original one. Many followed, there were many drifting cars, wooden sticks picked up, fires extinguished.<br />
                             At the end of the day one thing is certain though- many beers, laughs and mici have been consumed.

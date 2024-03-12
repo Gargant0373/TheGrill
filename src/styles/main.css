@@ -44,6 +44,10 @@ body {
     color: #fefae0;
 }
 
+.underlined {
+    border-bottom: 2px solid #BC6C25;
+}
+
 .chtext {
     font-size: 20px;
 }
