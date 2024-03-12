@@ -25,7 +25,7 @@ function Pictures() {
         <>
             <Grid container className="pictures" id="pictures">
                 <Grid item xs={12} className="ptitle">
-                    <div className="chtitle" id="pictures">PICTURES</div>
+                    <div className="chtitle">PICTURES</div>
                 </Grid>
                 <Grid item md={1} />
                 <Grid item md={7} xs={8} className="pcontainer">
