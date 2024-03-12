@@ -7,6 +7,8 @@ body {
 
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+
+    color: #0f0700;
 }
 
 .chtitle {
@@ -35,7 +37,6 @@ body {
 
 .chtext {
     font-size: 20px;
-    color: #fefae0;
 }
 
 .card {
@@ -45,4 +46,8 @@ body {
 
 .card.wmargin {
     margin: 10px;
+}
+
+.card.nobg {
+    background: none;
 }
