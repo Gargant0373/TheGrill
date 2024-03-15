@@ -18,7 +18,6 @@ function Navbar() {
         <Grid container className="navbar">
             <ParallaxProvider>
                 <Grid item xs={12} className="node">
-
                     <img src="6.jpeg" className="bg" alt="background" />
                 </Grid>
                 <Grid item xs={12} className="node ttl">
@@ -39,7 +38,7 @@ function Navbar() {
                     </a>
                     <a onClick={() => scrollTo("rules")}>
                         <Parallax speed={10}>
-                            <div className="item">RULES</div>
+                            <div className="item">GUIDELINES</div>
                         </Parallax>
                     </a>
                 </Grid>

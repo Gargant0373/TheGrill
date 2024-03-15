@@ -5,7 +5,7 @@ function Rules() {
     return <>
         <Grid container className="rules">
             <Grid item xs={12}>
-                <div className="chtitle" id="rules">RULES</div>
+                <div className="chtitle" id="rules">GUIDELINES</div>
             </Grid>
             <Grid item xs={10} md={5} className="node left">
                 <div>
