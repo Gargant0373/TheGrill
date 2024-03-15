@@ -26,7 +26,7 @@
 
 .navbar .node.text {
     position: absolute;
-    margin-top: 70px;
+    margin-top: 100px;
 
     justify-content: flex-end;
 
@@ -52,6 +52,8 @@
 
 .navbar img {
     min-height: 100vh;
+    
+    object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -61,6 +63,11 @@
 
     .navbar .node.text {
         justify-content: center;
+        margin-top: 70px;
+    }
+
+    .navbar .fire {
+        font-size: 50px;
     }
 }
 
@@ -77,7 +84,7 @@
     color: #fefae0;
     font-weight: bold;
 
-    font-size: 40px;
+    font-size: 80px;
 }
 
 @keyframes flicker {

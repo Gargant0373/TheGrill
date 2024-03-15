@@ -1,7 +1,6 @@
 import { Card, CardContent, Grid } from "@mui/material";
 import "../styles/History.css";
 
-
 function History() {
     return <>
         <Grid container className="history" id="history">
