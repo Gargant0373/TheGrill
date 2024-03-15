@@ -42,7 +42,7 @@
     margin-left: 10px;
     margin-right: 10px;
 
-    color: #fefae0;
+    color: var(--secondaryColor);
 }
 
 .footer .line {

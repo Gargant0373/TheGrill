@@ -36,7 +36,7 @@
 .navbar .node .item {
     margin: 0 10px;
 
-    color: #fefae0;
+    color: var(--secondaryColor);
     font-weight: bold;
     font-size: 20px;
 
@@ -44,15 +44,14 @@
 }
 
 .navbar .node .item:hover {
-    color: #BC6C25;
+    color: var(--primaryColor);
     scale: 1.1;
 
     transition: 0.3s;
 }
 
 .navbar img {
-    width: 150px;
-    height: auto;
+    min-height: 100vh;
 }
 
 @media (max-width: 768px) {

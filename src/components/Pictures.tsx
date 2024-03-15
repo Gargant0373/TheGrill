@@ -27,7 +27,6 @@ function Pictures() {
                 <Grid item xs={12} className="ptitle">
                     <div className="chtitle">PICTURES</div>
                 </Grid>
-                <Grid item md={1} />
                 <Grid item md={7} xs={8} className="pcontainer">
                     <Slider {...settings}>
                         {images.map((image, index) => {
@@ -39,18 +38,16 @@ function Pictures() {
                         })}
                     </Slider>
                 </Grid>
-                <Grid item md={1} xs={0} />
                 <Grid item md={2} xs={8} className="pcontainer">
                     <Card>
                         <CardContent className="card">
                             <div className="chtext primary">
-                                Here's a collection of pictures from previous grills. {<br />} 
+                                Here's a collection of pictures from previous grills. {<br />}
                                 We are looking to expand the collection with your pictures, feel free to send them to us! {<br />}
                             </div>
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item md={1} xs={0} />
             </Grid>
         </>
     )

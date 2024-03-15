@@ -1,9 +1,14 @@
+:root {
+    --primaryColor: #BC6C25;
+    --secondaryColor: #fefae0;
+}
+
 body {
     margin: 0;
     width: 100%;
 
     background: rgb(254, 250, 224);
-    background: radial-gradient(circle, rgba(254, 250, 224, 1) 0%, rgba(217, 204, 119, 1) 100%);
+    background: radial-gradient(circle, rgba(217, 204, 119, 1) 0%, rgba(254, 250, 224, 1) 100%);
 
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -25,8 +30,8 @@ body {
     margin: 20px 0;
     font-size: 30px;
 
-    background: #BC6C25;
-    background: linear-gradient(to right, #BC6C25 0%, #f9ad6b 100%);
+    background: var(--primaryColor);
+    background: linear-gradient(to right, var(--primaryColor) 0%, #f9ad6b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -38,6 +43,7 @@ body {
 .chsubtitle {
     font-size: 25px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .primary {
@@ -45,7 +51,7 @@ body {
 }
 
 .underlined {
-    border-bottom: 2px solid #BC6C25;
+    border-bottom: 2px solid var(--primaryColor);
 }
 
 .chtext {

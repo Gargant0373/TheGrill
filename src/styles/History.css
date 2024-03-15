@@ -8,3 +8,11 @@ img {
     max-width: 100%;
     border-radius: 25px;
 }
+
+.minh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 45vh;
+}
