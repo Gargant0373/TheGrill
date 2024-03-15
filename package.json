@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build && git add * && git commit -m \"gh-pages build\" && git push && gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
