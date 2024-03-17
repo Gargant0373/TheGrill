@@ -35,15 +35,12 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
 
     border-bottom: 1px solid rgb(96, 108, 56);
 }
 
 .chsubtitle {
     font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 10px;
 }
 
 .primary {
@@ -56,15 +53,20 @@ body {
 
 .chtext {
     font-size: 20px;
+    font-weight: 500;
 }
-
+.orangetext {
+    font-weight: 600;
+    color: var(--primaryColor);
+}
 .card {
-    background: rgb(96, 108, 56);
     background: linear-gradient(90deg, rgba(96, 108, 56, 0.8435968137254902) 0%, rgba(40, 54, 24, 0.6391150210084033) 100%);
 }
 
 .card.wmargin {
     margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .card.nobg {
