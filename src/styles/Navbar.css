@@ -3,9 +3,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    background: rgb(96, 108, 56);
-    background: linear-gradient(90deg, rgba(96, 108, 56, 1) 0%, rgba(40, 54, 24, 1) 100%);
 }
 
 .navbar .bg {

@@ -6,7 +6,11 @@
 
     margin-bottom: 40px;
 }
-
+.rulesinto
+{
+    position: relative;
+    left: -1em;
+}
 .rules .node {
     display: flex;
     flex-direction: column;

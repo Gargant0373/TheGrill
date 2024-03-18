@@ -11,7 +11,7 @@ function Pictures() {
         "5.jpeg",
     ]
 
-    let settings = {
+    const settings = {
         dots: true,
         infinite: true,
         speed: 500,
@@ -25,20 +25,21 @@ function Pictures() {
         <>
             <Grid container className="pictures" id="pictures">
                 <Grid item xs={12} className="ptitle">
-                    <div className="chtitle">PICTURES</div>
+                    <h1 className="chtitle">PICTURES</h1>
                 </Grid>
-                <Grid item md={7} xs={8} className="pcontainer">
+                <Grid item md={8} xs={8} className="pcontainer">
                     <Slider {...settings}>
                         {images.map((image, index) => {
+                            const key = `${image}-${index}`; 
                             return (
-                                <Grid className="pimg" key={index}>
+                                <Grid className="pimg" key={key}>
                                     <img src={image} alt={image} />
                                 </Grid>
                             )
                         })}
                     </Slider>
                 </Grid>
-                <Grid item md={2} xs={8} className="pcontainer">
+                <Grid item md={2} className="pcontainer">
                     <Card>
                         <CardContent className="card">
                             <div className="chtext primary">

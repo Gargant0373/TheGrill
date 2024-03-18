@@ -4,8 +4,8 @@ import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 function Navbar() {
 
-    let scrollTo = (elementId: string) => {
-        var element = document.getElementById(elementId);
+    const scrollTo = (elementId: string) => {
+        const element = document.getElementById(elementId);
         if (!element) return;
         window.scroll({
             behavior: 'smooth',
