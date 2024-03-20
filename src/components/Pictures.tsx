@@ -19,6 +19,9 @@ function Pictures() {
         slidesToScroll: 1,
         initialSlide: 2,
         variableWidth: true,
+        adaptiveHeight: true,
+        autoplay: true,
+        pauseOnHover: true,
     };
 
     return (
@@ -42,10 +45,12 @@ function Pictures() {
                 <Grid item md={2} className="pcontainer">
                     <Card>
                         <CardContent className="card">
-                            <div className="chtext primary">
-                                Here's a collection of pictures from previous grills. {<br />}
-                                We are looking to expand the collection with your pictures, feel free to send them to us! {<br />}
-                            </div>
+                            <p className="chtext primary">
+                                Here's a collection of pictures from previous grills.
+                                <br />
+                                We are looking to expand the collection with your pictures, feel free to send them to us! 
+                                <br />
+                            </p>
                         </CardContent>
                     </Card>
                 </Grid>

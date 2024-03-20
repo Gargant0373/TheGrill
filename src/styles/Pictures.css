@@ -19,15 +19,20 @@
     #pictures .pcontainer {
         margin-top: 50px;
     }
-
     #pictures .pcontainer .pimg img {
         height: 300px;
     }
+}
+@media (max-width: 900px) {
+    #pictures .pcontainer {
+        margin-top: 50px;
+    }
+
 }
 .slick-prev {
     left: -30px; 
 }
 
 .slick-prev:before, .slick-next:before {
-    font-size: 24px; /* Adjust the size of the icon specifically */
+    font-size: 24px; 
 }

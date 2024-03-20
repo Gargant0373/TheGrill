@@ -1,7 +1,25 @@
 import { Grid } from '@mui/material';
 import '../styles/Rules.css';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import {useState, useEffect} from 'react';
 function Rules() {
+    const [parallaxSpeed, setParallaxSpeed] = useState(-10);
+    useEffect( () => {
+            const handleResize = () => {
+                if (window.innerWidth < 900) {
+                    setParallaxSpeed(0);
+                } else {
+                    setParallaxSpeed(-10);
+                }
+            }
+            handleResize();
+            window.addEventListener('resize', handleResize);
+
+            return () => window.removeEventListener('resize', handleResize);
+        } , []);
+
+
+     
     return <>
         <Grid container className="rules">
             <ParallaxProvider>
@@ -9,7 +27,7 @@ function Rules() {
                     <h1 className="chtitle" id="rules">GUIDELINES</h1>
                 </Grid>
                 <Grid item xs={10} md={5} className="node left">
-                    <Parallax speed={-10}>
+                    <Parallax speed={parallaxSpeed}>
                         <div className='rulesinto'>
                             <Grid item xs={12}>
                                 <h2 className="chsubtitle">Let's make something clear...</h2>
