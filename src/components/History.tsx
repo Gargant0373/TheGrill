@@ -4,18 +4,18 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { useState, useEffect } from 'react';
 function History() {
     const [parallaxSpeed, setParallaxSpeed] = useState(-2);
-    const [shortText1, setShortText1] = useState(false);
-    const [shortText2, setShortText2] = useState(false);
+    const [shortText1, setShortText1] = useState(true);
+    const [shortText2, setShortText2] = useState(true);
 
-    const [showMoreTextButton, setShowMoreTextButton] = useState(false);
+    const [smallScreen, setSmallScreen] = useState(false);
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 900) {
                 setParallaxSpeed(0);
-                setShowMoreTextButton(true);
+                setSmallScreen(true);
             } else {
                 setParallaxSpeed(-2);
-                setShowMoreTextButton(false);
+                setSmallScreen(false);
             }
         }
         handleResize();
@@ -63,7 +63,7 @@ function History() {
 
                             </p>
                         </CardContent>
-                        {showMoreTextButton && (<button type="button" className="showmore" 
+                        {smallScreen && (<button type="button" className="showmore" 
                         onClick={() => setShortText1(!shortText1)}> {shortText1 ? "Read more..." : "Read less..."} </button>)}
                     </Card>
                 </Grid>
@@ -83,7 +83,7 @@ function History() {
                                 to blend the joy of childhood memories with the warmth of community spirit. </span>}
                             </p>
                         </CardContent>
-                        {showMoreTextButton && (<button type="button" className="showmore" 
+                        {smallScreen && (<button type="button" className="showmore" 
                         onClick={() => setShortText2(!shortText2)}> {shortText2 ? "Read more..." : "Read less..."} </button>)}
 
                     </Card>

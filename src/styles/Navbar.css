@@ -35,7 +35,6 @@
 
     color: var(--secondaryColor);
     font-weight: bold;
-    font-size: 20px;
 
     cursor: pointer;
 }
@@ -52,7 +51,9 @@
     
     object-fit: cover;
 }
-
+.scrollsection {
+    padding-top: 30px;
+}
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

@@ -20,6 +20,8 @@ function Pictures() {
         initialSlide: 2,
         variableWidth: true,
         adaptiveHeight: true,
+        autoplay: true,
+        pauseOnHover: true,
     };
 
     return (

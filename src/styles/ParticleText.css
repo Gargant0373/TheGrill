@@ -1,0 +1,18 @@
+.container {
+    position: absolute;
+    
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.hoverDiv {
+    position: absolute;
+    top: -10em;
+    /* background-color: red; */
+}
+.hoverDiv:hover {
+    /* doesn't work lol */
+    cursor: url('fire.png'), pointer;
+}
