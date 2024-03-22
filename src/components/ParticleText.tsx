@@ -2,27 +2,32 @@ import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import p5 from "p5";
 import '../styles/ParticleText.css';
-// import the css file
 
-// the myP5 variable is used to store a p5 instance
-// the p parameter references a p5 instance
 interface MyComponentProps {
-    styleProp?: React.CSSProperties;
-    textSizeProp: number;
-  }
-function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
+	styleProp?: React.CSSProperties;
+	textSizeProp: number;
+}
+
+/*
+	The myP5 variable is used to store a p5 instance 
+	the p parameter references a p5 instance
+	
+	@see https://p5js.org/reference/#/p5/p5
+	@author https://github.com/MateiDumitrescu1
+*/
+function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
-    const hoverDiv = useRef<HTMLDivElement>(null);
+	const hoverDiv = useRef<HTMLDivElement>(null);
 	const myP5 = useRef<p5 | null>(null);
 	const flowSpeedRef = useRef<number>(0);
-    const colorsRef = useRef<string[]>(["#BC6C25", "#fefae0"]);
+	const colorsRef = useRef<string[]>(["#BC6C25", "#fefae0"]);
 	const [flowSpeed, setFlowSpeed] = useState(0);
-    const [textWidth, setTextWidth] = useState(0);
-    const [colorsUsed, setColorsUsed] = useState(["#BC6C25", "#fefae0"]);
+	const [textWidth, setTextWidth] = useState(0);
+	const [colorsUsed, setColorsUsed] = useState(["#BC6C25", "#fefae0"]);
 	// Variables to change
-    //TODO also play with flowOffset and gravity direction and force    
+	//TODO also play with flowOffset and gravity direction and force    
 
-    // TODO make cursoe change into a fire emoji when hovering over the hover div
+	// TODO make cursoe change into a fire emoji when hovering over the hover div
 
 	const flowSpeedStep = 10;
 	const canvasWidth = 800;
@@ -41,22 +46,26 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 	const handleButtonUp = () => {
 		setFlowSpeed(0);
 	};
+
 	useEffect(() => {
+		if (!myP5 || !myP5.current) return;
+
 		if (hoverDiv.current) {
 			// THE EVENT LISTENER TRIGGERS TWICE IN PULA MEA NUSH DE CE
 			hoverDiv.current.addEventListener("mouseover", (e) => {
 				setFlowSpeed(flowSpeedStep);
-                setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
+				setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
 				myP5.current.updateFlowSpeed();
-                myP5.current.updateColors();
+				myP5.current.updateColors();
 			});
 			hoverDiv.current.addEventListener("mouseleave", (e) => {
 				setFlowSpeed(0);
-                setColorsUsed(["#BC6C25", "#fefae0"]);
+				setColorsUsed(["#BC6C25", "#fefae0"]);
 				myP5.current.updateFlowSpeed();
-                myP5.current.updateColors();
+				myP5.current.updateColors();
 			});
 		}
+
 		// Part for the p5JS sketch
 		// let myP5; I don't need this anymore, I used a ref instead
 		const sketch = (p) => {
@@ -75,37 +84,37 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 			p.updateFlowSpeed = () => {
 				system.flow = flowSpeedRef.current;
 			};
-            p.updateColors = () => {
+			p.updateColors = () => {
 				colors = colorsRef.current;
 			};
 			let colors = colorsUsed;
 			class Particle {
-                base_size: number;
-                index: number;
-                spawn: p5.Vector;
-                size: number;
-                start: number;
-                position: p5.Vector;
-                velocity: p5.Vector;
-                acceleration: p5.Vector;
-                duration: number;
-                drag: number;
-                color: string;
-				constructor(x:number, y:number, size:number, index:number) {
+				base_size: number;
+				index: number;
+				spawn: p5.Vector;
+				size: number;
+				start: number;
+				position: p5.Vector;
+				velocity: p5.Vector;
+				acceleration: p5.Vector;
+				duration: number;
+				drag: number;
+				color: string;
+				constructor(x: number, y: number, size: number, index: number) {
 					this.base_size = size;
 					this.index = index || 0;
 					this.spawn = p.createVector(x, y);
 					this.init();
-                    this.size=0;
-                    this.start=0;
-                    this.position=p.createVector(0,0);
-                    this.velocity=p.createVector(0,0);
-                    this.acceleration=p.createVector(0,0);
-                    this.duration=0;
-                    this.drag=0;
-                    this.color="";
+					this.size = 0;
+					this.start = 0;
+					this.position = p.createVector(0, 0);
+					this.velocity = p.createVector(0, 0);
+					this.acceleration = p.createVector(0, 0);
+					this.duration = 0;
+					this.drag = 0;
+					this.color = "";
 				}
-                
+
 				init() {
 					this.size = this.base_size * p.random(0.5, 1.5);
 					this.start = p.millis();
@@ -115,7 +124,7 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 					this.duration = system.lifeSpan * p.random(0.2, 1.2);
 					this.drag = p.random(0.9, 1);
 					this.addForce(
-                        //TODO add a new keyword if this doesnt work
+						//TODO add a new keyword if this doesnt work
 						p5.Vector.fromAngle(p.random(TWO_PI), p.random(10)),
 					);
 					this.color = p.random(colors);
@@ -139,8 +148,8 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 						this.position.x,
 						this.position.y,
 						this.size *
-							s *
-							p.map(this.velocity.mag(), 0, system.topSpeed, 0.5, 1.2),
+						s *
+						p.map(this.velocity.mag(), 0, system.topSpeed, 0.5, 1.2),
 					);
 				}
 
@@ -186,9 +195,9 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 				p.clear();
 				p.fill(0);
 				// p.textStyle(p.BOLD);
-                p.textSize(textSize);
+				p.textSize(textSize);
 				let textBoxWidth = p.textWidth(system.text);
-                setTextWidth(textBoxWidth);
+				setTextWidth(textBoxWidth);
 				// text() -> (text, x, y); x and y set the coordinates of the text's bottom-left corner
 				p.text(system.text, (p.width - textBoxWidth) / 2, p.height / 2); // Why does textBoxWidth returns 29.something for Matei with textSize 300?
 
@@ -233,19 +242,18 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 			};
 
 			p.draw = () => {
-                p.clear();
+				p.clear();
 				// p.background(255); // comment this for a cool effect
 				particles.forEach((particle, i) => {
 					particle.addForce(gravity);
 					// search field
 					particle.addForce(
-                        //TODO add a new keyword if this doesnt work
-                        //new
+						//TODO add a new keyword if this doesnt work
+						//new
 						p5.Vector.fromAngle(
 							field[
-								`${particle.position.x - (particle.position.x % fieldStep)}-${
-									particle.position.y - (particle.position.y % fieldStep)
-								}`
+							`${particle.position.x - (particle.position.x % fieldStep)}-${particle.position.y - (particle.position.y % fieldStep)
+							}`
 							] + system.flowOffset,
 							system.flow,
 						),
@@ -255,13 +263,15 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 				});
 			};
 		};
+
 		if (divRef.current) {
 			myP5.current = new p5(sketch, divRef.current);
 		}
+
 		return () => {
 			myP5.current.remove();
-			hoverDiv.current.removeEventListener("mouseover", (e) => {});
-			hoverDiv.current.removeEventListener("mouseleave", (e) => {});
+			hoverDiv.current.removeEventListener("mouseover", (e) => { });
+			hoverDiv.current.removeEventListener("mouseleave", (e) => { });
 		};
 	}, [textSizeProp]);
 	useEffect(() => {
@@ -271,7 +281,7 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 		}
 		// console.log(flowSpeed);
 	}, [flowSpeed]); // This effect depends on flowSpeed
-    useEffect(() => {
+	useEffect(() => {
 		if (myP5.current) {
 			colorsRef.current = colorsUsed;
 			myP5.current.updateColors();
@@ -291,8 +301,8 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 			>
 				press me
 			</button> */}
-			<div className="hoverDiv" style={{width: `${textWidth}px`, height: `${textSize}px`}} ref={hoverDiv}>
-				
+			<div className="hoverDiv" style={{ width: `${textWidth}px`, height: `${textSize}px` }} ref={hoverDiv}>
+
 			</div>
 		</div>
 	);
