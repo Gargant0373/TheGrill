@@ -8,15 +8,25 @@ img {
     max-width: 100%;
     border-radius: 25px;
 }
+
 @media (max-width: 768px) {
     img {
         margin-bottom: 10px;
     }
 }
+
 .minh {
     display: flex;
     justify-content: center;
     align-items: center;
 
     min-height: 45vh;
+}
+
+.rogradient {
+    background: #CF0000;
+    background: linear-gradient(to right, #CF0000 0%, #FFEA02 50%, #0149FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
