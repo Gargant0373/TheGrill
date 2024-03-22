@@ -8,12 +8,11 @@ interface MyComponentProps {
 	textSizeProp: number;
 }
 
-/*
-	The myP5 variable is used to store a p5 instance 
-	the p parameter references a p5 instance
-	
-	@see https://p5js.org/reference/#/p5/p5
-	@author https://github.com/MateiDumitrescu1
+/**
+ *	ParticleText component handles the navbar title animation.
+ *	
+ *	@see https://p5js.org/reference/#/p5/p5
+ *	@author https://github.com/MateiDumitrescu1
 */
 function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
