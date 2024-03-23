@@ -15,6 +15,24 @@
     margin-right: auto;
 }
 
+.mint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 30vh;
+}
+
+@media (max-width: 900px) {
+    #pictures .pcontainer {
+        margin-top: 50px;
+    }
+
+    .mint {
+        margin: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     #pictures .pcontainer {
         margin-top: 50px;
@@ -23,14 +41,13 @@
     #pictures .pcontainer .pimg img {
         height: 300px;
     }
-}
 
-@media (max-width: 900px) {
-    #pictures .pcontainer {
-        margin-top: 50px;
+    .mint {
+        margin: 30px;
     }
 
 }
+
 
 .slick-prev {
     left: -30px;

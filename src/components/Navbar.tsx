@@ -14,7 +14,7 @@ function Navbar() {
     }, []);
 
     const customParallax = {
-        transform: `translateY(${ -1 * scrollDistance * 0.2}px)`
+        transform: `translateY(${-1 * scrollDistance * 0.2}px)`
     }
 
     useEffect(() => {
@@ -42,7 +42,7 @@ function Navbar() {
     }
 
     return <>
-        
+
         <Grid container className="navbar">
             <ParallaxProvider>
                 <Grid item xs={12} className="node">
@@ -56,6 +56,11 @@ function Navbar() {
                     <ParticleText styleProp={customParallax} textSizeProp={smallScreen ? 100 : 180} />
                 </Grid>
                 <Grid item xs={12} md={9} className="node text">
+                    <a onClick={() => scrollTo("upcoming")}>
+                        <Parallax speed={10}>
+                            <div className="item scrollsection" style={{ fontSize: `${smallScreen ? '15px' : '25px'}` }}>EVENTS</div>
+                        </Parallax>
+                    </a>
                     <a onClick={() => scrollTo("history")}>
                         <Parallax speed={10}>
                             <div className="item scrollsection" style={{ fontSize: `${smallScreen ? '15px' : '25px'}` }} >HISTORY</div>

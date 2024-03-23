@@ -33,7 +33,7 @@ function Pictures() {
                 <Grid item md={8} xs={8} className="pcontainer">
                     <Slider {...settings}>
                         {images.map((image, index) => {
-                            const key = `${image}-${index}`; 
+                            const key = `${image}-${index}`;
                             return (
                                 <Grid className="pimg" key={key}>
                                     <img src={image} alt={image} />
@@ -43,12 +43,12 @@ function Pictures() {
                     </Slider>
                 </Grid>
                 <Grid item md={2} className="pcontainer">
-                    <Card>
-                        <CardContent className="card">
+                    <Card className="card mint">
+                        <CardContent>
                             <p className="chtext primary">
                                 Here's a collection of pictures from previous grills.
                                 <br />
-                                We are looking to expand the collection with your pictures, feel free to send them to us! 
+                                We are looking to expand the collection with your pictures, feel free to send them to us!
                                 <br />
                             </p>
                         </CardContent>
