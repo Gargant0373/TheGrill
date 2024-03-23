@@ -35,12 +35,12 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 	// ];
 	// Variables to change
 
-	const handleButtonDown = () => {
-		setFlowSpeed(flowSpeedStep);
-	};
-	const handleButtonUp = () => {
-		setFlowSpeed(0);
-	};
+	// const handleButtonDown = () => {
+	// 	setFlowSpeed(flowSpeedStep);
+	// };
+	// const handleButtonUp = () => {
+	// 	setFlowSpeed(0);
+	// };
 
 	interface CustomP5 extends p5 {
 		updateFlowSpeed?: () => void;
@@ -63,16 +63,16 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 		display(): void;
 		update(): void;
 		addForce(vector: p5.Vector): void;
-	  }
+	}
 	useEffect(() => {
 		if (hoverDiv.current) {
-			hoverDiv.current.addEventListener("mouseover", (e) => {
+			hoverDiv.current.addEventListener("mouseover", () => {
 				setFlowSpeed(flowSpeedStep);
 				setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
 				(myP5.current as CustomP5)?.updateFlowSpeed?.();
 				(myP5.current as CustomP5)?.updateColors?.();
 			});
-			hoverDiv.current.addEventListener("mouseleave", (e) => {
+			hoverDiv.current.addEventListener("mouseleave", () => {
 				setFlowSpeed(0);
 				setColorsUsed(["#BC6C25", "#fefae0"]);
 				(myP5.current as CustomP5)?.updateFlowSpeed?.();
@@ -218,7 +218,7 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 				// particles will spawn from there :)
 				p.noFill();
 				particles = [];
-				let step = p.floor(
+				let step = floor(
 					max(p.width, p.height) / min(160, min(p.width, p.height)),
 				);
 				let i = 0;
@@ -234,7 +234,7 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 					}
 				}
 				p.clear();
-				step = fieldStep = p.floor(
+				step = fieldStep = floor(
 					max(p.width, p.height) / min(20, min(p.width, p.height)),
 				);
 				i = 0;
@@ -255,11 +255,12 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 
 			p.draw = () => {
 				p.clear(); // Clear the background after each draw 
-				particles.forEach((particle, i) => {
+				// biome-ignore lint/complexity/noForEach: <explanation>
+				particles.forEach((particle) => {
 					particle.addForce(gravity);
 					// search field
 					particle.addForce(
-						
+
 						//new
 						p5.Vector.fromAngle(
 							field[
@@ -282,8 +283,8 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 				myP5.current.remove();
 			}
 			if (hoverDiv.current) {
-				hoverDiv.current.removeEventListener("mouseover", (e) => { });
-				hoverDiv.current.removeEventListener("mouseleave", (e) => { });
+				hoverDiv.current.removeEventListener("mouseover", () => { });
+				hoverDiv.current.removeEventListener("mouseleave", () => { });
 			}
 		};
 	}, [textSizeProp]);
