@@ -4,7 +4,7 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { useState, useEffect } from 'react';
 function History() {
     const [parallaxSpeed, setParallaxSpeed] = useState(-2);
-    const [shortText1, setShortText1] = useState(true);
+    const [shortText1, setShortText1] = useState(false);
     const [shortText2, setShortText2] = useState(true);
 
     const [smallScreen, setSmallScreen] = useState(false);
@@ -48,7 +48,7 @@ function History() {
                                 What was the occasion, you ask? A grand
                                 celebration of grilling mastery paired with abundant sunshine and an endless flow of beer.
                                 <br />
-                                {!shortText1 &&
+                                {(!shortText1) &&
                                     <span>
                                         As the aroma of grilling meats filled the air, it marked the beginning of something extraordinary. Through clever promotion within the TU Delft community, what began as a simple
                                         <br />
@@ -63,28 +63,28 @@ function History() {
 
                             </p>
                         </CardContent>
-                        {smallScreen && (<button type="button" className="showmore" 
-                        onClick={() => setShortText1(!shortText1)}> {shortText1 ? "Read more..." : "Read less..."} </button>)}
+                        {smallScreen && (<button type="button" className="showmore"
+                            onClick={() => setShortText1(!shortText1)}> {shortText1 ? "Read more..." : "Read less..."} </button>)}
                     </Card>
                 </Grid>
                 <Grid item xs={11} md={7}>
                     <Card className="card wmargin minh">
                         <CardContent>
-                            <h1 className="chsubtitle primary underlined">Other Grills</h1>
+                            <h1 className="chsubtitle primary underlined">1st of June</h1>
                             <p className="chtext primary">
                                 Next month, another big celebration was planned, the 1st of June, the International Children's Day. How to enjoy these day better than with a grill next to the beautiful
                                 lake Delftse Hout, that took all of us straight to our childhood?
                                 <br />
-                                {!shortText2 &&
-                                    <span> All memories from when we were little and we would as girls help our moms prepare the salads, and
-                                while the boys would bring wood for our dads and help them with cooking the meet.
-                                <br />
-                                Everyone is welcomed to join and relive those cherished moments,
-                                to blend the joy of childhood memories with the warmth of community spirit. </span>}
+                                {(!shortText2 || !smallScreen) &&
+                                    <span> All memories from when we were little started to come around. How we would help our moms prepare the salad, and our dads to light up the fire and make
+                                        the grill. Everything was feeling like back then, enjoying the sun and celebrating our day together. <br />
+                                        <br />
+                                        Everyone is welcomed to join and relive those cherished moments,
+                                        to blend the joy of childhood memories with the warmth of community spirit and to enjoy the new tradition: The Grill. </span>}
                             </p>
                         </CardContent>
-                        {smallScreen && (<button type="button" className="showmore" 
-                        onClick={() => setShortText2(!shortText2)}> {shortText2 ? "Read more..." : "Read less..."} </button>)}
+                        {smallScreen && (<button type="button" className="showmore"
+                            onClick={() => setShortText2(!shortText2)}> {shortText2 ? "Read more..." : "Read less..."} </button>)}
 
                     </Card>
                 </Grid>
@@ -97,12 +97,13 @@ function History() {
                     </Parallax>
                 </Grid>
                 <Grid item xs={11} md={7}>
-                    <Card className="card wmargin minh">
+                    <Card className="card wmargin minhh">
                         <CardContent>
                             <h1 className="chsubtitle primary underlined">Other Grills</h1>
                             <div className="chtext primary">
                                 Obviously the legendary grill was the original one. Many followed, there were many drifting cars, wooden sticks picked up, fires extinguished.<br />
-                                At the end of the day one thing is certain though - many beers, laughs and <span className="rogradient">mici</span>  have been consumed.
+                                At the end of the day one thing is certain though - many beers, laughs and <span className="rogradient">mici</span>  have been consumed. <br />
+                                We never missed an occasion to celebrate with a grill, be it a birthday, a holiday, the beginning of a new scholar year or just a sunny day. <br />
                             </div>
                         </CardContent>
                     </Card>

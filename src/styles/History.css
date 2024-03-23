@@ -8,15 +8,25 @@ img {
     max-width: 100%;
     border-radius: 25px;
 }
+
 @media (max-width: 768px) {
     img {
         margin-bottom: 10px;
     }
 }
+
 .minh {
     display: flex;
     justify-content: center;
     align-items: center;
 
     min-height: 45vh;
+}
+
+.minhh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 37vh;
 }
