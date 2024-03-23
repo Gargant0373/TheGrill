@@ -2,14 +2,18 @@ import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import p5 from "p5";
 import '../styles/ParticleText.css';
-// import the css file
 
-// the myP5 variable is used to store a p5 instance
-// the p parameter references a p5 instance
 interface MyComponentProps {
 	styleProp?: React.CSSProperties;
 	textSizeProp: number;
 }
+
+/**
+ *	ParticleText component handles the navbar title animation.
+ *	
+ *	@see https://p5js.org/reference/#/p5/p5
+ *	@author https://github.com/MateiDumitrescu1
+*/
 function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
 	const hoverDiv = useRef<HTMLDivElement>(null);
@@ -65,6 +69,8 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 		addForce(vector: p5.Vector): void;
 	}
 	useEffect(() => {
+		if (!myP5 || !myP5.current) return;
+
 		if (hoverDiv.current) {
 			hoverDiv.current.addEventListener("mouseover", () => {
 				setFlowSpeed(flowSpeedStep);
@@ -79,6 +85,7 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 				(myP5.current as CustomP5)?.updateColors?.();
 			});
 		}
+
 		// Part for the p5JS sketch
 		// let myP5; I don't need this anymore, I used a ref instead
 		const sketch = (p: CustomP5) => {
@@ -275,9 +282,11 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 				});
 			};
 		};
+
 		if (divRef.current) {
 			myP5.current = new p5(sketch, divRef.current);
 		}
+
 		return () => {
 			if (myP5.current) {
 				myP5.current.remove();

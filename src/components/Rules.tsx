@@ -4,6 +4,7 @@ import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import {useState, useEffect} from 'react';
 function Rules() {
     const [parallaxSpeed, setParallaxSpeed] = useState(-10);
+
     useEffect( () => {
             const handleResize = () => {
                 if (window.innerWidth < 900) {
@@ -18,22 +19,19 @@ function Rules() {
             return () => window.removeEventListener('resize', handleResize);
         } , []);
 
-
-     
     return <>
         <Grid container className="rules">
             <ParallaxProvider>
                 <Grid item xs={12}>
                     <h1 className="chtitle" id="rules">GUIDELINES</h1>
                 </Grid>
-                <Grid item xs={10} md={5} className="node left">
+                <Grid item xs={10} md={4} className="node left">
                     <Parallax speed={parallaxSpeed}>
                         <div className='rulesinto'>
                             <Grid item xs={12}>
                                 <h2 className="chsubtitle">Let's make something clear...</h2>
                             </Grid>
                             <Grid item xs={12}>
-
                                 <div className="chtext">
                                     The Grill is not a place for rules. We do not want to have rules when the sun is shining and beer is flowing. <br />
                                     However, the last thing we want is to have the police or the fire department showing up. We are not in Romania, be civilized.<br />
@@ -44,7 +42,7 @@ function Rules() {
                         </div>
                     </Parallax>
                 </Grid>
-                <Grid item xs={10} md={5} className="node right">
+                <Grid item xs={10} md={6} className="node right">
                     <Rule title="GRILLMASTER IS KING"
                         text="The grillmaster is the most important person at the grill. He is the one who makes sure the fire is burning and the meat is cooking. He is the one who feeds you. Always make sure there's someone to help him out" />
                     <Rule title="NO STUDYING"
