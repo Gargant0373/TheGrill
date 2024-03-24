@@ -2,7 +2,6 @@ import { Button, Card, CardContent, Grid, styled } from "@mui/material";
 import "../styles/History.css";
 import { useState, useEffect } from 'react';
 function History() {
-    const [parallaxSpeed, setParallaxSpeed] = useState(-2);
     const [shortText1, setShortText1] = useState(false);
     const [shortText2, setShortText2] = useState(true);
 

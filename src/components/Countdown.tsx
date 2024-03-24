@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 
 function CountDown() {

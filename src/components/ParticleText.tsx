@@ -69,8 +69,6 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 		addForce(vector: p5.Vector): void;
 	}
 	useEffect(() => {
-		if (!myP5 || !myP5.current) return;
-
 		if (hoverDiv.current) {
 			hoverDiv.current.addEventListener("mouseover", () => {
 				setFlowSpeed(flowSpeedStep);
