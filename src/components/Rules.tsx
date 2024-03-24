@@ -35,7 +35,7 @@ function Rules() {
                                 <div className="chtext">
                                     The Grill is not a place for rules. We do not want to have rules when the sun is shining and beer is flowing. <br />
                                     However, the last thing we want is to have the police or the fire department showing up. We are not in Romania, be civilized.<br />
-                                    Here's a list of <span className='orangetext' >"guidelines"</span>→
+                                    Here's a list of <span className='primary bold' >"guidelines"</span>→
                                 </div>
 
                             </Grid>

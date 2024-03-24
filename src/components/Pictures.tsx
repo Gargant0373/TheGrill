@@ -45,7 +45,7 @@ function Pictures() {
                 <Grid item md={2} className="pcontainer">
                     <Card className="card mint">
                         <CardContent>
-                            <p className="chtext primary">
+                            <p className="chtext secondary">
                                 Here's a collection of pictures from previous grills.
                                 <br />
                                 We are looking to expand the collection with your pictures, feel free to send them to us!

@@ -30,3 +30,13 @@ img {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+.showmore {
+    width: 4em;
+    height: 2em;
+    position: relative;
+    bottom: 1em;
+    left: 0px;
+    margin-top: 0.5em;
+    width: auto;
+}

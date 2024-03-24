@@ -12,16 +12,6 @@ body {
     font-optical-sizing: auto;
 }
 
-.showmore {
-    width: 4em;
-    height: 2em;
-    position: relative;
-    bottom: 1em;
-    left: 0px;
-    margin-top: 0.5em;
-    width: auto;
-}
-
 .chtitle {
     padding-left: 20px;
     margin: 20px 0;
@@ -36,19 +26,6 @@ body {
     border-bottom: 1px solid rgb(96, 108, 56);
 }
 
-.chsubtitle {
-    font-size: 25px;
-}
-
-.primary {
-    color: #fefae0;
-}
-
-.underlined {
-    padding-bottom: 2px;
-    border-bottom: 2px solid var(--primaryColor);
-}
-
 .chtext {
     font-size: 20px;
     font-weight: 500;
@@ -57,9 +34,25 @@ body {
     text-align: justify;
 }
 
-.orangetext {
-    font-weight: 600;
+.chsubtitle {
+    font-size: 25px;
+}
+
+.primary {
     color: var(--primaryColor);
+}
+
+.secondary {
+    color: var(--secondaryColor);
+}
+
+.underlined {
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--primaryColor);
+}
+
+.bold {
+    font-weight: 600;
 }
 
 .card {
