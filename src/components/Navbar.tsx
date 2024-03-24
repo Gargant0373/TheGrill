@@ -6,6 +6,7 @@ import ParticleText from './ParticleText';
 function Navbar() {
     const [smallScreen, setSmallScreen] = useState(false);
     const [scrollDistance, setScrollDistance] = useState(0);
+    
     useEffect(() => {
         const handleScroll = () => setScrollDistance(window.scrollY);
         window.addEventListener('scroll', handleScroll);
