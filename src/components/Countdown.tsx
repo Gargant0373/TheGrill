@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 
 function CountDown() {
@@ -34,7 +35,8 @@ function CountDown() {
     return (
         <>
             <div>The time left is: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds.</div>
-
+            <Grid container className="countdown" id="countdown">
+            </Grid>
         </>
     );
 }

@@ -15,7 +15,7 @@
     margin-right: auto;
 }
 
-.mint {
+.pictures .minh {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@
         margin-top: 50px;
     }
 
-    .mint {
+    .pictures .minh {
         margin: 10px;
     }
 }
@@ -42,7 +42,7 @@
         height: 300px;
     }
 
-    .mint {
+    .pictures .minh {
         margin: 30px;
     }
 
