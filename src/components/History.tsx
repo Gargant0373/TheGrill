@@ -70,10 +70,16 @@ function History() {
                     {renderReadButton(shortText1, () => setShortText1(!shortText1))}
                 </Card>
             </Grid>
+            {
+                smallScreen &&
+                <Grid item xs={10} md={4}>
+                    <img src="10.jpeg" alt="" />
+                </Grid>
+            }
             <Grid item xs={11} md={7}>
                 <Card className="card wmargin minh">
                     <CardContent>
-                        <h1 className="chsubtitle primary underlined">Other Grills</h1>
+                        <h1 className="chsubtitle primary underlined">1st of June</h1>
                         <p className="chtext primary">
                             Next month, another big celebration was planned, the 1st of June, the International Children's Day. How to enjoy these day better than with a grill next to the beautiful
                             lake Delftse Hout, that took all of us straight to our childhood?
@@ -89,9 +95,12 @@ function History() {
                     {renderReadButton(shortText2, () => setShortText2(!shortText2))}
                 </Card>
             </Grid>
-            <Grid item xs={10} md={4}>
-                <img src="10.jpeg" alt="" />
-            </Grid>
+            {
+                !smallScreen &&
+                <Grid item xs={10} md={4}>
+                    <img src="10.jpeg" alt="" />
+                </Grid>
+            }
             <Grid item xs={10} md={4}>
                 <img src="9.jpeg" alt="" />
             </Grid>
