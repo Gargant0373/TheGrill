@@ -27,7 +27,7 @@ function Rules() {
                 </Grid>
                 <Grid item xs={10} md={4} className="node left">
                     <Parallax speed={parallaxSpeed}>
-                        <div className='rulesinto'>
+                        <div className='into'>
                             <Grid item xs={12}>
                                 <h2 className="chsubtitle">Let's make something clear...</h2>
                             </Grid>
