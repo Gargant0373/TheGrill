@@ -33,6 +33,8 @@
 .navbar .node .item {
     margin: 0 10px;
 
+    z-index: 1;
+
     color: var(--secondaryColor);
     font-weight: bold;
 
