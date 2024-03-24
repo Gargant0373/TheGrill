@@ -12,14 +12,6 @@ body {
     font-optical-sizing: auto;
 }
 
-/* * {
-    opacity: 0;
-    scale: 0.8;
-
-    animation: fadeIn linear forwards;
-    animation-timeline: view();
-    animation-range: 300px 400px;
-} */
 .showmore {
     width: 4em;
     height: 2em;
@@ -82,15 +74,3 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-
-/* @keyframes fadeIn {
-    from {
-        opacity: 0;
-        scale: 0.8;
-    }
-
-    to {
-        opacity: 1;
-        scale: 1;
-    }
-} */
