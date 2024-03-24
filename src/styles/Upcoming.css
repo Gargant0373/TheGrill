@@ -20,8 +20,8 @@
 
 a,
 a:visited {
-    text-decoration: none;
-    color: var(--primaryColor);
+    color: var(--secondaryColor);
+    text-shadow: rgba(24, 118, 242, 1) 0px 0px 30px;
 }
 
 .upcoming .minh {
