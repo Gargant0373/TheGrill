@@ -37,7 +37,7 @@ function Upcoming() {
                                 data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div> */}
                                 <CardContent>
                                     <p className="chtext secondary">
-                                        Check out our <a href="https://fb.me/e/527IVfMk3" className="fbgradient">Facebook event</a> for more information and to let us know you're coming!
+                                        Check out our <a href="https://fb.me/e/527IVfMk3" className="fbgradient">Facebook</a> event for more information and to let us know you're coming!
                                     </p>
                                 </CardContent>
                             </Grid>

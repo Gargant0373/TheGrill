@@ -29,7 +29,7 @@
 .upcoming a,
 a:visited {
     background: var(--secondaryColor);
-    background: linear-gradient(to left, #c1daff, #80b7ff 56%);
+    background: linear-gradient(to left, #1c6feb, #1453b3 56%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
