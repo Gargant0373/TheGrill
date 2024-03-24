@@ -19,15 +19,17 @@
 
 .navbar .node.ttl {
     position: absolute;
+
+    max-width: 90%;
 }
 
 .navbar .node.text {
     position: absolute;
     margin-top: 100px;
+    
+    max-width: 90%;
 
     justify-content: flex-end;
-
-    background-image: ("6.jpeg");
 }
 
 .navbar .node .item {
@@ -58,7 +60,7 @@
     padding-top: 30px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
     }
@@ -66,10 +68,8 @@
     .navbar .node.text {
         justify-content: center;
         margin-top: 70px;
-    }
 
-    .navbar .fire {
-        font-size: 50px;
+        font-size: 15px;
     }
 }
 

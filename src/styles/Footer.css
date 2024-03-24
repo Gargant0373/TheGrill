@@ -1,7 +1,7 @@
 .footer {
     padding-top: 20px;
     padding-bottom: 20px;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,4 +69,10 @@
     height: 1px;
 
     border-top: 1px solid var(--secondaryColor);
+}
+
+@media screen and (max-width: 768px) {
+    .footer .row .ftext {
+        font-size: 12px;
+    }
 }

@@ -36,7 +36,7 @@ function Navbar() {
     const renderNavItem = (text: string, targetId: string) => (
         <a onClick={() => scrollTo(targetId)}>
             <Parallax speed={10}>
-                <div className="item scrollsection" style={{ fontSize: `${smallScreen ? '15px' : '25px'}` }}>
+                <div className="item scrollsection" style={{ fontSize: `${smallScreen ? '14px' : '25px'}` }}>
                     {text}
                 </div>
             </Parallax>
@@ -50,7 +50,7 @@ function Navbar() {
                     <img src="6.jpeg" className="bg" alt="background" />
                 </Grid>
                 <Grid item xs={12} className="node ttl">
-                    <ParticleText styleProp={{ transform: `translateY(${-1 * scrollDistance * 0.2}px)` }} textSizeProp={smallScreen ? 100 : 180} canvasWidthVal={smallScreen ? 380 : 800} />
+                    <ParticleText styleProp={{ transform: `translateY(${-1 * scrollDistance * 0.2}px)` }} textSizeProp={smallScreen ? 90 : 180} canvasWidthVal={smallScreen ? 360 : 800} />
                 </Grid>
                 <Grid item xs={12} md={9} className="node text">
                     {renderNavItem('EVENTS', 'upcoming')}

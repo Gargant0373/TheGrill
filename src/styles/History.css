@@ -10,17 +10,19 @@
 }
 
 .history img {
-    width: auto;
-    height: 350px;
+    width: 45vw;
+    height: auto;
 
     max-width: 100%;
     border-radius: 25px;
+
+    object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
     .history img {
         margin-bottom: 10px;
-        height: 300px;
+        width: 90vw;
     }
 }
 
