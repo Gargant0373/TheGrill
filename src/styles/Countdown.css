@@ -1,0 +1,21 @@
+.countdown {
+    font-size: 40px;
+    font-weight: 600;
+
+    text-shadow: var(--backgroundColor) 0px 0px 39px;
+}
+
+.countdown .outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.countdown .outer .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}

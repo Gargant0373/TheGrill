@@ -1,5 +1,6 @@
-import { Grid } from "@mui/material";
+import { Card, CardContent, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
+import "../styles/Countdown.css";
 
 function CountDown() {
     const eventDate = new Date();
@@ -34,11 +35,57 @@ function CountDown() {
 
     return (
         <>
-            <div>The time left is: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds.</div>
-            <Grid container className="countdown" id="countdown">
-            </Grid>
+            <div className="countdown">
+                <CountdownText days={days} hours={hours} minutes={minutes} seconds={seconds} />
+            </div>
+
         </>
     );
+}
+interface CountdownTextProps {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+function CountdownText(props: CountdownTextProps) {
+    return (
+        <div className="outer secondary">
+            <div className="inner">
+                <div className="node top">
+                    {props.days}
+                </div>
+                <div className="node bot">
+                    days
+                </div>
+            </div>
+            <div className="inner">
+                <div className="node top">
+                    {props.hours}
+                </div>
+                <div className="node bot">
+                    hours
+                </div>
+            </div>
+            <div className="inner">
+                <div className="node top">
+                    {props.minutes}
+                </div>
+                <div className="node bot">
+                    minutes
+                </div>
+            </div>
+            <div className="inner">
+                <div className="node top">
+                    {props.seconds}
+                </div>
+                <div className="node bot">
+                    seconds
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default CountDown;

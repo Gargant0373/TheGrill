@@ -1,6 +1,7 @@
 :root {
     --primaryColor: #BC6C25;
     --secondaryColor: #fefae0;
+    --backgroundColor: rgb(96, 108, 56);
 }
 
 body {
@@ -23,7 +24,7 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    border-bottom: 1px solid rgb(96, 108, 56);
+    border-bottom: 1px solid var(--backgroundColor);
 }
 
 .chtext {
