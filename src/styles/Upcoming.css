@@ -1,0 +1,50 @@
+.upcoming {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.upcoming .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.upcoming .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a,
+a:visited {
+    background: var(--secondaryColor);
+    background: linear-gradient(to left, var(--secondaryColor) 0%, #71a8f0 56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+}
+
+.upcoming .minh {
+    min-height: 50vh;
+}
+
+.upcoming .map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .upcoming {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .upcoming .row {
+        flex-direction: column;
+        justify-content: center;
+    }
+}

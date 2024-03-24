@@ -32,6 +32,27 @@
     font-weight: bold;
 }
 
+.footer .row .ftext.small {
+    font-size: 12px;
+}
+
+.footer .margin {
+    margin-bottom: 10px;
+}
+
+.footer .row .lcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .row .logo {
+    height: 40px;
+    width: auto;
+
+    margin-right: 5px;
+}
+
 .footer .row .social {
     display: flex;
     justify-content: center;

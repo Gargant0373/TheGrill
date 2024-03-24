@@ -6,12 +6,13 @@
 
     margin-bottom: 40px;
 }
-.rulesinto
-{
+
+.rule .into {
     position: relative;
     left: -1em;
     margin-bottom: 1em;
 }
+
 .rules .node {
     display: flex;
     flex-direction: column;

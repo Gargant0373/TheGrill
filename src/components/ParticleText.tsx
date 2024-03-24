@@ -2,30 +2,36 @@ import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import p5 from "p5";
 import '../styles/ParticleText.css';
-// import the css file
 
 // the myP5 variable is used to store a p5 instance
 // the p parameter references a p5 instance
 interface MyComponentProps {
-    styleProp?: React.CSSProperties;
-    textSizeProp: number;
-  }
-function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
+	styleProp?: React.CSSProperties;
+	textSizeProp: number;
+	canvasWidthVal: number;
+}
+/**
+ *	ParticleText component handles the navbar title animation.
+ *	
+ *	@see https://p5js.org/reference/#/p5/p5
+ *	@author https://github.com/MateiDumitrescu1
+*/
+function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
-    const hoverDiv = useRef<HTMLDivElement>(null);
+	const hoverDiv = useRef<HTMLDivElement>(null);
 	const myP5 = useRef<p5 | null>(null);
 	const flowSpeedRef = useRef<number>(0);
-    const colorsRef = useRef<string[]>(["#BC6C25", "#fefae0"]);
+	const colorsRef = useRef<string[]>(["#BC6C25", "#fefae0"]);
 	const [flowSpeed, setFlowSpeed] = useState(0);
-    const [textWidth, setTextWidth] = useState(0);
-    const [colorsUsed, setColorsUsed] = useState(["#BC6C25", "#fefae0"]);
+	const [textWidth, setTextWidth] = useState(0);
+	const [colorsUsed, setColorsUsed] = useState(["#BC6C25", "#fefae0"]);
 	// Variables to change
-    //TODO also play with flowOffset and gravity direction and force    
+	//TODO also play with flowOffset and gravity direction and force    
 
-    // TODO make cursoe change into a fire emoji when hovering over the hover div
+	// TODO make cursor change into a fire emoji when hovering over the hover div
 
 	const flowSpeedStep = 10;
-	const canvasWidth = 800;
+	const canvasWidth = canvasWidthVal;
 	const canvasHeight = 800;
 	const textSize = textSizeProp;
 	const text = "The Grill";
@@ -35,31 +41,53 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 	// ];
 	// Variables to change
 
-	const handleButtonDown = () => {
-		setFlowSpeed(flowSpeedStep);
-	};
-	const handleButtonUp = () => {
-		setFlowSpeed(0);
-	};
+	// const handleButtonDown = () => {
+	// 	setFlowSpeed(flowSpeedStep);
+	// };
+	// const handleButtonUp = () => {
+	// 	setFlowSpeed(0);
+	// };
+
+	interface CustomP5 extends p5 {
+		updateFlowSpeed?: () => void;
+		updateColors?: () => void;
+		init(): void;
+	}
+	interface IParticle {
+		base_size: number;
+		index: number;
+		spawn: p5.Vector;
+		size: number;
+		start: number;
+		position: p5.Vector;
+		velocity: p5.Vector;
+		acceleration: p5.Vector;
+		duration: number;
+		drag: number;
+		color: string;
+		init(): void;
+		display(): void;
+		update(): void;
+		addForce(vector: p5.Vector): void;
+	}
 	useEffect(() => {
 		if (hoverDiv.current) {
-			// THE EVENT LISTENER TRIGGERS TWICE IN PULA MEA NUSH DE CE
-			hoverDiv.current.addEventListener("mouseover", (e) => {
+			hoverDiv.current.addEventListener("mouseover", () => {
 				setFlowSpeed(flowSpeedStep);
-                setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
-				myP5.current.updateFlowSpeed();
-                myP5.current.updateColors();
+				setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
+				(myP5.current as CustomP5)?.updateFlowSpeed?.();
+				(myP5.current as CustomP5)?.updateColors?.();
 			});
-			hoverDiv.current.addEventListener("mouseleave", (e) => {
+			hoverDiv.current.addEventListener("mouseleave", () => {
 				setFlowSpeed(0);
-                setColorsUsed(["#BC6C25", "#fefae0"]);
-				myP5.current.updateFlowSpeed();
-                myP5.current.updateColors();
+				setColorsUsed(["#BC6C25", "#fefae0"]);
+				(myP5.current as CustomP5)?.updateFlowSpeed?.();
+				(myP5.current as CustomP5)?.updateColors?.();
 			});
 		}
 		// Part for the p5JS sketch
 		// let myP5; I don't need this anymore, I used a ref instead
-		const sketch = (p) => {
+		const sketch = (p: CustomP5) => {
 			const { floor, min, max, TWO_PI, noise } = p;
 			const system = {
 				text: text,
@@ -75,37 +103,37 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 			p.updateFlowSpeed = () => {
 				system.flow = flowSpeedRef.current;
 			};
-            p.updateColors = () => {
+			p.updateColors = () => {
 				colors = colorsRef.current;
 			};
 			let colors = colorsUsed;
 			class Particle {
-                base_size: number;
-                index: number;
-                spawn: p5.Vector;
-                size: number;
-                start: number;
-                position: p5.Vector;
-                velocity: p5.Vector;
-                acceleration: p5.Vector;
-                duration: number;
-                drag: number;
-                color: string;
-				constructor(x:number, y:number, size:number, index:number) {
+				base_size: number;
+				index: number;
+				spawn: p5.Vector;
+				size: number;
+				start: number;
+				position: p5.Vector;
+				velocity: p5.Vector;
+				acceleration: p5.Vector;
+				duration: number;
+				drag: number;
+				color: string;
+				constructor(x: number, y: number, size: number, index: number) {
 					this.base_size = size;
 					this.index = index || 0;
 					this.spawn = p.createVector(x, y);
 					this.init();
-                    this.size=0;
-                    this.start=0;
-                    this.position=p.createVector(0,0);
-                    this.velocity=p.createVector(0,0);
-                    this.acceleration=p.createVector(0,0);
-                    this.duration=0;
-                    this.drag=0;
-                    this.color="";
+					this.size = 0;
+					this.start = 0;
+					this.position = p.createVector(0, 0);
+					this.velocity = p.createVector(0, 0);
+					this.acceleration = p.createVector(0, 0);
+					this.duration = 0;
+					this.drag = 0;
+					this.color = "";
 				}
-                
+
 				init() {
 					this.size = this.base_size * p.random(0.5, 1.5);
 					this.start = p.millis();
@@ -115,7 +143,7 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 					this.duration = system.lifeSpan * p.random(0.2, 1.2);
 					this.drag = p.random(0.9, 1);
 					this.addForce(
-                        //TODO add a new keyword if this doesnt work
+						//TODO add a new keyword if this doesnt work
 						p5.Vector.fromAngle(p.random(TWO_PI), p.random(10)),
 					);
 					this.color = p.random(colors);
@@ -139,8 +167,8 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 						this.position.x,
 						this.position.y,
 						this.size *
-							s *
-							p.map(this.velocity.mag(), 0, system.topSpeed, 0.5, 1.2),
+						s *
+						p.map(this.velocity.mag(), 0, system.topSpeed, 0.5, 1.2),
 					);
 				}
 
@@ -161,12 +189,12 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 					this.acceleration.add(vector);
 				}
 			}
-			let particles = [];
-			let field = [];
-			let fieldStep;
-			let gravity;
+			let particles: IParticle[] = [];
+			let field: Record<string, number> = {};
+			let fieldStep: number;
+			let gravity: p5.Vector;
 			function setGravity() {
-				gravity = new p5.Vector.fromAngle(
+				gravity = p5.Vector.fromAngle(
 					p.radians(system.gravity.direction),
 					system.gravity.force,
 				);
@@ -186,9 +214,9 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 				p.clear();
 				p.fill(0);
 				// p.textStyle(p.BOLD);
-                p.textSize(textSize);
+				p.textSize(textSize);
 				let textBoxWidth = p.textWidth(system.text);
-                setTextWidth(textBoxWidth);
+				setTextWidth(textBoxWidth);
 				// text() -> (text, x, y); x and y set the coordinates of the text's bottom-left corner
 				p.text(system.text, (p.width - textBoxWidth) / 2, p.height / 2); // Why does textBoxWidth returns 29.something for Matei with textSize 300?
 
@@ -196,7 +224,7 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 				// particles will spawn from there :)
 				p.noFill();
 				particles = [];
-				let step = p.floor(
+				let step = floor(
 					max(p.width, p.height) / min(160, min(p.width, p.height)),
 				);
 				let i = 0;
@@ -211,9 +239,8 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 						}
 					}
 				}
-				field = {};
 				p.clear();
-				step = fieldStep = p.floor(
+				step = fieldStep = floor(
 					max(p.width, p.height) / min(20, min(p.width, p.height)),
 				);
 				i = 0;
@@ -233,19 +260,18 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 			};
 
 			p.draw = () => {
-                p.clear();
-				// p.background(255); // comment this for a cool effect
-				particles.forEach((particle, i) => {
+				p.clear(); // Clear the background after each draw 
+				// biome-ignore lint/complexity/noForEach: <explanation>
+				particles.forEach((particle) => {
 					particle.addForce(gravity);
 					// search field
 					particle.addForce(
-                        //TODO add a new keyword if this doesnt work
-                        //new
+
+						//new
 						p5.Vector.fromAngle(
 							field[
-								`${particle.position.x - (particle.position.x % fieldStep)}-${
-									particle.position.y - (particle.position.y % fieldStep)
-								}`
+							`${particle.position.x - (particle.position.x % fieldStep)}-${particle.position.y - (particle.position.y % fieldStep)
+							}`
 							] + system.flowOffset,
 							system.flow,
 						),
@@ -259,22 +285,26 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 			myP5.current = new p5(sketch, divRef.current);
 		}
 		return () => {
-			myP5.current.remove();
-			hoverDiv.current.removeEventListener("mouseover", (e) => {});
-			hoverDiv.current.removeEventListener("mouseleave", (e) => {});
+			if (myP5.current) {
+				myP5.current.remove();
+			}
+			if (hoverDiv.current) {
+				hoverDiv.current.removeEventListener("mouseover", () => { });
+				hoverDiv.current.removeEventListener("mouseleave", () => { });
+			}
 		};
 	}, [textSizeProp]);
 	useEffect(() => {
 		if (myP5.current) {
 			flowSpeedRef.current = flowSpeed;
-			myP5.current.updateFlowSpeed();
+			(myP5.current as CustomP5)?.updateFlowSpeed?.();
 		}
 		// console.log(flowSpeed);
 	}, [flowSpeed]); // This effect depends on flowSpeed
-    useEffect(() => {
+	useEffect(() => {
 		if (myP5.current) {
 			colorsRef.current = colorsUsed;
-			myP5.current.updateColors();
+			(myP5.current as CustomP5)?.updateColors?.();
 		}
 		// console.log(flowSpeed);
 	}, [colorsUsed]); // This effect depends on flowSpeed
@@ -291,8 +321,8 @@ function ParticleText({styleProp, textSizeProp }: MyComponentProps) {
 			>
 				press me
 			</button> */}
-			<div className="hoverDiv" style={{width: `${textWidth}px`, height: `${textSize}px`}} ref={hoverDiv}>
-				
+			<div className="hoverDiv" style={{ width: `${textWidth}px`, height: `${textSize}px` }} ref={hoverDiv}>
+
 			</div>
 		</div>
 	);
