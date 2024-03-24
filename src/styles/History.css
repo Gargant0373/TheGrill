@@ -6,7 +6,7 @@
 
 .history .icontainer {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .history img {
@@ -17,9 +17,10 @@
     border-radius: 25px;
 }
 
-@media (max-width: 768px) {
-    img {
+@media screen and (max-width: 768px) {
+    .history img {
         margin-bottom: 10px;
+        height: 300px;
     }
 }
 

@@ -47,12 +47,12 @@ function Pictures() {
                 <Grid item xs={12} className="ptitle">
                     <h1 className="chtitle">PICTURES</h1>
                 </Grid>
-                <Grid item md={7} xs={8} className="pcontainer">
+                <Grid item md={7} xs={10} className="pcontainer">
                     <Slider {...settings}>
                         {images.map(renderMedia)}
                     </Slider>
                 </Grid>
-                <Grid item md={3} xs={8} className="pcontainer">
+                <Grid item md={3} xs={11} className="pcontainer">
                     <Card className="card minh">
                         <CardContent>
                             <p className="chtext secondary">

@@ -25,7 +25,8 @@
     border-radius: 25px;
 }
 
-.upcoming a, a:visited {
+.upcoming a,
+a:visited {
     background: var(--secondaryColor);
     background: linear-gradient(to left, #c1daff, #80b7ff 56%);
     -webkit-background-clip: text;
@@ -57,5 +58,10 @@
     .upcoming .row {
         flex-direction: column;
         justify-content: center;
+    }
+
+    .upcoming img {
+        margin-bottom: 10px;
+        height: 300px;
     }
 }
