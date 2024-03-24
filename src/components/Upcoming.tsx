@@ -8,20 +8,24 @@ function Upcoming() {
             <Grid item xs={12} className="ptitle">
                 <h1 className="chtitle">UPCOMING EVENTS</h1>
             </Grid>
-            <Countdown />
-            <Grid item xs={12} className="row">
-                <Grid item xs={11} md={5} className="col ">
+            <div className="cdown">
+                <Countdown />
+            </div>
+            <Grid item xs={11} className="row">
+                <Grid item xs={12} md={7} className="col ">
                     {/* TODO: insert new invitation */}
                     <img src="7.jpeg" alt="" />
                 </Grid>
-                <Grid item xs={10} className="col">
-                    <Card className="card wmargin">
+                <Grid item xs={12} className="col">
+                    <Card className="card wmargin minh">
                         <Grid item xs={11} className="row">
                             <CardContent>
-                                <p className="chtext secondary">
+                                <p className="chtext secondary underlined">
                                     The Grill is back for another year! Join us on the 1st of May, 2024, for a day of delicious food,
                                     cold drinks, and great company. Whether you're a seasoned Grill veteran or a first-timer, you're
                                     sure to have a fantastic time. We can't wait to see you there!
+                                    <br />
+                                    <br />
                                 </p>
                             </CardContent>
                         </Grid>
@@ -32,8 +36,8 @@ function Upcoming() {
                             <div className="fb-page" data-href="https://www.facebook.com/events/334566999051529" data-tabs="timeline" data-width="Min. 180" data-height="Min. 70"
                                 data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div> */}
                                 <CardContent>
-                                    <p className="chtext secondary minh">
-                                        Check out our <a href="https://fb.me/e/527IVfMk3">Facebook event</a> for more information and to let us know you're coming!
+                                    <p className="chtext secondary">
+                                        Check out our <a href="https://fb.me/e/527IVfMk3" className="fbgradient">Facebook event</a> for more information and to let us know you're coming!
                                     </p>
                                 </CardContent>
                             </Grid>
