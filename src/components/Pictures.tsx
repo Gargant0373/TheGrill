@@ -43,7 +43,7 @@ function Pictures() {
                     </Slider>
                 </Grid>
                 <Grid item md={2} className="pcontainer">
-                    <Card className="card mint">
+                    <Card className="card minh">
                         <CardContent>
                             <p className="chtext secondary">
                                 Here's a collection of pictures from previous grills.
