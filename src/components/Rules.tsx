@@ -1,12 +1,20 @@
 import { Grid } from '@mui/material';
 import '../styles/Rules.css';
-function Rules() {
 
-    return <>
+function Rules() {
+    return (
         <Grid container className="rules">
             <Grid item xs={12}>
                 <h1 className="chtitle" id="rules">GUIDELINES</h1>
             </Grid>
+            <Guidelines />
+        </Grid>
+    );
+}
+
+function Guidelines() {
+    return (
+        <>
             <Grid item xs={10} md={4} className="node left">
                 <div className='into'>
                     <Grid item xs={12}>
@@ -18,7 +26,6 @@ function Rules() {
                             However, the last thing we want is to have the police or the fire department showing up. We are not in Romania, be civilized.<br />
                             Here's a list of <span className='primary bold' >"guidelines"</span>→
                         </div>
-
                     </Grid>
                 </div>
             </Grid>
@@ -36,8 +43,8 @@ function Rules() {
                 <Rule title="MEN SWIM"
                     text="Men must take a bath before leaving the grill. The lake might not be warm, but the soul of the lovely ladies will be." />
             </Grid>
-        </Grid >
-    </>
+        </>
+    );
 }
 
 function Rule(props: { title: string, text: string }) {
@@ -48,7 +55,7 @@ function Rule(props: { title: string, text: string }) {
                 {props.text}
             </div>
         </div>
-    )
+    );
 }
 
 export default Rules;
