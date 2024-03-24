@@ -15,7 +15,7 @@ img {
     }
 }
 
-.minh {
+.history .minh {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,10 +23,20 @@ img {
     min-height: 45vh;
 }
 
-.rogradient {
+.history .rogradient {
     background: #CF0000;
     background: linear-gradient(to right, #CF0000 0%, #FFEA02 50%, #0149FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.history .showmore {
+    width: 4em;
+    height: 2em;
+    position: relative;
+    bottom: 1em;
+    left: 0px;
+    margin-top: 0.5em;
+    width: auto;
 }

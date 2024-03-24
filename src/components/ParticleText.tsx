@@ -11,6 +11,12 @@ interface MyComponentProps {
 	textSizeProp: number;
 	canvasWidthVal: number;
 }
+/**
+ *	ParticleText component handles the navbar title animation.
+ *	
+ *	@see https://p5js.org/reference/#/p5/p5
+ *	@author https://github.com/MateiDumitrescu1
+*/
 function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
 	const hoverDiv = useRef<HTMLDivElement>(null);
