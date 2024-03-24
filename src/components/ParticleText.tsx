@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import p5 from "p5";
 import '../styles/ParticleText.css';
-// import the css file
 
 // the myP5 variable is used to store a p5 instance
 // the p parameter references a p5 instance
@@ -29,7 +28,7 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 	// Variables to change
 	//TODO also play with flowOffset and gravity direction and force    
 
-	// TODO make cursoe change into a fire emoji when hovering over the hover div
+	// TODO make cursor change into a fire emoji when hovering over the hover div
 
 	const flowSpeedStep = 10;
 	const canvasWidth = canvasWidthVal;
