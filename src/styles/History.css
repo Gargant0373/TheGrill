@@ -23,7 +23,7 @@ img {
     min-height: 45vh;
 }
 
-.rogradient {
+.history .rogradient {
     background: #CF0000;
     background: linear-gradient(to right, #CF0000 0%, #FFEA02 50%, #0149FF 100%);
     -webkit-background-clip: text;
@@ -31,7 +31,7 @@ img {
     background-clip: text;
 }
 
-.showmore {
+.history .showmore {
     width: 4em;
     height: 2em;
     position: relative;

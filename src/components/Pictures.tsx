@@ -9,6 +9,8 @@ function Pictures() {
         "3.jpeg",
         "4.jpeg",
         "5.jpeg",
+        "lake.mp4",
+        "8.mp4"
     ]
 
     const settings = {
@@ -24,6 +26,21 @@ function Pictures() {
         pauseOnHover: true,
     };
 
+    const renderMedia = (image: string, index: number) => {
+        const key = `${image}-${index}`;
+        return (
+            <Grid className="pimg" key={key}>
+                {image.includes("mp4") ? (
+                    <video autoPlay loop muted>
+                        <source src={image} type="video/mp4" />
+                    </video>
+                ) : (
+                    <img src={image} alt={image} />
+                )}
+            </Grid>
+        );
+    };
+
     return (
         <>
             <Grid container className="pictures" id="pictures">
@@ -32,14 +49,7 @@ function Pictures() {
                 </Grid>
                 <Grid item md={8} xs={8} className="pcontainer">
                     <Slider {...settings}>
-                        {images.map((image, index) => {
-                            const key = `${image}-${index}`;
-                            return (
-                                <Grid className="pimg" key={key}>
-                                    <img src={image} alt={image} />
-                                </Grid>
-                            )
-                        })}
+                        {images.map(renderMedia)}
                     </Slider>
                 </Grid>
                 <Grid item md={2} className="pcontainer">
