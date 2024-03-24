@@ -21,7 +21,7 @@
 a,
 a:visited {
     background: var(--secondaryColor);
-    background: linear-gradient(to left, var(--secondaryColor) 0%, #1876F2 56%);
+    background: linear-gradient(to left, var(--secondaryColor) 0%, #71a8f0 56%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: underline;
