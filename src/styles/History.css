@@ -4,7 +4,12 @@
     align-items: center;
 }
 
-img {
+.history .icontainer {
+    display: flex;
+    align-items: center;
+}
+
+.history img {
     width: auto;
     height: 350px;
 

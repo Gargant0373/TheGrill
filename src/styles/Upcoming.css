@@ -21,6 +21,8 @@
 .upcoming img {
     height: 350px;
     width: auto;
+
+    border-radius: 25px;
 }
 
 .upcoming a, a:visited {
@@ -34,6 +36,10 @@
 
 .upcoming .minh {
     min-height: 350px;
+}
+
+.upcoming .map {
+    margin-bottom: 10px;
 }
 
 .upcoming .map iframe {

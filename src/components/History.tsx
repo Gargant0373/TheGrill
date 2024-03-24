@@ -36,7 +36,7 @@ function History() {
             <Grid item xs={12} className="ptitle">
                 <h1 className="chtitle">HISTORY</h1>
             </Grid>
-            <Grid item xs={11} md={4}>
+            <Grid item xs={11} md={4} className="icontainer">
                 <img src="7.jpeg" alt="" />
             </Grid>
             <Grid item xs={11} md={7}>
@@ -66,7 +66,7 @@ function History() {
             {
                 smallScreen &&
                 <Grid item xs={10} md={4}>
-                    <img src="10.jpeg" alt="" />
+                    <img src="10.jpeg" alt="" className="icontainer" />
                 </Grid>
             }
             <Grid item xs={11} md={7}>
@@ -91,11 +91,11 @@ function History() {
             {
                 !smallScreen &&
                 <Grid item xs={10} md={4}>
-                    <img src="10.jpeg" alt="" />
+                    <img src="10.jpeg" alt="" className="icontainer" />
                 </Grid>
             }
             <Grid item xs={10} md={4}>
-                <img src="9.jpeg" alt="" />
+                <img src="9.jpeg" alt="" className="icontainer" />
             </Grid>
             <Grid item xs={11} md={7}>
                 <Card className="card wmargin minh">
