@@ -9,8 +9,9 @@ import '../styles/ParticleText.css';
 interface MyComponentProps {
 	styleProp?: React.CSSProperties;
 	textSizeProp: number;
+	canvasWidthVal: number;
 }
-function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
+function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
 	const hoverDiv = useRef<HTMLDivElement>(null);
 	const myP5 = useRef<p5 | null>(null);
@@ -25,7 +26,7 @@ function ParticleText({ styleProp, textSizeProp }: MyComponentProps) {
 	// TODO make cursoe change into a fire emoji when hovering over the hover div
 
 	const flowSpeedStep = 10;
-	const canvasWidth = 800;
+	const canvasWidth = canvasWidthVal;
 	const canvasHeight = 800;
 	const textSize = textSizeProp;
 	const text = "The Grill";

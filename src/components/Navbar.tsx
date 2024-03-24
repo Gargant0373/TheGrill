@@ -53,7 +53,7 @@ function Navbar() {
                         
                         <div className="fire">THE GRILL</div>
                     </Parallax> */}
-                    <ParticleText styleProp={customParallax} textSizeProp={smallScreen ? 100 : 180} />
+                    <ParticleText styleProp={customParallax} textSizeProp={smallScreen ? 100 : 180} canvasWidthVal={smallScreen ? 380 : 800} />
                 </Grid>
                 <Grid item xs={12} md={9} className="node text">
                     <a onClick={() => scrollTo("history")}>
