@@ -16,6 +16,8 @@ body {
     margin: 0;
     width: 100%;
 
+    overflow-x: hidden;
+
     background: rgb(235, 228, 187);
     background: -moz-linear-gradient(103deg, var(--page1) 0%, var(--page2) 100%);
     background: -webkit-linear-gradient(103deg, var(--page1) 0%, var(--page2) 100%);

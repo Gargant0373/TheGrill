@@ -47,7 +47,7 @@ function Pictures() {
                 <Grid item xs={12} className="ptitle">
                     <h1 className="chtitle">PICTURES</h1>
                 </Grid>
-                <Grid item md={7} xs={10} className="pcontainer">
+                <Grid item md={7} xs={9} className="pcontainer">
                     <Slider {...settings}>
                         {images.map(renderMedia)}
                     </Slider>

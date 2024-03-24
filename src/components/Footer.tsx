@@ -12,13 +12,13 @@ function Footer() {
                 </div>
             </Grid>
             <Grid container className="row margin overlay">
-                <Grid item xs={3}>
+                <Grid item xs={5} md={3}>
                     <div className="lcontainer ftext">
                         <img src="bg-society.png" alt="Backgammon Society" className="logo" />
                         Backgammon Society
                     </div>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={5} md={3}>
                     <div className="lcontainer ftext">
                         <img src="BSA.png" alt="Backgammon Society" className="logo" />
                         Balcan Student Association
