@@ -45,22 +45,15 @@ function History() {
                         <h1 className="chsubtitle primary underlined">1st of May</h1>
                         <p className="chtext primary">
                             It all kicked off on the 1st of May, 2023, a day meant for honoring workers, but in Romania, it became the birthday of something unexpected and delightful.
-                            <br />
-                            Picture this: around 50
-                            eager souls gathered on one side of the lake in Delftse Hout, while another 30 claimed their spot on the opposite bank.
-                            <br />
-                            What was the occasion, you ask? A grand
-                            celebration of grilling mastery paired with abundant sunshine and an endless flow of beer.
-                            <br />
-                            {!shortText1 &&
+                            Picture this: around 50 eager souls gathered on one side of the lake in Delftse Hout, while another 30 claimed their spot on the opposite bank.<br />
+                            What was the occasion, you ask? A grand celebration of grilling mastery paired with abundant sunshine and an endless flow of beer.<br />
+                            {(!shortText1 || !smallScreen) &&
                                 <span>
                                     As the aroma of grilling meats filled the air, it marked the beginning of something extraordinary. Through clever promotion within the TU Delft community, what began as a simple
-                                    <br />
                                     barbecue transformed into "The Grill," a campus-wide sensation embodying unity amidst academia. <br />
                                     With each delicious bite and refreshing sip, The Grill embedded itself deeper into TU Delft's culture. From a modest gathering,
                                     it blossomed into a cherished tradition, fostering
                                     connections and cherished memories for students and beyond.
-                                    <br />
                                     As the sun set on that memorable May day, The Grill had become an integral part of TU Delft's identity,
                                     promising joy and camaraderie for years to come.
                                 </span>}
@@ -84,9 +77,9 @@ function History() {
                             Next month, another big celebration was planned, the 1st of June, the International Children's Day. How to enjoy these day better than with a grill next to the beautiful
                             lake Delftse Hout, that took all of us straight to our childhood?
                             <br />
-                            {!shortText2 &&
+                            {(!shortText2 || !smallScreen) &&
                                 <span> All memories from when we were little and we would as girls help our moms prepare the salads, and
-                                    while the boys would bring wood for our dads and help them with cooking the meet.
+                                    while the boys would bring wood for our dads and help them with cooking the meat.
                                     <br />
                                     Everyone is welcomed to join and relive those cherished moments,
                                     to blend the joy of childhood memories with the warmth of community spirit. </span>}

@@ -53,6 +53,8 @@ body {
     font-size: 20px;
     font-weight: 500;
     margin-left: 2px;
+
+    text-align: justify;
 }
 
 .orangetext {
