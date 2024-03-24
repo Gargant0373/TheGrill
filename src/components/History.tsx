@@ -2,7 +2,7 @@ import { Button, Card, CardContent, Grid, styled } from "@mui/material";
 import "../styles/History.css";
 import { useState, useEffect } from 'react';
 function History() {
-    const [shortText1, setShortText1] = useState(false);
+    const [shortText1, setShortText1] = useState(true);
     const [shortText2, setShortText2] = useState(true);
 
     const [smallScreen, setSmallScreen] = useState(false);
