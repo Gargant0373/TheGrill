@@ -6,6 +6,25 @@ import GitHubIcon from '@mui/icons-material/Github';
 function Footer() {
     return <>
         <Grid container className="footer">
+            <Grid container className="row margin">
+                <div className="ftext small">
+                    Special thanks to our parteners:
+                </div>
+            </Grid>
+            <Grid container className="row margin overlay">
+                <Grid item xs={3}>
+                    <div className="lcontainer ftext">
+                        <img src="bg-society.png" alt="Backgammon Society" className="logo" />
+                        Backgammon Society
+                    </div>
+                </Grid>
+                <Grid item xs={3}>
+                    <div className="lcontainer ftext">
+                        <img src="BSA.png" alt="Backgammon Society" className="logo" />
+                        Balcan Student Association
+                    </div>
+                </Grid>
+            </Grid>
             <Grid container className="row">
                 <Grid item xs={4} md={3}><div className="line" /></Grid>
 
