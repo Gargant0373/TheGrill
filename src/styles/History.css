@@ -5,6 +5,9 @@
 }
 
 img {
+    width: auto;
+    height: 350px;
+
     max-width: 100%;
     border-radius: 25px;
 }
@@ -20,7 +23,7 @@ img {
     justify-content: center;
     align-items: center;
 
-    min-height: 45vh;
+    min-height: 350px;
 }
 
 .history .rogradient {

@@ -1,5 +1,5 @@
 .countdown {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 600;
     top: 107%;
 
@@ -20,4 +20,10 @@
     align-items: center;
     flex-direction: column;
     margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .countdown {
+        font-size: 25px;
+    }
 }

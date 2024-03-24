@@ -18,8 +18,12 @@
     align-items: center;
 }
 
-.upcoming a,
-a:visited {
+.upcoming img {
+    height: 350px;
+    width: auto;
+}
+
+.upcoming a, a:visited {
     background: var(--secondaryColor);
     background: linear-gradient(to left, #c1daff, #80b7ff 56%);
     -webkit-background-clip: text;
@@ -29,7 +33,7 @@ a:visited {
 }
 
 .upcoming .minh {
-    min-height: 50vh;
+    min-height: 350px;
 }
 
 .upcoming .map iframe {
