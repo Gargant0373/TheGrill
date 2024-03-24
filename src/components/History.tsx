@@ -8,12 +8,9 @@ function History() {
     const [smallScreen, setSmallScreen] = useState(false);
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 900) {
-                setSmallScreen(true);
-            } else {
-                setSmallScreen(false);
-            }
+            setSmallScreen(window.innerWidth < 900);
         }
+
         handleResize();
         window.addEventListener('resize', handleResize);
 
@@ -25,6 +22,14 @@ function History() {
         color: 'white',
         borderColor: 'white'
     })
+
+    const renderReadButton = (textState: boolean, handleToggle: () => void) => (
+        smallScreen && (
+            <ReadButton variant="outlined" className="showmore" onClick={handleToggle}>
+                {textState ? "Read more..." : "Read less..."}
+            </ReadButton>
+        )
+    );
 
     return <>
         <Grid container className="history" id="history">
@@ -62,8 +67,7 @@ function History() {
 
                         </p>
                     </CardContent>
-                    {smallScreen && (<ReadButton variant="outlined" className="showmore"
-                        onClick={() => setShortText1(!shortText1)}> {shortText1 ? "Read more..." : "Read less..."} </ReadButton>)}
+                    {renderReadButton(shortText1, () => setShortText1(!shortText1))}
                 </Card>
             </Grid>
             <Grid item xs={11} md={7}>
@@ -82,9 +86,7 @@ function History() {
                                     to blend the joy of childhood memories with the warmth of community spirit. </span>}
                         </p>
                     </CardContent>
-                    {smallScreen && (<ReadButton variant="outlined" className="showmore"
-                        onClick={() => setShortText2(!shortText2)}> {shortText2 ? "Read more..." : "Read less..."} </ReadButton>)}
-
+                    {renderReadButton(shortText2, () => setShortText2(!shortText2))}
                 </Card>
             </Grid>
             <Grid item xs={10} md={4}>
@@ -106,7 +108,6 @@ function History() {
             </Grid>
         </Grid>
     </>
-
 }
 
 export default History;
