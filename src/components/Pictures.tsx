@@ -9,6 +9,8 @@ function Pictures() {
         "3.jpeg",
         "4.jpeg",
         "5.jpeg",
+        "lake.mp4",
+        "8.mp4"
     ]
 
     const settings = {
@@ -36,7 +38,13 @@ function Pictures() {
                             const key = `${image}-${index}`;
                             return (
                                 <Grid className="pimg" key={key}>
-                                    <img src={image} alt={image} />
+                                    {
+                                        image.includes("mp4") ?
+                                            <video autoPlay loop muted>
+                                                <source src={image} type="video/mp4" />
+                                            </video> :
+                                            <img src={image} alt={image} />
+                                    }
                                 </Grid>
                             )
                         })}

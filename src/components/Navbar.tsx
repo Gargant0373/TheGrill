@@ -6,7 +6,7 @@ import ParticleText from './ParticleText';
 function Navbar() {
     const [smallScreen, setSmallScreen] = useState(false);
     const [scrollDistance, setScrollDistance] = useState(0);
-    
+
     useEffect(() => {
         const handleScroll = () => setScrollDistance(window.scrollY);
         window.addEventListener('scroll', handleScroll);
@@ -50,10 +50,6 @@ function Navbar() {
                     <img src="6.jpeg" className="bg" alt="background" />
                 </Grid>
                 <Grid item xs={12} className="node ttl">
-                    {/* <Parallax speed={10}>
-                        
-                        <div className="fire">THE GRILL</div>
-                    </Parallax> */}
                     <ParticleText styleProp={customParallax} textSizeProp={smallScreen ? 100 : 180} />
                 </Grid>
                 <Grid item xs={12} md={9} className="node text">
