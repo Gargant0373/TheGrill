@@ -51,7 +51,7 @@ interface CountdownTextProps {
 
 function CountdownText(props: CountdownTextProps) {
     return (
-        <div className="outer secondary">
+        <div className="outer primary">
             <div className="inner">
                 <div className="node top">
                     {props.days}

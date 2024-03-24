@@ -72,7 +72,7 @@ function History() {
             <Grid item xs={11} md={7}>
                 <Card className="card wmargin minh">
                     <CardContent>
-                        <h1 className="chsubtitle secondary underlined">Other Grills</h1>
+                        <h1 className="chsubtitle secondary underlined">1st of June</h1>
                         <p className="chtext secondary">
                             Next month, another big celebration was planned, the 1st of June, the International Children's Day. How to enjoy these day better than with a grill next to the beautiful
                             lake Delftse Hout, that took all of us straight to our childhood?
