@@ -1,4 +1,3 @@
-import { Card, CardContent, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import "../styles/Countdown.css";
 
