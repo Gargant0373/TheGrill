@@ -63,6 +63,12 @@ function History() {
                     {renderReadButton(shortText1, () => setShortText1(!shortText1))}
                 </Card>
             </Grid>
+            {
+                smallScreen &&
+                <Grid item xs={10} md={4}>
+                    <img src="10.jpeg" alt="" />
+                </Grid>
+            }
             <Grid item xs={11} md={7}>
                 <Card className="card wmargin minh">
                     <CardContent>
@@ -82,9 +88,12 @@ function History() {
                     {renderReadButton(shortText2, () => setShortText2(!shortText2))}
                 </Card>
             </Grid>
-            <Grid item xs={10} md={4}>
-                <img src="10.jpeg" alt="" />
-            </Grid>
+            {
+                !smallScreen &&
+                <Grid item xs={10} md={4}>
+                    <img src="10.jpeg" alt="" />
+                </Grid>
+            }
             <Grid item xs={10} md={4}>
                 <img src="9.jpeg" alt="" />
             </Grid>
