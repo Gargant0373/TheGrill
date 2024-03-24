@@ -52,7 +52,13 @@
     }
 
     #pictures .pcontainer .pimg img {
-        height: 300px;
+        height: 200px;
+        width: auto;
+    }
+
+    #pictures .pcontainer .pimg video {
+        height: 200px;
+        width: auto;
     }
 
     .pictures .minh {
