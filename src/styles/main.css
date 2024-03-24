@@ -1,13 +1,26 @@
 :root {
     --primaryColor: #BC6C25;
+    --primaryColorFade: #f9ad6b;
     --secondaryColor: #fefae0;
-    --backgroundColor: rgb(96, 108, 56);
+    --backgroundColor: #45521c;
+    --backgroundColorFade: #283a12;
+
+    --page1: #fcf8c7;
+    --page2: #fbffc8;
+
+    --ftext1: #ffffff;
+    --ftext2: #fff8a6
 }
 
 body {
     margin: 0;
     width: 100%;
-    background: radial-gradient(circle, rgba(217, 204, 119, 1) 0%, rgba(254, 250, 224, 1) 100%);
+
+    background: rgb(235, 228, 187);
+    background: -moz-linear-gradient(103deg, var(--page1) 0%, var(--page2) 100%);
+    background: -webkit-linear-gradient(103deg, var(--page1) 0%, var(--page2) 100%);
+    background: linear-gradient(103deg, var(--page1) 0%, var(--page2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ebe4bb", endColorstr="#fefae0", GradientType=1);
 
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -19,7 +32,7 @@ body {
     font-size: 30px;
 
     background: var(--primaryColor);
-    background: linear-gradient(to right, var(--primaryColor) 0%, #f9ad6b 100%);
+    background: linear-gradient(to right, var(--primaryColor) 0%, var(--primaryColorFade) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -62,7 +75,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(90deg, rgba(96, 108, 56, 0.8435968137254902) 0%, rgba(40, 54, 24, 0.6391150210084033) 100%);
+    background: linear-gradient(100deg, var(--backgroundColor) 0%, var(--backgroundColorFade) 100%);
 }
 
 .card.wmargin {

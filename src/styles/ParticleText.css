@@ -12,8 +12,3 @@
     top: -10em;
     /* background-color: red; */
 }
-
-.hoverDiv:hover {
-    /* doesn't work lol */
-    cursor: url('fire.png'), pointer;
-}

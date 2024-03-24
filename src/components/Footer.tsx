@@ -8,7 +8,7 @@ function Footer() {
         <Grid container className="footer">
             <Grid container className="row margin">
                 <div className="ftext small">
-                    Special thanks to our parteners:
+                    Special thanks to our partners:
                 </div>
             </Grid>
             <Grid container className="row margin overlay">
