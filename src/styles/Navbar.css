@@ -43,13 +43,6 @@
     cursor: pointer;
 }
 
-.navbar .node .item:hover {
-    color: var(--primaryColor);
-    scale: 1.1;
-
-    transition: 0.3s;
-}
-
 .navbar img {
     min-height: 100vh;
     
@@ -57,10 +50,43 @@
 }
 
 .navbar .item.scrollsection {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 30px;
 }
+.navbar .item.scrollsection:hover {
 
+}
+.navbar .item.scrollsection:hover::before {
+    display: block;
+    animation: expandRight 0.3s ease-out forwards;
+}
+.navbar .item.scrollsection::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: calc(100% - 20px);
+    height: 5px;
+    background-color: var(--primaryColor);
+    display: none;
+}
+@keyframes expandRight {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: calc(100% - 20px);
+    }
+    
+}
 @media screen and (max-width: 768px) {
+    .navbar .item.scrollsection {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 30px;
+    }
+    
     .navbar {
         flex-direction: column;
     }
