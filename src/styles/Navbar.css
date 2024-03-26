@@ -60,7 +60,7 @@
 }
 .navbar .item.scrollsection:hover::before {
     display: block;
-    animation: expandRight 0.3s ease-out forwards;
+    animation: expandRight 0.25s ease-out forwards;
 }
 .navbar .item.scrollsection::before {
     content: "";
