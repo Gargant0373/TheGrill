@@ -47,22 +47,22 @@ function Pictures() {
                 <Grid item xs={12} className="ptitle">
                     <h1 className="chtitle">PICTURES</h1>
                 </Grid>
-                <Grid item md={7} xs={9} className="pcontainer">
-                    <Slider {...settings}>
-                        {images.map(renderMedia)}
-                    </Slider>
-                </Grid>
-                <Grid item md={3} xs={11} className="pcontainer">
-                    <Card className="card minh">
+                <Grid item md={10} xs={11} className="pcontainer">
+                    <Card className="card">
                         <CardContent>
+                            <h1 className="chsubtitle secondary underlined">Memories Captured</h1>
                             <p className="chtext secondary">
                                 Here's a collection of pictures from previous grills.
                                 <br />
                                 We are looking to expand the collection with your pictures, feel free to send them to us!
-                                <br />
                             </p>
                         </CardContent>
                     </Card>
+                </Grid>
+                <Grid item md={10} xs={10} className="pcontainer">
+                    <Slider {...settings}>
+                        {images.map(renderMedia)}
+                    </Slider>
                 </Grid>
             </Grid>
         </>
