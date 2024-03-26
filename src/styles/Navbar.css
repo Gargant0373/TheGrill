@@ -60,25 +60,16 @@
 }
 .navbar .item.scrollsection:hover::before {
     display: block;
-    animation: expandRight 0.25s ease-out forwards;
+    width: calc(100% - 20px);
 }
 .navbar .item.scrollsection::before {
     content: "";
     position: absolute;
     bottom: -10px;
-    width: calc(100% - 20px);
+    width: 0;
     height: 5px;
     background-color: var(--primaryColor);
-    display: none;
-}
-@keyframes expandRight {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: calc(100% - 20px);
-    }
-    
+    transition: width 0.25s ease-in-out;
 }
 @media screen and (max-width: 768px) {
     .navbar .item.scrollsection {

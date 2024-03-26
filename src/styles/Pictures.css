@@ -49,6 +49,7 @@
 @media (max-width: 768px) {
     #pictures .pcontainer {
         margin-top: 50px;
+        position: relative;
     }
 
     #pictures .pcontainer .pimg img {
@@ -67,7 +68,6 @@
 
 }
 
-
 .slick-prev {
     left: -30px;
 }
@@ -75,4 +75,30 @@
 .slick-prev:before,
 .slick-next:before {
     font-size: 24px;
+}
+.buttonHolderPrev {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+.buttonHolderNext {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.button-back {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: red;
+}
+
+.button-next {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: red;
 }

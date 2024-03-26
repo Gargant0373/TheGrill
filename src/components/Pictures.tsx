@@ -1,7 +1,7 @@
 import { Card, CardContent, Grid } from "@mui/material";
+import { useRef } from "react";
 import Slider from "react-slick";
 import "../styles/Pictures.css";
-
 function Pictures() {
     const images = [
         "1.jpeg",
@@ -12,7 +12,7 @@ function Pictures() {
         "lake.mp4",
         "8.mp4"
     ]
-
+    const slider = useRef<Slider>(null);
     const settings = {
         dots: true,
         infinite: true,
@@ -24,6 +24,7 @@ function Pictures() {
         adaptiveHeight: true,
         autoplay: true,
         pauseOnHover: true,
+        arrows: false,        
     };
 
     const renderMedia = (image: string, index: number) => {
@@ -59,12 +60,25 @@ function Pictures() {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item md={10} xs={10} className="pcontainer">
-                    <Slider {...settings}>
-                        {images.map(renderMedia)}
-                    </Slider>
+                <Grid item container md={12} xs={12} className="pcontainer">
+                    <Grid item xs={1} className="buttonHolderPrev">
+                        <button type='button' className="button-back"
+                            onClick={() => slider?.current?.slickPrev()}>
+                        </button>
+                    </Grid>
+
+
+                    <Grid item xs={10}>
+                        <Slider ref={slider} {...settings}>
+                            {images.map(renderMedia)}
+                        </Slider>
+                    </Grid>
+                    <Grid item xs={1} className="buttonHolderNext">
+                        <button type='button' className="button-next"
+                            onClick={() => slider?.current?.slickNext()}> </button>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </Grid >
         </>
     )
 }
