@@ -6,6 +6,10 @@
     margin-bottom: 40px;
 }
 
+#pictures .pcontainer {
+    margin-bottom: 10px;
+}
+
 #pictures .pcontainer .pimg img {
     height: 400px;
     width: auto;
