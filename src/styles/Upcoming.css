@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.upcoming .row.between {
+    justify-content: space-between;
+}
+
 .upcoming .col {
     display: flex;
     flex-direction: column;
@@ -22,7 +26,7 @@
     width: 45vw;
     height: auto;
     max-width: 100%;
-    
+
     border-radius: 25px;
 }
 
@@ -64,5 +68,9 @@ a:visited {
     .upcoming img {
         margin-bottom: 10px;
         width: 90vw;
+    }
+
+    .upcoming .row.between {
+        justify-content: center;
     }
 }

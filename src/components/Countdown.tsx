@@ -42,7 +42,7 @@ function CountdownText(props: { days: number, hours: number, minutes: number, se
     );
 
     return (
-        <div className="outer primary">
+        <div className="outer secondary bold">
             {renderNode(props.days, 'days')}
             {renderNode(props.hours, 'hours')}
             {renderNode(props.minutes, 'minutes')}
