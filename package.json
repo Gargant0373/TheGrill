@@ -12,10 +12,10 @@
     "deploy": "npm run build && git add * && git commit -m \"gh-pages build\" && git push && gh-pages -d build"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.5",
+    "@mui/material": "^5.15.14",
     "@mui/styled-engine-sc": "^5.12.0",
     "@mui/types": "^7.2.4",
     "localforage": "^1.10.0",
