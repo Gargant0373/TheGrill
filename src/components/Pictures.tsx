@@ -52,7 +52,7 @@ function Pictures() {
                 <Grid item xs={12} className="ptitle">
                     <h1 className="chtitle">PICTURES</h1>
                 </Grid>
-                <Grid item md={10} xs={5} className="pcontainer">
+                <Grid item md={10} xs={10} className="pcontainer">
                     <Card className="card">
                         <CardContent>
                             <h1 className="chsubtitle secondary underlined">Memories Captured</h1>
