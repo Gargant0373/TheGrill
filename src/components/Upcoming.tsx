@@ -19,18 +19,16 @@ function Upcoming() {
                         <Grid item xs={12} md={10}>
                             <CardContent>
                                 <div className="chsubtitle secondary bold underlined center">
-                                    <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MjU0MGM0N2FwczIxaTh2aXQ0aGxjZGtiOTUgZWYzMWNhNmM0NDZkYTUzNGRhMzdiNzBmMzNkMGQ2NThkN2IyY2VkMWI5ZWM4MTE4NmU3N2JlOTBlZTY0YThmNUBn&amp;tmsrc=ef31ca6c446da534da37b70f33d0d658d7b2ced1b9ec81186e77be90ee64a8f5%40group.calendar.google.com">
-                                        The Grill is coming back!
-                                    </a>
+                                    The Grill is coming back!
                                 </div>
                             </CardContent>
                             <Countdown />
                         </Grid>
                         <Grid item xs={11}>
                             <p className="chtext secondary bold">
-                                Save the Date → <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MjU0MGM0N2FwczIxaTh2aXQ0aGxjZGtiOTUgZWYzMWNhNmM0NDZkYTUzNGRhMzdiNzBmMzNkMGQ2NThkN2IyY2VkMWI5ZWM4MTE4NmU3N2JlOTBlZTY0YThmNUBn&amp;tmsrc=ef31ca6c446da534da37b70f33d0d658d7b2ced1b9ec81186e77be90ee64a8f5%40group.calendar.google.com">
+                                Save the Date (in Google Calendar) → <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MjU0MGM0N2FwczIxaTh2aXQ0aGxjZGtiOTUgZWYzMWNhNmM0NDZkYTUzNGRhMzdiNzBmMzNkMGQ2NThkN2IyY2VkMWI5ZWM4MTE4NmU3N2JlOTBlZTY0YThmNUBn&amp;tmsrc=ef31ca6c446da534da37b70f33d0d658d7b2ced1b9ec81186e77be90ee64a8f5%40group.calendar.google.com">
                                     1st of May 2024
-                                    </a>
+                                </a>
                             </p>
                             <p className="chtext secondary">
                                 Whether you're a seasoned Grill veteran or a first-timer, you're
