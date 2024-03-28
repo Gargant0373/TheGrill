@@ -23,6 +23,8 @@
     .history img {
         margin-bottom: 10px;
         width: 90vw;
+
+        object-fit: contain;
     }
 }
 
