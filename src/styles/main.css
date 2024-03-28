@@ -50,14 +50,18 @@ body {
     text-align: justify;
 }
 
+.chsubtitle {
+    font-size: 25px;
+}
+
 @media screen and (max-width: 768px) {
+    .chsubtitle {
+        font-size: 22px;
+    }
+    
     .chtext {
         text-align: start;
     }
-}
-
-.chsubtitle {
-    font-size: 25px;
 }
 
 .primary {
@@ -75,6 +79,10 @@ body {
 
 .bold {
     font-weight: 600;
+}
+
+.center {
+    text-align: center;
 }
 
 .card {

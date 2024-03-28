@@ -16,7 +16,7 @@ function Upcoming() {
                     <Card className="card">
                         <Grid item xs={12} md={10}>
                             <CardContent>
-                                <div className="chtext secondary bold underlined">The Grill is coming back!</div>
+                                <div className="chsubtitle secondary bold underlined center">The Grill is coming back!</div>
                             </CardContent>
                             <Countdown />
                         </Grid>
