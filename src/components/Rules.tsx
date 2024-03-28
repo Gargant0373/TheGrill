@@ -57,9 +57,9 @@ function Guidelines() {
 function Rule(props: { title: string, icon: ComponentType<SvgIconProps>, text: string }) {
     return (
         <div className="rule">
-            <div className="ruleHeader">
+            <div className="header">
                 <h1 className="subtitle">{props.title}</h1>
-                <div className="rule-icon">
+                <div className="icon">
                     {<props.icon fontSize="large" />}
                 </div>
             </div>
