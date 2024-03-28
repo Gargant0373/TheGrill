@@ -1,6 +1,5 @@
-import React from 'react'
+import { useEffect, useRef } from 'react'
 import '../styles/GodRays.scss'
-import { useEffect, useState, useRef } from 'react'
 function GodRays() {
     //make a scroll event listener that changes:
     // the opacity of the rays (a little bit)
