@@ -1,13 +1,14 @@
+import Delete from '@mui/icons-material/Delete';
 import { Grid } from '@mui/material';
 import '../styles/Rules.scss';
 import Fastfood from '@mui/icons-material/Fastfood';
 import LocalLibrary from '@mui/icons-material/LocalLibrary';
-import Delete from '@mui/icons-material/Delete';
-import SmokeFree from '@mui/icons-material/SmokeFree';
-import Pool from '@mui/icons-material/Pool';
 import OutdoorGrill from '@mui/icons-material/OutdoorGrill';
-import { SvgIconProps } from '@mui/material';
-import { ReactElement, ComponentType } from 'react';
+import Pool from '@mui/icons-material/Pool';
+import SmokeFree from '@mui/icons-material/SmokeFree';
+import { Grid, SvgIconProps } from '@mui/material';
+import { ComponentType } from 'react';
+import '../styles/Rules.css';
 function Rules() {
     return (
         <Grid container className="rules">
@@ -36,7 +37,7 @@ function Guidelines() {
                     </Grid>
                 </div>
             </Grid>
-            <Grid item xs={10} md={6} className="node right">
+            <Grid item xs={10} md={7} className="node right">
                 <Rule title="GRILLMASTER IS KING" icon={OutdoorGrill}
                     text="The grillmaster is the most important person at the grill. He is the one who makes sure the fire is burning and the meat is cooking. He is the one who feeds you. Always make sure there's someone to help him out" />
                 <Rule title="NO STUDYING" icon={LocalLibrary}
@@ -57,9 +58,9 @@ function Guidelines() {
 function Rule(props: { title: string, icon: ComponentType<SvgIconProps>, text: string }) {
     return (
         <div className="rule">
-            <div className="ruleHeader">
+            <div className="header">
                 <h1 className="subtitle">{props.title}</h1>
-                <div className="rule-icon">
+                <div className="icon">
                     {<props.icon fontSize="large" />}
                 </div>
             </div>
