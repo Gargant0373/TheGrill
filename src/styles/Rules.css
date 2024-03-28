@@ -21,13 +21,7 @@
 }
 
 .rules .node.left {
-    padding-right: 10px;
-}
-
-@media (max-width: 768px) {
-    .rules .node.left {
-        margin-bottom: 20px;
-    }
+    padding-right: 30px;
 }
 
 .rules .node.right {
@@ -40,22 +34,36 @@
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+
+    width: 100%;
 }
-.ruleHeader {
+
+.rule .header {
     display: flex;
     align-items: center;
 }
+
 .rule .subtitle {
     font-size: 23px;
-
     margin-bottom: 10px;
-
     color: var(--primaryColor);
 }
-.rule-icon {
+
+.rule .icon {
     margin-left: 10px;
-    position: relative;
+    padding-top: 3px;
 }
+
 .rule .text {
     font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .rules .node.left {
+        margin-bottom: 20px;
+    }
+
+    .rules .subtitle {
+        font-size: 20px;
+    }
 }

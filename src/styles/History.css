@@ -10,13 +10,13 @@
 }
 
 .history img {
-    width: 45vw;
-    height: auto;
+    height: 40vh;
+    width: auto;
 
     max-width: 100%;
     border-radius: 25px;
 
-    object-fit: contain;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
 
-    min-height: 350px;
+    min-height: 40vh;
 }
 
 .history .rogradient {
