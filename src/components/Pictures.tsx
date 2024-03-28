@@ -1,7 +1,9 @@
 import { Card, CardContent, Grid } from "@mui/material";
 import { useRef } from "react";
 import Slider from "react-slick";
-import "../styles/Pictures.css";
+import "../styles/Pictures.scss";
+import RightArrow from '@mui/icons-material/KeyboardArrowRight';
+import LeftArrow from '@mui/icons-material/KeyboardArrowLeft';
 function Pictures() {
     const images = [
         "1.jpeg",
@@ -24,7 +26,7 @@ function Pictures() {
         adaptiveHeight: true,
         autoplay: true,
         pauseOnHover: true,
-        arrows: false,        
+        arrows: false,
     };
 
     const renderMedia = (image: string, index: number) => {
@@ -41,7 +43,9 @@ function Pictures() {
             </Grid>
         );
     };
-
+    const rootStyle = getComputedStyle(document.documentElement);
+    const sliderButtonFont = 70;
+    const sliderButtonColor = rootStyle.getPropertyValue('--backgroundColor').trim() || "orange";
     return (
         <>
             <Grid container className="pictures" id="pictures">
@@ -62,8 +66,13 @@ function Pictures() {
                 </Grid>
                 <Grid item container md={12} xs={12} className="pcontainer">
                     <Grid item xs={1} className="buttonHolderPrev">
-                        <button type='button' className="button-back"
+                        {/* bigger icon */}
+                        {/* <RightArrow/> */}
+                        <button type='button' className="slider-btn button-back"
                             onClick={() => slider?.current?.slickPrev()}>
+                                <LeftArrow style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                            <LeftArrow className="arrow-left-appear"
+                                style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
                         </button>
                     </Grid>
 
@@ -74,8 +83,12 @@ function Pictures() {
                         </Slider>
                     </Grid>
                     <Grid item xs={1} className="buttonHolderNext">
-                        <button type='button' className="button-next"
-                            onClick={() => slider?.current?.slickNext()}> </button>
+                        <button type='button' className="slider-btn button-next"
+                            onClick={() => slider?.current?.slickNext()}>
+                            <RightArrow style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                            <RightArrow className="arrow-right-appear"
+                                style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                        </button>
                     </Grid>
                 </Grid>
             </Grid >

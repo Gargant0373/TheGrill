@@ -81,24 +81,55 @@
     align-items: center;
     justify-content: flex-end;
     padding-right: 20px;
+
 }
 .buttonHolderNext {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding-left: 20px;
-}
 
+}
+$buttonWidth: 40px;
+$buttonHeight: 40px;
+.slider-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .button-back {
-    width: 50px;
-    height: 50px;
+    border: none;
+    width: $buttonWidth;
+    height: $buttonHeight;
     position: relative;
-    background-color: red;
+    background-color: transparent;
+    &:hover .arrow-left-appear {
+        opacity: 0.75;
+        transform: translateX(-5px);
+    }
+    .arrow-left-appear {
+        transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+        position: absolute;
+        right: 0;
+        opacity: 0;
+    }
 }
 
 .button-next {
-    width: 50px;
-    height: 50px;
+    border: none;
+    width: $buttonWidth;
+    height: $buttonHeight;
     position: relative;
-    background-color: red;
+    background-color: transparent;
+    &:hover .arrow-right-appear {
+        opacity: 0.75;
+        transform: translateX(5px);
+    }
+    .arrow-right-appear {
+        transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+        position: absolute;
+        left: 0;
+        opacity: 0;
+    }
 }

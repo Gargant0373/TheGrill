@@ -44,6 +44,7 @@
 .ruleHeader {
     display: flex;
     align-items: center;
+   
 }
 .rule .subtitle {
     font-size: 23px;
@@ -52,9 +53,13 @@
 
     color: var(--primaryColor);
 }
+// function to vary a color by a bit
 .rule-icon {
     margin-left: 10px;
     position: relative;
+    > * {
+        color: var(--primaryColor);
+    }
 }
 .rule .text {
     font-size: 18px;

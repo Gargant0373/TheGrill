@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import '../styles/Rules.css';
+import '../styles/Rules.scss';
 import Fastfood from '@mui/icons-material/Fastfood';
 import LocalLibrary from '@mui/icons-material/LocalLibrary';
 import Delete from '@mui/icons-material/Delete';
@@ -60,7 +60,7 @@ function Rule(props: { title: string, icon: ComponentType<SvgIconProps>, text: s
             <div className="ruleHeader">
                 <h1 className="subtitle">{props.title}</h1>
                 <div className="rule-icon">
-                    {<props.icon color="primary" fontSize="large" />}
+                    {<props.icon fontSize="large" />}
                 </div>
             </div>
 
