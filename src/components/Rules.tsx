@@ -1,13 +1,13 @@
-import { Grid } from '@mui/material';
-import '../styles/Rules.scss';
+import Delete from '@mui/icons-material/Delete';
 import Fastfood from '@mui/icons-material/Fastfood';
 import LocalLibrary from '@mui/icons-material/LocalLibrary';
-import Delete from '@mui/icons-material/Delete';
-import SmokeFree from '@mui/icons-material/SmokeFree';
-import Pool from '@mui/icons-material/Pool';
 import OutdoorGrill from '@mui/icons-material/OutdoorGrill';
-import { SvgIconProps } from '@mui/material';
-import { ReactElement, ComponentType } from 'react';
+import Pool from '@mui/icons-material/Pool';
+import SmokeFree from '@mui/icons-material/SmokeFree';
+import { Grid, SvgIconProps } from '@mui/material';
+import { ComponentType } from 'react';
+import '../styles/Rules.scss';
+
 function Rules() {
     return (
         <Grid container className="rules">
