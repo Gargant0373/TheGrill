@@ -26,7 +26,7 @@
 .navbar .node.text {
     position: absolute;
     margin-top: 100px;
-    
+
     max-width: 90%;
 
     justify-content: flex-end;
@@ -45,7 +45,7 @@
 
 .navbar img {
     min-height: 100vh;
-    
+
     object-fit: cover;
 }
 
@@ -55,13 +55,12 @@
     padding-right: 10px;
     padding-top: 30px;
 }
-.navbar .item.scrollsection:hover {
 
-}
 .navbar .item.scrollsection:hover::before {
     display: block;
     width: calc(100% - 20px);
 }
+
 .navbar .item.scrollsection::before {
     content: "";
     position: absolute;
@@ -71,13 +70,14 @@
     background-color: var(--primaryColor);
     transition: width 0.25s ease-in-out;
 }
+
 @media screen and (max-width: 768px) {
     .navbar .item.scrollsection {
         padding-left: 0px;
         padding-right: 0px;
         padding-top: 30px;
     }
-    
+
     .navbar {
         flex-direction: column;
     }
@@ -97,7 +97,7 @@
         0px -2px 6px #FF3,
         0px -6px 12px #F90,
         0px -10px 20px #C33;
-        
+
     animation: flicker 2s infinite;
 
     color: #fefae0;
