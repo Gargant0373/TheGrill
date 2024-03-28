@@ -21,7 +21,7 @@
 }
 
 .rules .node.left {
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 @media (max-width: 768px) {
@@ -37,16 +37,30 @@
 }
 
 .rule {
+    width: 100%;
+
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rule .header {
+    display: flex;
+    align-items: center;
+   
 }
 
 .rule .subtitle {
     font-size: 23px;
-    font-weight: bold;
 
     margin-bottom: 10px;
 
     color: var(--primaryColor);
+}
+
+.rule .icon {
+    margin-left: 10px;
+    position: relative;
 }
 
 .rule .text {

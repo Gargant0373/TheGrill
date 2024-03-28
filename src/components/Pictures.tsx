@@ -1,7 +1,9 @@
 import { Card, CardContent, Grid } from "@mui/material";
+import { useRef } from "react";
 import Slider from "react-slick";
-import "../styles/Pictures.css";
-
+import "../styles/Pictures.scss";
+import RightArrow from '@mui/icons-material/KeyboardArrowRight';
+import LeftArrow from '@mui/icons-material/KeyboardArrowLeft';
 function Pictures() {
     const images = [
         "1.jpeg",
@@ -12,7 +14,7 @@ function Pictures() {
         "lake.mp4",
         "8.mp4"
     ]
-
+    const slider = useRef<Slider>(null);
     const settings = {
         dots: true,
         infinite: true,
@@ -24,6 +26,7 @@ function Pictures() {
         adaptiveHeight: true,
         autoplay: true,
         pauseOnHover: true,
+        arrows: false,
     };
 
     const renderMedia = (image: string, index: number) => {
@@ -40,31 +43,55 @@ function Pictures() {
             </Grid>
         );
     };
-
+    const rootStyle = getComputedStyle(document.documentElement);
+    const sliderButtonFont = 70;
+    const sliderButtonColor = rootStyle.getPropertyValue('--backgroundColor').trim() || "orange";
     return (
         <>
             <Grid container className="pictures" id="pictures">
                 <Grid item xs={12} className="ptitle">
                     <h1 className="chtitle">PICTURES</h1>
                 </Grid>
-                <Grid item md={7} xs={9} className="pcontainer">
-                    <Slider {...settings}>
-                        {images.map(renderMedia)}
-                    </Slider>
-                </Grid>
-                <Grid item md={3} xs={11} className="pcontainer">
-                    <Card className="card minh">
+                <Grid item md={10} xs={5} className="pcontainer">
+                    <Card className="card">
                         <CardContent>
+                            <h1 className="chsubtitle secondary underlined">Memories Captured</h1>
                             <p className="chtext secondary">
                                 Here's a collection of pictures from previous grills.
                                 <br />
                                 We are looking to expand the collection with your pictures, feel free to send them to us!
-                                <br />
                             </p>
                         </CardContent>
                     </Card>
                 </Grid>
-            </Grid>
+                <Grid item container md={12} xs={12} className="pcontainer">
+                    <Grid item xs={1} className="buttonHolderPrev">
+                        {/* bigger icon */}
+                        {/* <RightArrow/> */}
+                        <button type='button' className="slider-btn button-back"
+                            onClick={() => slider?.current?.slickPrev()}>
+                                <LeftArrow style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                            <LeftArrow className="arrow-left-appear"
+                                style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                        </button>
+                    </Grid>
+
+
+                    <Grid item xs={10}>
+                        <Slider ref={slider} {...settings}>
+                            {images.map(renderMedia)}
+                        </Slider>
+                    </Grid>
+                    <Grid item xs={1} className="buttonHolderNext">
+                        <button type='button' className="slider-btn button-next"
+                            onClick={() => slider?.current?.slickNext()}>
+                            <RightArrow style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                            <RightArrow className="arrow-right-appear"
+                                style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                        </button>
+                    </Grid>
+                </Grid>
+            </Grid >
         </>
     )
 }
