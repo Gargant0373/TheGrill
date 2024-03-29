@@ -43,9 +43,6 @@ function Pictures() {
             </Grid>
         );
     };
-    const rootStyle = getComputedStyle(document.documentElement);
-    const sliderButtonFont = 70;
-    const sliderButtonColor = rootStyle.getPropertyValue('--backgroundColor').trim() || "orange";
     return (
         <>
             <Grid container className="pictures" id="pictures">
@@ -70,9 +67,8 @@ function Pictures() {
                         {/* <RightArrow/> */}
                         <button type='button' className="slider-btn button-back"
                             onClick={() => slider?.current?.slickPrev()}>
-                                <LeftArrow style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
-                            <LeftArrow className="arrow-left-appear"
-                                style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                            <LeftArrow className="arrow-icon" />
+                            <LeftArrow className="arrow-left-appear arrow-icon" />
                         </button>
                     </Grid>
 
@@ -85,9 +81,9 @@ function Pictures() {
                     <Grid item xs={1} className="buttonHolderNext">
                         <button type='button' className="slider-btn button-next"
                             onClick={() => slider?.current?.slickNext()}>
-                            <RightArrow style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
-                            <RightArrow className="arrow-right-appear"
-                                style={{ fontSize: `${sliderButtonFont}px`, color: sliderButtonColor }} />
+                            <RightArrow className="arrow-icon" />
+                            <RightArrow className="arrow-right-appear arrow-icon"
+                            />
                         </button>
                     </Grid>
                 </Grid>

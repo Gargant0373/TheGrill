@@ -2,13 +2,15 @@ import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import p5 from "p5";
 import '../styles/ParticleText.css';
-
+import { throttle } from 'lodash';
 // the myP5 variable is used to store a p5 instance
 // the p parameter references a p5 instance
 interface MyComponentProps {
 	styleProp?: React.CSSProperties;
 	textSizeProp: number;
 	canvasWidthVal: number;
+	scanStepVal: number;
+	particleSizeVal: number;
 }
 /**
  *	ParticleText component handles the navbar title animation.
@@ -16,15 +18,13 @@ interface MyComponentProps {
  *	@see https://p5js.org/reference/#/p5/p5
  *	@author https://github.com/MateiDumitrescu1
 */
-function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentProps) {
+function ParticleText({ styleProp, textSizeProp, canvasWidthVal, scanStepVal,particleSizeVal }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
 	const hoverDiv = useRef<HTMLDivElement>(null);
 	const myP5 = useRef<p5 | null>(null);
 	const flowSpeedRef = useRef<number>(0);
 	const colorsRef = useRef<string[]>(["#BC6C25", "#fefae0"]);
-	const [flowSpeed, setFlowSpeed] = useState(0);
 	const [textWidth, setTextWidth] = useState(0);
-	const [colorsUsed, setColorsUsed] = useState(["#BC6C25", "#fefae0"]);
 	// Variables to change
 	//TODO also play with flowOffset and gravity direction and force    
 
@@ -35,12 +35,9 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 	const canvasHeight = 800;
 	const textSize = textSizeProp;
 	const text = "The Grill";
-	// let colorsUsed = [
-	// 	"#BC6C25",
-	// 	"#fefae0"
-	// ];
-	// Variables to change
-
+	const scanStep = scanStepVal;
+	const particleSize = particleSizeVal;
+	const throttleTime = 100;
 	// const handleButtonDown = () => {
 	// 	setFlowSpeed(flowSpeedStep);
 	// };
@@ -71,19 +68,34 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 		addForce(vector: p5.Vector): void;
 	}
 	useEffect(() => {
+		const newParticleRender = throttle(() => {
+			flowSpeedRef.current = flowSpeedStep;
+			colorsRef.current = ["#BC6C25", "#fefae0", "#ff0000"];
+			(myP5.current as CustomP5)?.updateFlowSpeed?.();
+			(myP5.current as CustomP5)?.updateColors?.();
+		}, throttleTime);
+		const resetParticleRender = throttle( () => {
+			flowSpeedRef.current = 0;
+			colorsRef.current = ["#BC6C25", "#fefae0"];
+			(myP5.current as CustomP5)?.updateFlowSpeed?.();
+			(myP5.current as CustomP5)?.updateColors?.();
+		}, throttleTime);
 		if (hoverDiv.current) {
-			hoverDiv.current.addEventListener("mouseover", () => {
-				setFlowSpeed(flowSpeedStep);
-				setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
-				(myP5.current as CustomP5)?.updateFlowSpeed?.();
-				(myP5.current as CustomP5)?.updateColors?.();
-			});
-			hoverDiv.current.addEventListener("mouseleave", () => {
-				setFlowSpeed(0);
-				setColorsUsed(["#BC6C25", "#fefae0"]);
-				(myP5.current as CustomP5)?.updateFlowSpeed?.();
-				(myP5.current as CustomP5)?.updateColors?.();
-			});
+			hoverDiv.current.addEventListener("mouseover", newParticleRender);
+			// hoverDiv.current.addEventListener("touchstart", () => {
+			// 	setFlowSpeed(flowSpeedStep);
+			// 	setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
+			// 	(myP5.current as CustomP5)?.updateFlowSpeed?.();
+			// 	(myP5.current as CustomP5)?.updateColors?.();
+			// });
+			hoverDiv.current.addEventListener("mouseleave", resetParticleRender);
+			// hoverDiv.current.addEventListener("touchend", () => {
+			// 	setFlowSpeed(flowSpeedStep);
+				
+			// 	setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
+			// 	(myP5.current as CustomP5)?.updateFlowSpeed?.();
+			// 	(myP5.current as CustomP5)?.updateColors?.();
+			// });
 		}
 		// Part for the p5JS sketch
 		// let myP5; I don't need this anymore, I used a ref instead
@@ -106,7 +118,7 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 			p.updateColors = () => {
 				colors = colorsRef.current;
 			};
-			let colors = colorsUsed;
+			let colors = colorsRef.current;
 			class Particle {
 				base_size: number;
 				index: number;
@@ -214,6 +226,9 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 				p.clear();
 				p.fill(0);
 				// p.textStyle(p.BOLD);
+				// change the font family
+				// p.textFont("Arial");
+				//change the font weight to lightest possible avalue
 				p.textSize(textSize);
 				let textBoxWidth = p.textWidth(system.text);
 				setTextWidth(textBoxWidth);
@@ -225,7 +240,7 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 				p.noFill();
 				particles = [];
 				let step = floor(
-					max(p.width, p.height) / min(160, min(p.width, p.height)),
+					max(p.width, p.height) / scanStep
 				);
 				let i = 0;
 				for (let x = 0; x < p.width; x += step) {
@@ -234,7 +249,7 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 						let target_y = y + step / 2;
 						let alpha = p.get(target_x, target_y)[3];
 						if (alpha > 0.5) {
-							particles.push(new Particle(target_x, target_y, step * 3, i));
+							particles.push(new Particle(target_x, target_y, step * particleSize, i));
 							i++;
 						}
 					}
@@ -289,25 +304,11 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal }: MyComponentPr
 				myP5.current.remove();
 			}
 			if (hoverDiv.current) {
-				hoverDiv.current.removeEventListener("mouseover", () => { });
-				hoverDiv.current.removeEventListener("mouseleave", () => { });
+				hoverDiv.current.removeEventListener("mouseover", newParticleRender);
+				hoverDiv.current.removeEventListener("mouseleave", resetParticleRender);
 			}
 		};
 	}, [textSizeProp]);
-	useEffect(() => {
-		if (myP5.current) {
-			flowSpeedRef.current = flowSpeed;
-			(myP5.current as CustomP5)?.updateFlowSpeed?.();
-		}
-		// console.log(flowSpeed);
-	}, [flowSpeed]); // This effect depends on flowSpeed
-	useEffect(() => {
-		if (myP5.current) {
-			colorsRef.current = colorsUsed;
-			(myP5.current as CustomP5)?.updateColors?.();
-		}
-		// console.log(flowSpeed);
-	}, [colorsUsed]); // This effect depends on flowSpeed
 	return (
 		<div style={styleProp} className="container">
 			<div ref={divRef}>

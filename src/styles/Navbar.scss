@@ -54,21 +54,24 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 30px;
-}
-
-.navbar .item.scrollsection:hover::before {
-    display: block;
-    width: calc(100% - 20px);
-}
-
-.navbar .item.scrollsection::before {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    width: 0;
-    height: 5px;
-    background-color: var(--primaryColor);
-    transition: width 0.25s ease-in-out;
+    transition: color 0.15s ease-in-out;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 0;
+        height: 5px;
+        background-color: var(--primaryColor);
+        transition: width 0.25s ease-in-out;
+    }
+    &:hover {
+        color: var(--primaryColorFade);
+        
+    }
+    &:hover::before {
+        display: block;
+        width: calc(100% - 20px);
+    }
 }
 
 @media screen and (max-width: 768px) {

@@ -67,15 +67,6 @@
 
 }
 
-.slick-prev {
-    left: -30px;
-}
-
-.slick-prev:before,
-.slick-next:before {
-    font-size: 24px;
-}
-
 .buttonHolderPrev {
     display: flex;
     align-items: center;
@@ -115,7 +106,29 @@ $buttonHeight: 40px;
         opacity: 0;
     }
 }
+.arrow-icon {
+    font-size: 70px !important;
+    color: var(--backgroundColor);
+}
+@media screen and (max-width: 768px){
+    .arrow-icon {
+        font-size: 40px !important;
+        color: var(--backgroundColor);
+    }
+    .button-next {
+        left: -25px;
+    }
+    .button-back {
+        left: 25px;
+    }
+    .arrow-left-appear {
+        display: none !important;
+    }
+    .arrow-right-appear {
+        display: none !important;
+    }
 
+}
 .button-next {
     border: none;
     width: $buttonWidth;

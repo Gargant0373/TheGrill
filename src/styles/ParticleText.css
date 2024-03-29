@@ -12,3 +12,8 @@
     top: -10em;
     /* background-color: red; */
 }
+@media screen and (max-width: 900px) {
+    .hoverDiv {
+        top: -5em;
+    }
+}
