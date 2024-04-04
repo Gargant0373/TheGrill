@@ -21,10 +21,12 @@
 
 @media screen and (max-width: 768px) {
     .history img {
-        margin-bottom: 10px;
         width: 90vw;
+        height: auto;
+    }
 
-        object-fit: contain;
+    .history .icontainer {
+        height: auto;
     }
 }
 
