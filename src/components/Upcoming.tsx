@@ -1,8 +1,44 @@
 import { Card, CardContent, Grid } from "@mui/material";
-import "../styles/Upcoming.css";
+import "../styles/Upcoming.scss";
 import Countdown from "./Countdown";
-
+import { useEffect } from "react";
+import React from "react";
 function Upcoming() {
+    const options = {
+        root: null, // the browser viewport is used
+        rootMargin: '0px',
+        threshold: 0.75
+    }
+    const imgShineContainer = React.useRef<HTMLDivElement>(null);
+    const imgShine = React.useRef<HTMLImageElement>(null);
+    useEffect(() => {
+        const makeShine = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+            console.log("makeShine");
+            // check if the element is in view
+            console.log(entries);
+            for (const entry of entries) {
+                if (entry.isIntersecting) {
+                    const imgElement = imgShine.current;
+                    const imgContainer = imgShineContainer.current;
+                    if (imgElement) {
+                        imgElement.classList.add('img-shine');
+                    }
+                    if (imgContainer) {
+                        imgContainer.classList.add('imgShineContainerGo');
+                    }
+                    // observer.unobserve(entry.target);
+                }
+            }
+            // remove the class if the element leaves view
+        }
+        const observer = new IntersectionObserver(makeShine, options);
+        const imgElement = imgShine.current;
+        if (imgElement) {
+            observer.observe(imgElement);
+        }
+    }, []);
+    
+    
     return (
         <Grid container className="upcoming" id="upcoming">
             <Grid item xs={12} className="ptitle">
@@ -11,8 +47,9 @@ function Upcoming() {
                 </h1>
             </Grid>
             <Grid item xs={12} className="row">
-                <Grid item xs={12} md={5}>
-                    <img src="10.jpeg" alt="grill_invitation" />
+                <Grid ref={imgShineContainer} item xs={12} md={5} className="imgShineContainer" >
+                    <img ref={imgShine} id="upcomingImg" src="10.jpeg" alt="grill_invitation" />
+            
                 </Grid>
                 <Grid item xs={11} md={6} className="col">
                     <Card className="card">
