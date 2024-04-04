@@ -3,6 +3,7 @@ import "../styles/Upcoming.scss";
 import Countdown from "./Countdown";
 import { useEffect } from "react";
 import React from "react";
+
 function Upcoming() {
     const options = {
         root: null, // the browser viewport is used
@@ -12,10 +13,8 @@ function Upcoming() {
     const imgShineContainer = React.useRef<HTMLDivElement>(null);
     const imgShine = React.useRef<HTMLImageElement>(null);
     useEffect(() => {
-        const makeShine = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-            console.log("makeShine");
+        const makeShine = (entries: IntersectionObserverEntry[]) => {
             // check if the element is in view
-            console.log(entries);
             for (const entry of entries) {
                 if (entry.isIntersecting) {
                     const imgElement = imgShine.current;
@@ -26,7 +25,6 @@ function Upcoming() {
                     if (imgContainer) {
                         imgContainer.classList.add('imgShineContainerGo');
                     }
-                    // observer.unobserve(entry.target);
                 }
             }
             // remove the class if the element leaves view
@@ -37,8 +35,8 @@ function Upcoming() {
             observer.observe(imgElement);
         }
     }, []);
-    
-    
+
+
     return (
         <Grid container className="upcoming" id="upcoming">
             <Grid item xs={12} className="ptitle">
@@ -49,7 +47,7 @@ function Upcoming() {
             <Grid item xs={12} className="row">
                 <Grid ref={imgShineContainer} item xs={12} md={5} className="imgShineContainer" >
                     <img ref={imgShine} id="upcomingImg" src="10.jpeg" alt="grill_invitation" />
-            
+
                 </Grid>
                 <Grid item xs={11} md={6} className="col">
                     <Card className="card">
@@ -63,7 +61,7 @@ function Upcoming() {
                         </Grid>
                         <Grid item xs={11}>
                             <p className="chtext secondary bold">
-                                Save the Date (in Google Calendar) → <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MjU0MGM0N2FwczIxaTh2aXQ0aGxjZGtiOTUgZWYzMWNhNmM0NDZkYTUzNGRhMzdiNzBmMzNkMGQ2NThkN2IyY2VkMWI5ZWM4MTE4NmU3N2JlOTBlZTY0YThmNUBn&amp;tmsrc=ef31ca6c446da534da37b70f33d0d658d7b2ced1b9ec81186e77be90ee64a8f5%40group.calendar.google.com">
+                                Save the Date (in Google Calendar) → <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N29ob2Uyc3Y3aHBmZm1odGNpZGltcHJkazAgZWYzMWNhNmM0NDZkYTUzNGRhMzdiNzBmMzNkMGQ2NThkN2IyY2VkMWI5ZWM4MTE4NmU3N2JlOTBlZTY0YThmNUBn&tmsrc=ef31ca6c446da534da37b70f33d0d658d7b2ced1b9ec81186e77be90ee64a8f5%40group.calendar.google.com">
                                     1st of May 2024
                                 </a>
                             </p>

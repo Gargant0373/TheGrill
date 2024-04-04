@@ -25,7 +25,6 @@
         width: 45vw;
         height: auto;
         max-width: 100%;
-        border-radius: 25px;
     }
 
     .calendar {
@@ -102,7 +101,6 @@ $shineTime: 0.8s;
 .imgShineContainer {
     overflow: hidden;
     position: relative;
-    border-radius: 25px;
     background-color: transparent;
     z-index: 2;
     &::before {
