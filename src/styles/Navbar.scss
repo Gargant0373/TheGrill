@@ -91,6 +91,10 @@
 
         font-size: 15px;
     }
+    .navbar .item.scrollsection:hover::before {
+        display: block;
+        width: 100%;
+    }
 }
 
 
