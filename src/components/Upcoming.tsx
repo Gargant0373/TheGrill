@@ -46,7 +46,7 @@ function Upcoming() {
             </Grid>
             <Grid item xs={12} className="row">
                 <Grid ref={imgShineContainer} item xs={12} md={5} className="imgShineContainer" >
-                    <img ref={imgShine} id="upcomingImg" src="10.jpeg" alt="grill_invitation" />
+                    <img ref={imgShine} id="upcomingImg" src="new_invit.png" alt="grill_invitation" />
 
                 </Grid>
                 <Grid item xs={11} md={6} className="col">
