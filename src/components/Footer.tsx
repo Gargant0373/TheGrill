@@ -2,6 +2,7 @@ import { Grid, Tooltip } from "@mui/material";
 import "../styles/Footer.css";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/Github';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Footer() {
     return <>
@@ -26,9 +27,9 @@ function Footer() {
                 </Grid>
             </Grid>
             <Grid container className="row">
-                <Grid item xs={4} md={3}><div className="line" /></Grid>
+                <Grid item xs={3} md={2}><div className="line" /></Grid>
 
-                <Grid item xs={3} md={1} className="social">
+                <Grid item xs={4} md={2} className="social">
                     <a href="https://fb.me/e/6LMXKsHgr">
                         <Tooltip title="Facebook Event">
                             <FacebookIcon className="icon" />
@@ -39,9 +40,14 @@ function Footer() {
                             <GitHubIcon className="icon" />
                         </Tooltip>
                     </a>
+                    <a href="https://www.instagram.com/thegrill.space/">
+                        <Tooltip title="Instagram">
+                            <InstagramIcon className="icon" />
+                        </Tooltip>
+                    </a>
                 </Grid>
 
-                <Grid item xs={4} md={3}><div className="line" /></Grid>
+                <Grid item xs={3} md={2}><div className="line" /></Grid>
             </Grid>
             <Grid container className="row">
                 <Grid item xs={12}>
