@@ -18,7 +18,7 @@ interface MyComponentProps {
  *	@see https://p5js.org/reference/#/p5/p5
  *	@author https://github.com/MateiDumitrescu1
 */
-function ParticleText({ styleProp, textSizeProp, canvasWidthVal, scanStepVal,particleSizeVal }: MyComponentProps) {
+function ParticleText({ styleProp, textSizeProp, canvasWidthVal, scanStepVal, particleSizeVal }: MyComponentProps) {
 	const divRef = useRef<HTMLDivElement>(null);
 	const hoverDiv = useRef<HTMLDivElement>(null);
 	const myP5 = useRef<p5 | null>(null);
@@ -74,7 +74,7 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal, scanStepVal,par
 			(myP5.current as CustomP5)?.updateFlowSpeed?.();
 			(myP5.current as CustomP5)?.updateColors?.();
 		}, throttleTime);
-		const resetParticleRender = throttle( () => {
+		const resetParticleRender = throttle(() => {
 			flowSpeedRef.current = 0;
 			colorsRef.current = ["#BC6C25", "#fefae0"];
 			(myP5.current as CustomP5)?.updateFlowSpeed?.();
@@ -91,7 +91,7 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal, scanStepVal,par
 			hoverDiv.current.addEventListener("mouseleave", resetParticleRender);
 			// hoverDiv.current.addEventListener("touchend", () => {
 			// 	setFlowSpeed(flowSpeedStep);
-				
+
 			// 	setColorsUsed(["#BC6C25", "#fefae0", "#ff0000"]);
 			// 	(myP5.current as CustomP5)?.updateFlowSpeed?.();
 			// 	(myP5.current as CustomP5)?.updateColors?.();
@@ -315,13 +315,6 @@ function ParticleText({ styleProp, textSizeProp, canvasWidthVal, scanStepVal,par
 				{" "}
 			</div>
 
-			{/* <button className="button"
-				type="button"
-				onMouseDown={handleButtonDown}
-				onMouseUp={handleButtonUp}
-			>
-				press me
-			</button> */}
 			<div className="hoverDiv" style={{ width: `${textWidth}px`, height: `${textSize}px` }} ref={hoverDiv}>
 
 			</div>

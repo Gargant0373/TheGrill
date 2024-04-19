@@ -1,9 +1,10 @@
+import LeftArrow from '@mui/icons-material/KeyboardArrowLeft';
+import RightArrow from '@mui/icons-material/KeyboardArrowRight';
 import { Card, CardContent, Grid } from "@mui/material";
 import { useRef } from "react";
 import Slider from "react-slick";
 import "../styles/Pictures.scss";
-import RightArrow from '@mui/icons-material/KeyboardArrowRight';
-import LeftArrow from '@mui/icons-material/KeyboardArrowLeft';
+
 function Pictures() {
     const images = [
         "1.jpeg",
@@ -63,8 +64,6 @@ function Pictures() {
                 </Grid>
                 <Grid item container md={12} xs={12} className="pcontainer">
                     <Grid item xs={1} className="buttonHolderPrev">
-                        {/* bigger icon */}
-                        {/* <RightArrow/> */}
                         <button type='button' className="slider-btn button-back"
                             onClick={() => slider?.current?.slickPrev()}>
                             <LeftArrow className="arrow-icon" />
