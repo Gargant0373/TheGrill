@@ -1,0 +1,48 @@
+.mouth .upper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.mouth .upper img {
+  width: 100%;
+  height: auto;
+}
+
+.mouth .lower {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mouth .lower img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.mouth, .container {
+  transition: opacity 0.5s ease;
+}
+
+.content {
+  margin-top: 100vh;
+}
+
+.content img {
+  width: 100%;
+  height: auto;
+}

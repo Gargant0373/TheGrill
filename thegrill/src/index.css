@@ -1,0 +1,13 @@
+:root {
+  --background-color: #2f0000;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+
+  min-height: 200vh;
+}
