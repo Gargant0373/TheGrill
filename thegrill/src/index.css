@@ -1,5 +1,6 @@
 :root {
   --background-color: #2f0000;
+  --font-color: #F0F0F0;
 }
 
 body,
@@ -10,4 +11,5 @@ html {
   background-color: var(--background-color);
 
   min-height: 200vh;
+  color: var(--font-color);
 }

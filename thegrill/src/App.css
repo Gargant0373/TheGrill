@@ -1,48 +1,38 @@
-.mouth .upper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.mouth .upper img {
-  width: 100%;
-  height: auto;
-}
-
-.mouth .lower {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.mouth .lower img {
-  width: 100%;
-  height: auto;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container img {
-  width: 100%;
-  height: auto;
-}
-
-.mouth, .container {
-  transition: opacity 0.5s ease;
-}
-
 .content {
-  margin-top: 100vh;
+  margin-top: 70vh;
 }
 
 .content img {
   width: 100%;
   height: auto;
+}
+
+.content h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.content p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.content2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 50px;
+} 
+
+.content2 img {
+  margin-top: 50vh;
+  width: 100%;
+}
+
+.content2 .rhs-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
