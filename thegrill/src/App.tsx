@@ -7,7 +7,7 @@ import Rules from './components/Guidelines';
 function App() {
 
   const lipThreshold = 500;
-  const contentFadeStart = 600;
+  const contentFadeStart = 500;
   const contentFadeDuration = 200;
   const [scrollOffset, setScrollOffset] = useState(0);
 
