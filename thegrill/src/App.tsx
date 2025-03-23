@@ -3,6 +3,7 @@ import './App.css';
 import './Mouth.css';
 import EventMap from './components/EventMap';
 import Rules from './components/Guidelines';
+import ImageCarousel from './components/ImageCarousel';
 
 function App() {
 
@@ -29,7 +30,11 @@ function App() {
     <>
       <div
         className="mouth"
-        style={{ opacity: 1 - lipProgress, transition: "opacity 0.5s ease" }}
+        style={{ 
+          opacity: 1 - lipProgress,
+          transition: "opacity 0.5s ease",
+          display: lipProgress === 1 ? "none" : "block"
+        }}
       >
         <div className="upper">
           <img
@@ -60,13 +65,17 @@ function App() {
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
       </div>
       <div className="content2">
-        <img
-          src="./assets/beergrill.png"
-          alt="Beer and Grill on top of it"
-        />
+        <div className="lhs-content">
+          <img
+            src="./assets/beergrill.png"
+            alt="Beer and Grill on top of it"
+            className="beer-image"
+          />
+        </div>
         <div className="rhs-content">
           <EventMap />
           <Rules />
+          <ImageCarousel />
         </div>
       </div>
     </>
