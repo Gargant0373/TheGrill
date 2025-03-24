@@ -10,6 +10,6 @@ html {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
 
-  min-height: 200vh;
+  min-height: 100vh;
   color: var(--font-color);
 }
