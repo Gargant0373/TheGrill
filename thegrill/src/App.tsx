@@ -3,6 +3,7 @@ import './App.css';
 import './Mouth.css';
 import EventMap from './components/EventMap';
 import Rules from './components/Guidelines';
+import ImageCarousel from './components/ImageCarousel';
 
 function App() {
 
@@ -29,7 +30,11 @@ function App() {
     <>
       <div
         className="mouth"
-        style={{ opacity: 1 - lipProgress, transition: "opacity 0.5s ease" }}
+        style={{ 
+          opacity: 1 - lipProgress,
+          transition: "opacity 0.5s ease",
+          display: lipProgress === 1 ? "none" : "block"
+        }}
       >
         <div className="upper">
           <img
@@ -53,19 +58,24 @@ function App() {
           style={{ opacity: contentFadeProgress, transition: "opacity 0.5s ease" }}
         />
         <h1>ABOUT THE GRILL!</h1>
-        <p>On May 1st, we feast for the 5th time at Delftse Hout.</p>
-        <p>The fire will char the meat, and the mere sight of beer will make us salivate.</p>
-        <p>Bring your grill, your food, your fire, but most importantly, your thirst.</p>
-        <p>If you don’t feed the flames, the flames won’t feed you!</p>
+        <p>Lorem ipsum dolores mama masii </p>
+        <p>Consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+        <p>Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
       </div>
       <div className="content2">
-        <img
-          src="./assets/beergrill.png"
-          alt="Beer and Grill on top of it"
-        />
+        <div className="lhs-content">
+          <img
+            src="./assets/beergrill.png"
+            alt="Beer and Grill on top of it"
+            className="beer-image"
+          />
+        </div>
         <div className="rhs-content">
           <EventMap />
           <Rules />
+          <ImageCarousel />
         </div>
       </div>
     </>
