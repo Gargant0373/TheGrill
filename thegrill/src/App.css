@@ -2,6 +2,10 @@
   margin-top: 0vh;
 }
 
+.content .info-section {
+  overflow: hidden;
+}
+
 .content img {
   width: 100%;
   height: auto;

@@ -20,9 +20,9 @@ function App() {
   const topLipOffset = useTransform(scrollY, [0, viewportHeight], [0, -0.01 * viewportHeight])
   const bottomLipOffset = useTransform(scrollY, [0, viewportHeight], [0, -1.65 * viewportHeight])
   //  const lipOpacity = useTransform(scrollY, [0, 1 * viewportHeight], [1, 1])
-  const lipTransitionOpacity = useTransform(scrollY, [0, 0.5 * viewportHeight], [1, 0])
+  const lipTransitionOpacity = useTransform(scrollY, [0, 0.5 * viewportHeight], [0.8, 0])
   const roofOffset = useTransform(scrollY, [0, viewportHeight], [0, viewportHeight])
-  const infoScale = useTransform(scrollY, [0, viewportHeight], [0.9, 1])
+  const infoScale = useTransform(scrollY, [0, viewportHeight], [1, 1.1])
   const mouthScale = useTransform(scrollY, [0, viewportHeight], [1, 1.3])
 
   const smoothedTopLipOffset = useSpring(topLipOffset, { stiffness: 5, damping: 10 });
@@ -105,23 +105,14 @@ function App() {
           />
           <motion.div
             className="content"
-            style={{ zIndex: 2, position: 'absolute', width: '100%', top: 0 }}
+            style={{ zIndex: 2, position: 'absolute', width: '100%', transform: 'translateY(50%)'}}
           >
-            <h1>This is the info</h1>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-            <p>Urasc sa fac animatii e atat de finicky</p>
-          </motion.div>
+            <h1>Here's what you need to know!</h1>
+            <p>On May 1st, we feast for the 5th time at Delftse Hout.</p>
+            <p>The fire will char the meat, and the mere sight of beer will make us salivate.</p>
+            <p>Bring your grill, your food, your fire, but most importantly, your thirst.</p>
+            <p>If you don’t feed the flames, the flames won’t feed you!</p>
+         </motion.div>
         </motion.div>
       </div >
 
