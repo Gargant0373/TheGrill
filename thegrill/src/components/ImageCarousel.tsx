@@ -36,8 +36,11 @@ function ImageCarousel() {
     <div className="carousel">
       <h1>SOME PICTURES FROM LAST YEARS</h1>
       <div className="carousel-container" {...handlers}>
-        <button className="nav-button left" onClick={prevImage}>
-          back
+        <button
+          className="nav-button left"
+          onClick={prevImage}
+        >
+          ‹
         </button>
 
         <img
@@ -47,8 +50,11 @@ function ImageCarousel() {
           onClick={() => setFullscreen(true)}
         />
 
-        <button className="nav-button right" onClick={nextImage}>
-          forward
+        <button
+          className="nav-button right"
+          onClick={nextImage}
+        >
+          ›
         </button>
 
         <div

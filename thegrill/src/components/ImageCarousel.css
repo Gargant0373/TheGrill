@@ -10,7 +10,6 @@
   width: 100%;
   overflow: hidden;
   height: 30rem;
-  background: #2d2424;
   padding: 1rem 1rem;
 }
 
@@ -27,8 +26,34 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  
+  width: 2.5rem;
+  height: 2.5rem;
+  
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffffaa;
+  font-size: 2rem;
+
+  color: var(--background-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .left {
