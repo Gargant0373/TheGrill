@@ -97,14 +97,14 @@ function App() {
             </motion.div>
           </>
         )}
-        <motion.div className="info-section" style={{ zIndex: 1, position: 'absolute', width: '100%', top: smoothedRoofOffset, scale: smoothedInfoScale }}>
+        <motion.div style={{ zIndex: 1, position: 'absolute', width: '100%', top: smoothedRoofOffset, scale: smoothedInfoScale }}>
           <motion.img
             src="./assets/insidemouth.png"
             alt="Inside of The Grill Master's mouth"
             style={{ position: 'absolute', width: '100%' }}
           />
           <motion.div
-            className="content"
+            className="info"
             style={{ zIndex: 2, position: 'absolute', width: '100%', transform: 'translateY(50%)'}}
           >
             <h1>Here's what you need to know!</h1>
@@ -116,10 +116,7 @@ function App() {
         </motion.div>
       </div >
 
-
-
-
-      <div className="content2">
+      <div className="content">
         <img
           src="./assets/beergrill.png"
           alt="Beer and Grill on top of it"

@@ -1,27 +1,15 @@
-.content {
-  margin-top: 0vh;
-}
-
-.content .info-section {
-  overflow: hidden;
-}
-
-.content img {
-  width: 100%;
-  height: auto;
-}
-
-.content h1 {
+.info h1 {
   font-size: 3rem;
   text-align: center;
 }
 
-.content p {
+.info p {
   font-size: 1.5rem;
   text-align: center;
 }
 
-.content2 {
+.content {
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,12 +17,12 @@
   gap: 50px;
 } 
 
-.content2 img {
+.content img {
   margin-top: 50vh;
   width: 100%;
 }
 
-.content2 .rhs-content {
+.content .rhs-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
