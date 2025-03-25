@@ -3,6 +3,7 @@ import './App.css';
 import EventMap from './components/EventMap';
 import Rules from './components/Guidelines';
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
+import ImageCarousel from './components/ImageCarousel';
 
 function App() {
 
@@ -50,7 +51,6 @@ function App() {
 
   return (
     <>
-
       <div className="start-page" style={{ height: '250vh' }} >
         <motion.button
           onClick={scrollTo100vh}
@@ -117,13 +117,17 @@ function App() {
       </div >
 
       <div className="content">
-        <img
-          src="./assets/beergrill.png"
-          alt="Beer and Grill on top of it"
-        />
+        <div className="lhs-content">
+          <img
+            src="./assets/beergrill.png"
+            alt="Beer and Grill on top of it"
+            className="beer-image"
+          />
+        </div>
         <div className="rhs-content">
           <EventMap />
           <Rules />
+          <ImageCarousel />
         </div>
       </div>
     </>

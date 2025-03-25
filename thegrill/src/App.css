@@ -14,17 +14,29 @@
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  gap: 50px;
+  margin-top: 20vh;
 } 
 
-.content img {
-  margin-top: 50vh;
+.content .beer-image {
+  margin-top: 40vh;
   width: 100%;
+  height: auto;
+}
+
+.content .lhs-content {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content .rhs-content {
+  width: 60%;
   display: flex;
+  gap: 5rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 0 15rem;
+  box-sizing: border-box;
 }
