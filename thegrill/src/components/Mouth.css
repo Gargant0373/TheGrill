@@ -1,0 +1,17 @@
+.mouth {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.upper, .lower {
+  position: absolute;
+  width: 100%;
+}
+
+.mouth-transition {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
