@@ -1,0 +1,29 @@
+.about {
+  width: 100%;
+}
+
+.about-section {
+  height: 200vh;
+}
+
+.inside-mouth {
+  position: absolute;
+  width: 100%;
+}
+
+.about-content {
+  position: absolute;
+  width: 100%;
+  transform: translateY(50%);
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+

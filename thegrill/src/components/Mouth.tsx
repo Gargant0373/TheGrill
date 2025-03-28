@@ -2,7 +2,6 @@ import { motion, useTransform, useSpring, MotionValue } from "motion/react"
 import "./Mouth.css"
 
 function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, viewportHeight: number }) {
-  // TODO this is very taxing for the cpu :') idk what to do abt it
   const lipOffset = useTransform(scrollY, [0, viewportHeight], [0, -1 * viewportHeight])
   const lipTransitionOpacity = useTransform(scrollY, [0, 0.5 * viewportHeight], [1, 0])
   const mouthScale = useTransform(scrollY, [0, viewportHeight], [1, 2])
@@ -19,7 +18,7 @@ function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, view
       <motion.button
         onClick={scrollTo100vh}
         style={{
-          position: "fixed",
+          position: "absolute",
           top: "20px",
           left: "50%",
           transform: "translateX(-50%)",

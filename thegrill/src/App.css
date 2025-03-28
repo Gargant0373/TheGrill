@@ -1,13 +1,3 @@
-.info h1 {
-  font-size: 3rem;
-  text-align: center;
-}
-
-.info p {
-  font-size: 1.5rem;
-  text-align: center;
-}
-
 .content {
   width: 90%;
   display: flex;
