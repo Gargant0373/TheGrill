@@ -15,12 +15,6 @@
   justify-content: center;
   align-items: stretch;
   margin-top: 20vh;
-} 
-
-.content .beer-image {
-  margin-top: 40vh;
-  width: 100%;
-  height: auto;
 }
 
 .content .lhs-content {
@@ -28,7 +22,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
+
+.content .beer-image {
+  margin-top: 40vh;
+  margin-left: 11%;
+  width: 100%;
+}
+
+.lhs-content .beer-drop {
+  position: absolute;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: drip 5s ease-in-out infinite;
+}
+
+@keyframes drip {
+  0% {
+    top: 85%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 112%;
+    opacity: 0;
+  }
+}
+
 
 .content .rhs-content {
   width: 60%;

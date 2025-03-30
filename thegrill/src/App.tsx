@@ -49,7 +49,7 @@ function App() {
     return () => unsubscribe();
   }, [scrollY, viewportHeight]);
 
-  return (
+        return (
     <>
       <div className="start-page" style={{ height: '250vh' }} >
         <motion.button
@@ -118,11 +118,17 @@ function App() {
 
       <div className="content">
         <div className="lhs-content">
-          <img
-            src="./assets/beergrill.png"
-            alt="Beer and Grill on top of it"
-            className="beer-image"
-          />
+            <div>
+                <img
+                    src="./assets/beergrill.png"
+                    alt="Beer and Grill on top of it"
+                    className="beer-image"
+                />
+                <img
+                src="./assets/droplet.svg"
+                alt="Beer drop"
+                className="beer-drop"/>
+            </div>
         </div>
         <div className="rhs-content">
           <EventMap />
