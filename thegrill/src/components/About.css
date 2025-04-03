@@ -1,5 +1,8 @@
 .about {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-section {
@@ -27,5 +30,19 @@
   font-size: 2.5rem;
   text-align: center;
   font-family: 'Ashcan';
+  width: 100%;
 }
 
+@media (max-width: 768px) {
+  .about-content {
+    width: 80%;
+  }
+
+  .about-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-content p {
+    font-size: 1.5rem;
+  }
+}
