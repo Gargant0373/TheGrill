@@ -58,7 +58,7 @@
   .content {
     flex-direction: column-reverse;
     align-items: center;
-    margin-top: 100vh;
+    margin-top: 30vh;
   }
 
   .content .beer-image {
