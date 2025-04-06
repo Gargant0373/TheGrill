@@ -31,6 +31,10 @@ function App() {
             alt="Beer and Grill on top of it"
             className="beer-image"
           />
+          <img
+            src="./assets/droplet.svg"
+            alt="Beer drop"
+            className="beer-drop" />
         </div>
         <div className="rhs-content">
           <EventMap />

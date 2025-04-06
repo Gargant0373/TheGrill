@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 96" width="64" height="96">
+    <defs>
+        <!-- Radial beer gradient -->
+        <radialGradient id="beerGradient" cx="50%" cy="35%" r="70%">
+            <stop offset="0%" stop-color="#fceabb" />
+            <stop offset="40%" stop-color="#f8b500" />
+            <stop offset="100%" stop-color="#d35400" />
+        </radialGradient>
+
+        <!-- Drop shape as a reusable clip path -->
+        <clipPath id="dropClip">
+            <path d="M32 2C24 20 10 36 10 56c0 13 10 24 22 24s22-11 22-24C54 36 40 20 32 2z"/>
+        </clipPath>
+    </defs>
+
+    <!-- Beer droplet shape with gradient -->
+    <path
+            d="M32 2C24 20 10 36 10 56c0 13 10 24 22 24s22-11 22-24C54 36 40 20 32 2z"
+            fill="url(#beerGradient)"
+            stroke="#c0392b"
+            stroke-width="0.5"
+    />
+
+    <!-- Foam on top using group clipped to droplet shape -->
+    <g clip-path="url(#dropClip)">
+        <ellipse cx="32" cy="12" rx="14" ry="6" fill="#fffef2" />
+        <circle cx="20" cy="10" r="4" fill="#fffef2" />
+        <circle cx="44" cy="9" r="3.5" fill="#fffef2" />
+        <circle cx="28" cy="7" r="3" fill="#fffef2" />
+        <circle cx="36" cy="6.5" r="2.5" fill="#fffef2" />
+    </g>
+
+    <!-- Subtle bubbles inside the droplet -->
+    <circle cx="26" cy="60" r="2.2" fill="#ffffff" opacity="0.3" />
+    <circle cx="34" cy="68" r="1.8" fill="#ffffff" opacity="0.25" />
+    <circle cx="38" cy="58" r="1.4" fill="#ffffff" opacity="0.2" />
+    <circle cx="30" cy="74" r="1.1" fill="#ffffff" opacity="0.2" />
+</svg>
