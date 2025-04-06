@@ -58,7 +58,7 @@ function ImageCarousel() {
               />
             </motion.div>
             <motion.div
-              key={`image ${currentIndex + 1 >= shuffledImages.length ? 0 : currentIndex + 1}`}
+              key={`image ${currentIndex}`}
               layout
               transition={spring}
               className="carousel-image-wrapper"
