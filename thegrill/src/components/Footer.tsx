@@ -11,13 +11,13 @@ function Footer() {
             <div className="footer-content">
                 <div className="line" />
                 <div className="socials">
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/thegrill.life" target="_blank" rel="noopener noreferrer">
                         <FaInstagram />
                     </a>
                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                         <FaFacebook />
                     </a>
-                    <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Gargant0373/TheGrill" target="_blank" rel="noopener noreferrer">
                         <FaGithub />
                     </a>
                 </div>

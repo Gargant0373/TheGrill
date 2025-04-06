@@ -53,6 +53,8 @@ footer .footer-content .socials {
     flex-direction: row;
 
     gap: 20px;
+    position: relative;
+    z-index: 10; 
 }
 
 footer .footer-content .socials a {
@@ -63,7 +65,7 @@ footer .footer-content .socials a {
     cursor: pointer;
     pointer-events: auto;
     position: relative;
-    z-index: 1;
+    z-index: 11; 
 }
 
 footer .footer-content .socials a:hover {
@@ -99,6 +101,7 @@ footer img {
 
     width: 30%;
     height: auto;
+    pointer-events: none;
 }
 
 @media (max-width: 768px) {
