@@ -1,5 +1,6 @@
 import { motion, useTransform, useSpring, MotionValue } from "motion/react"
 import "./Mouth.css"
+import { useEffect, useState } from "react"
 
 function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, viewportHeight: number }) {
   const lipOffset = useTransform(scrollY, [0, viewportHeight], [0, -1 * viewportHeight])
@@ -7,6 +8,21 @@ function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, view
   const mouthScale = useTransform(scrollY, [0, viewportHeight], [1, 2])
 
   const smoothedLipOffset = useSpring(lipOffset, { stiffness: 150, damping: 30 });
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Function to scroll smoothly to 100vh - chatGPT
   const scrollTo100vh = () => {
@@ -35,7 +51,6 @@ function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, view
         Scroll to 100vh
       </motion.button>
 
-
       <>
         <motion.div
           className="mouth"
@@ -43,13 +58,13 @@ function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, view
         >
           <motion.img
             className="upper"
-            src="./assets/toplip.png"
+            src={mobile ? "./assets/toplip_m.png" : "./assets/toplip.png"}
             alt="Top lip of The Grill Master"
             style={{ zIndex: 5, top: smoothedLipOffset }}
           />
           <motion.img
             className="lower"
-            src="./assets/downlip.png"
+            src={mobile ? "./assets/downlip_m.png" : "./assets/downlip.png"}
             alt="Bottom lip of The Grill Master"
             style={{ zIndex: 4, bottom: smoothedLipOffset }}
           />

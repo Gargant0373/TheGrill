@@ -107,9 +107,9 @@ footer img {
         margin-top: 100px;
     }
 
-
     footer .footer-heading {
         width: 90%;
+        z-index: 2;
     }
 
     footer .footer-content {
@@ -120,7 +120,8 @@ footer img {
     }
 
     footer img {
-        top: -80%;
+        top: -90%;
+        left: 25%;
         width: 50%;
     }
 
