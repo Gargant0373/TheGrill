@@ -4,7 +4,6 @@ import { FaInstagram, FaFacebook, FaGithub } from "react-icons/fa";
 function Footer() {
     return <>
         <footer>
-            <img src="./assets/guydrinking.png" alt="Guy waiting to drink" />
             <div className="footer-heading">
                 <h1>Check us out on socials!</h1>
             </div>

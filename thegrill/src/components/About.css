@@ -5,19 +5,15 @@
   align-items: center;
 }
 
-.about-section {
-  height: 200vh;
-}
-
 .inside-mouth {
+  display: block;
   position: absolute;
   width: 100%;
 }
 
 .about-content {
-  position: absolute;
+  display: block;
   width: 100%;
-  transform: translateY(50%);
 }
 
 .about-content h1 {

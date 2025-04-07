@@ -25,6 +25,8 @@ function App() {
       <Mouth scrollY={scrollY} viewportHeight={viewportHeight} />
       <AboutSection scrollY={scrollY} viewportHeight={viewportHeight} />
 
+      <div style={{ height: 2 * viewportHeight }} />
+
       <div className="content">
         <div className="lhs-content">
           <img
@@ -33,6 +35,7 @@ function App() {
             className="beer-image"
           />
           <DropletAnimation />
+          <img id="guy" src="./assets/guydrinking.png" alt="Guy waiting to drink" />
         </div>
         <div className="rhs-content">
           <EventMap />
