@@ -6,6 +6,7 @@ import { useScroll } from "motion/react"
 import ImageCarousel from './components/ImageCarousel';
 import Mouth from './components/Mouth'
 import AboutSection from './components/About';
+import DropletAnimation from './components/DropletAnimation';
 
 function App() {
 
@@ -31,10 +32,7 @@ function App() {
             alt="Beer and Grill on top of it"
             className="beer-image"
           />
-          <img
-            src="./assets/droplet.svg"
-            alt="Beer drop"
-            className="beer-drop" />
+          <DropletAnimation />
         </div>
         <div className="rhs-content">
           <EventMap />
