@@ -29,8 +29,8 @@
   }
 
   .content .lhs-content .beer-drop {
-    position: absolute;
-    left: 50%;
+    position: fixed;
+    left: 25%;
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
@@ -38,7 +38,7 @@
     opacity: 0;
     animation: drip 5s ease-in-out infinite;
 
-    z-index: 100;
+    z-index: 0;
   }
 
   .content .lhs-content #guy {
