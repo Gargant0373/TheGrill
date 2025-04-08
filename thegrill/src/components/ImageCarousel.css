@@ -1,5 +1,7 @@
 .carousel {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .carousel-container {
@@ -107,4 +109,44 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.gallery-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.gallery-button {
+  padding: 1rem 2rem;
+  background: var(--background-color);
+  color: var(--font-color);
+  border: 3px solid var(--font-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Ashcan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 101;
+  pointer-events: auto;
+}
+
+.gallery-button:hover {
+  background: var(--font-color);
+  color: var(--background-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

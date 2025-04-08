@@ -9,11 +9,9 @@ import AboutSection from './components/About';
 import DropletAnimation from './components/DropletAnimation';
 
 function App() {
-
   const { scrollY } = useScroll();
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
-  // Update viewport height on resize -- I chatGPTd this :)
   useEffect(() => {
     const updateHeight = () => setViewportHeight(window.innerHeight);
     window.addEventListener("resize", updateHeight);
@@ -44,7 +42,7 @@ function App() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

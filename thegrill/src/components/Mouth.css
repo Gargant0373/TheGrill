@@ -3,11 +3,13 @@
   width: 100%;
   height: 100vh;
   top: 0;
+  pointer-events: none;
 }
 
 .upper, .lower {
   position: absolute;
   width: 100%;
+  pointer-events: none;
 }
 
 .mouth-transition {
@@ -15,4 +17,5 @@
   width: 100%;
   height: 100%;
   background: black;
+  pointer-events: none;
 }
