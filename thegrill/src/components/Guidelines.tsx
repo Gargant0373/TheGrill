@@ -9,28 +9,28 @@ function Guidelines() {
         },
         rulesList: [
             {
-                title: "GRILLMASTER IS KING",
-                text: "The grillmaster is the most important person at the grill. He is the one who makes sure the fire is burning and the meat is cooking. He is the one who feeds you. Always make sure there's someone to help him out"
+                title: "The Grillmaster is King",
+                text: "He controls the fire, the feast, and your fate. Respect him, or be left hungry."
             },
             {
-                title: "NO STUDYING",
-                text: "The Grill is a place for fun, not for studying. No laptops or notebooks. They are only allowed for writing poems."
+                title: "No Studying",
+                text: "Just chewing, books and laptops stay home"
             },
             {
-                title: "YOU BRING, YOU EAT",
-                text: "The balance of the grill relies on the fact that each individual contributes. If you bring something, you eat something. If you don't bring anything, you eat nothing. Your 'meat' might be enough for your girlfriend, not for us. Only exception from this rule is people who cross the lake swimming."
+                title: "You Bring, You Eat, You Drink",
+                text: "We believe in generosity, not freeloading. Bring enough to share, but don’t come empty-handed."
             },
             {
-                title: "TRASH",
-                text: "We are not savages. We clean up after ourselves. There are no trash cans around the lake so you're expected to bring some bags yourself."
+                title: "No Trash Left Behind",
+                text: "Clean up your bones, ashes, and bottles. We may be wild, but we leave no mess."
             },
             {
-                title: "SMOKING KILLS",
-                text: "We believe in the freedom of lighting up a cigarette. We do not like your cigarette buds. Make sure beer corks and cigarette buns are not left behind."
+                title: "Smoke If You Must, But Don’t Litter",
+                text: "The fire burns bright, but cigarette butts don’t belong in the embers. Even less so on the ground."
             },
             {
-                title: "MEN SWIM",
-                text: "Men must take a bath before leaving the grill. The lake might not be warm, but the soul of the lovely ladies will be."
+                title: "Take the Plunge",
+                text: "Before you leave, take a dip in the lake. Wash off the smoke, the sweat, and the sins of The Grill."
             }
         ]
     };

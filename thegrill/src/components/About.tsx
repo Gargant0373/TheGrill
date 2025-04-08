@@ -1,7 +1,6 @@
-import { MotionValue, motion } from "motion/react";
-import { useTransform, useSpring } from "motion/react";
-import "./About.css"
+import { MotionValue, motion, useSpring, useTransform } from "motion/react";
 import { useEffect, useState } from "react";
+import "./About.css";
 
 function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, viewportHeight: number }) {
 
@@ -31,7 +30,7 @@ function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number
     >
       <motion.img
         className="inside-mouth"
-        src="./assets/insidemouth.png"
+        src="./assets/inside_mouth_anim.webp"
         alt="Inside of The Grill Master's mouth"
       />
       <motion.div
