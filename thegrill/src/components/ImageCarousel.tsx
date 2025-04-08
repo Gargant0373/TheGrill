@@ -35,17 +35,28 @@ function ImageCarousel() {
 
   if (!shuffledImages.length) return null;
 
+  {/* <button */ }
+  {/*   className="nav-button left" */ }
+  {/*   onClick={prevImage} */ }
+  {/* > */ }
+  {/*   ‹ */ }
+  {/* </button> */ }
   return (
     <div className="carousel">
       <h1>SOME PICTURES FROM LAST YEARS</h1>
       <div className="carousel-container" {...handlers}>
-        <button
-          className="nav-button left"
+        <motion.button
+          initial={{ y: "-50%" }}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.95 }}
           onClick={prevImage}
+          className="nav-button left"
         >
-          ‹
-        </button>
-
+          <img
+            src='./assets/arrow-left.svg'
+            alt="<-"
+          />
+        </motion.button>
         {(
           <>
             <motion.div
@@ -85,12 +96,18 @@ function ImageCarousel() {
           </>
         )}
 
-        <button
-          className="nav-button right"
+        <motion.button
+          initial={{ y: "-50%" }}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.95 }}
           onClick={nextImage}
+          className="nav-button right"
         >
-          ›
-        </button>
+          <img
+            src='./assets/arrow-right.svg'
+            alt="<-"
+          />
+        </motion.button>
 
         <div
           className="fullscreen-container"
@@ -103,7 +120,7 @@ function ImageCarousel() {
         </div>
       </div>
       <div className="gallery-button-container" style={{ position: 'relative', zIndex: 100 }}>
-        <button 
+        <button
           className="gallery-button"
           onClick={() => navigate('/gallery')}
           style={{ position: 'relative', zIndex: 101 }}
