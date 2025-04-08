@@ -4,7 +4,7 @@ import "./About.css";
 
 function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, viewportHeight: number }) {
 
-  const infoScale = useTransform(scrollY, [0, viewportHeight], [0.9, 1.0])
+  const infoScale = useTransform(scrollY, [0, viewportHeight], [1.0, 1.1])
   const smoothedInfoScale = useSpring(infoScale, { stiffness: 1000, damping: 50 })
   const [isFixed, setIsFixed] = useState(true); // ✅ State to track position
 

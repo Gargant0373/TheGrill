@@ -12,8 +12,15 @@
 }
 
 .about-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
+  height: 90vh;
+}
+
+.about-content > * {
+  margin: 1vh; /* remove default margin from h1/p */
 }
 
 .about-content h1 {
