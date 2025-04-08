@@ -34,11 +34,11 @@ function App() {
             &nbsp;
             <DropletAnimation />
           </div>
-          <img src="./assets/beer_grill_top.png" alt="Beer grill" className="beer-image" style={{
+          <img src="./assets/beer_grill_top.png" alt="Beer grill" className="beer-image beer" style={{
             zIndex: 10,
           }} />
-          <img src="./assets/beer_grill_bot.png" alt="Beer grill bot" className="beer-image" />
-          <img src="./assets/beer_grill_guy.png" alt="Beer grill guy" className="beer-image" style={{position: 'relative', zIndex: 1}}/>
+          <img src="./assets/beer_grill_bot.png" alt="Beer grill bot" className="beer-image beer" />
+          <img src="./assets/beer_grill_guy.png" alt="Beer grill guy" className="beer-image guy"/>
         </div>
         <div className="rhs-content">
           <EventMap />
