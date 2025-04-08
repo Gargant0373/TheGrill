@@ -1,7 +1,6 @@
 .carousel {
   width: 100%;
   position: relative;
-  z-index: 1;
 }
 
 .carousel-container {
@@ -98,7 +97,7 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 100;
+  z-index: 103;
 }
 
 .fullscreen-container img {
