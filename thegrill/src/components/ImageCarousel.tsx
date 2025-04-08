@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import { motion, spring } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./ImageCarousel.css";
 
 const imagesObj = import.meta.glob("../assets/images/*.{png,jpg,jpeg,svg}", { eager: true });
@@ -10,6 +11,7 @@ const images = Object.values(imagesObj).map((mod) => (mod as { default: string }
 const shuffleArray = (arr: string[]) => arr.sort(() => Math.random() - 0.5);
 
 function ImageCarousel() {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [shuffledImages, setShuffledImages] = useState<string[]>([]);
   const [fullscreen, setFullscreen] = useState(false);
@@ -100,8 +102,17 @@ function ImageCarousel() {
           <img src={shuffledImages[currentIndex]} alt="carousel" className="carousel-image" />
         </div>
       </div>
+      <div className="gallery-button-container" style={{ position: 'relative', zIndex: 100 }}>
+        <button 
+          className="gallery-button"
+          onClick={() => navigate('/gallery')}
+          style={{ position: 'relative', zIndex: 101 }}
+        >
+          View Full Gallery
+        </button>
+      </div>
     </div>
   );
-};
+}
 
 export default ImageCarousel;

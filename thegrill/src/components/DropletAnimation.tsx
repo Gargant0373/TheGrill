@@ -17,6 +17,13 @@ export default function DropletAnimation() {
     const [currentFrame, setCurrentFrame] = useState(0);
 
     useEffect(() => {
+        frames.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, []);
+
+    useEffect(() => {
         const interval = setInterval(() => {
             setCurrentFrame(prev => (prev + 1) % frames.length);
         }, FRAME_INTERVAL);
