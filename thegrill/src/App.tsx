@@ -22,8 +22,6 @@ function App() {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
-  // const viewportHeight = window.innerHeight;
-
   return (
     <>
       <Mouth scrollY={scrollY} viewportHeight={viewportHeight} />
@@ -33,9 +31,9 @@ function App() {
         <div className="lhs-content">
           <div className="beer-drop-container">
             &nbsp;
-            <DropletAnimation />
+            <img src="./assets/droplet.webp" alt="Droplet" className="beer-drop" />
           </div>
-          <img src="./assets/beergrill.webp" alt="Beer grill" className="beer-image beer" style={{
+          <img src="./assets/beer_grill_top.webp" alt="Beer grill" className="beer-image beer" style={{
             zIndex: 10,
           }} />
           <img src="./assets/beer_grill_bot.png" alt="Beer grill bot" className="beer-image beer" />
