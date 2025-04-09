@@ -1,7 +1,14 @@
+.about-wrapper {
+  height: 200vh;
+  margin: 0 0 10vh 0;
+}
+
 .about {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  position: sticky;
+  top: 0;
 }
 
 .inside-mouth {
@@ -28,13 +35,13 @@
 }
 
 .about-content h1 {
-  font-size: 4.5rem;
+  font-size: 4.3rem;
   text-align: center;
   font-family: 'Font-On-A-Grain';
 }
 
 .about-content p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: center;
   font-family: 'Ashcan';
   width: 100%;
