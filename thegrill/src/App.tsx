@@ -24,7 +24,7 @@ function App() {
       <Mouth scrollY={scrollY} viewportHeight={viewportHeight} />
       <AboutSection scrollY={scrollY} viewportHeight={viewportHeight} />
 
-      <div style={{ height: 2 * viewportHeight }} />
+      <div style={{ height: 2.2 * viewportHeight }} />
 
       <div className="content">
         <div className="lhs-content">
@@ -36,7 +36,7 @@ function App() {
             zIndex: 10,
           }} />
           <img src="./assets/beer_grill_bot.png" alt="Beer grill bot" className="beer-image beer" />
-          <img src="./assets/beer_grill_guy.png" alt="Beer grill guy" className="beer-image guy"/>
+          <img src="./assets/beer_grill_guy.png" alt="Beer grill guy" className="beer-image guy" />
         </div>
         <div className="rhs-content">
           <EventMap />
