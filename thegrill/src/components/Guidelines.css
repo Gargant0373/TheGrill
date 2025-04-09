@@ -3,7 +3,7 @@
 }
 
 .rules h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-family: 'Font-On-A-Grain', 'Roboto';
 }
 
@@ -12,7 +12,7 @@
 }
 
 .rules p {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 
@@ -22,10 +22,10 @@
   }
 
   .rules h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .rules p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }

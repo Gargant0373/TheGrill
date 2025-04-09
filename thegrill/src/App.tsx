@@ -24,7 +24,7 @@ function App() {
       <Mouth scrollY={scrollY} viewportHeight={viewportHeight} />
       <AboutSection scrollY={scrollY} viewportHeight={viewportHeight} />
 
-      <div style={{ height: 2.2 * viewportHeight }} />
+      <div style={{ height: 2.1 * viewportHeight }} />
 
       <div className="content">
         <div className="lhs-content">

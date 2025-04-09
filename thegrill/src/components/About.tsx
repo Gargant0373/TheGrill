@@ -19,23 +19,23 @@ function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number
   }, [scrollY, viewportHeight]);
 
   return (
-    <motion.section
+    <motion.div
       className="about"
       style={{
         position: isFixed ? 'fixed' : 'absolute',
         top: isFixed ? '0' : '100vh',
-        scale: smoothedInfoScale,
-        zIndex: 1
+        scale: smoothedInfoScale
       }}
     >
       <motion.img
         className="inside-mouth"
         src="./assets/inside_mouth_anim.webp"
         alt="Inside of The Grill Master's mouth"
+        style={{ zIndex: 1 }}
       />
       <motion.div
         className="about-content"
-        style={{ zIndex: 2 }}
+        style={{ zIndex: 3 }}
       >
         <h1>Here's what you need to know!</h1>
         <p>On May 1st, we feast for the 5th time at Delftse Hout.</p>
@@ -43,7 +43,7 @@ function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number
         <p>Bring your grill, your food, your fire, but most importantly, your thirst.</p>
         <p>If you don’t feed the flames, the flames won’t feed you!</p>
       </motion.div>
-    </motion.section>
+    </motion.div>
   );
 }
 
