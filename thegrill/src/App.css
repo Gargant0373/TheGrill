@@ -99,6 +99,11 @@ body {
     margin-top: 10rem;
     position: relative;
   }
+
+  .content .lhs-content .beer-drop {
+    width: 60%;
+    height: auto;
+  }
   
   .guy {
     position: relative;
