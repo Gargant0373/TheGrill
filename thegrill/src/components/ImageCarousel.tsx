@@ -4,7 +4,7 @@ import { motion, spring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./ImageCarousel.css";
 
-const imagesObj = import.meta.glob("../assets/images/*.{png,jpg,jpeg,svg}", { eager: true });
+const imagesObj = import.meta.glob("../assets/images/*.{png,jpg,jpeg,svg,webp}", { eager: true });
 
 const images = Object.values(imagesObj).map((mod) => (mod as { default: string }).default);
 

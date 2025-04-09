@@ -29,21 +29,6 @@ function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, view
     window.scrollTo({ top: viewportHeight, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    const wheelFunction = (e: WheelEvent) => {
-      e.preventDefault();
-      const scrollSpeed = 160;
-      const delta = e.deltaY > 0 ? scrollSpeed : -scrollSpeed;
-      window.scrollBy({
-        top: delta,
-        behavior: "smooth"
-      });
-    };
-
-    document.addEventListener("wheel", wheelFunction, { passive: false });
-    return () => document.removeEventListener("wheel", wheelFunction);
-  }, []);
-
   return (
     <>
       <motion.button

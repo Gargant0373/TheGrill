@@ -5,7 +5,7 @@ import './Gallery.css';
 
 // Import all images from the 2024 folder
 const images = Object.values(
-    import.meta.glob('./assets/images/*.{png,jpg,jpeg,svg}', { eager: true })
+    import.meta.glob('./assets/images/*.{png,jpg,jpeg,svg,webp}', { eager: true })
 ).map((mod) => (mod as { default: string }).default);
 
 const Gallery: React.FC = () => {
