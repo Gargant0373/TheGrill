@@ -21,7 +21,7 @@
 }
 
 .scroll-button {
-  position: absolute;
+  position: fixed;
   bottom: 10vh;
   left: 50%;
   transform: translateX(-50%);
