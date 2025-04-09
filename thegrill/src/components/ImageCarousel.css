@@ -60,6 +60,9 @@
   cursor: pointer;
 
   z-index: 50;
+  
+  background: none;
+  border: none;
 }
 
 .nav-button img {
