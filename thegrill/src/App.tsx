@@ -30,7 +30,7 @@ function App() {
             &nbsp;
             <DropletAnimation />
           </div>
-          <img src="./assets/beer_grill_top.png" alt="Beer grill" className="beer-image beer" style={{
+          <img src="./assets/beergrill.webp" alt="Beer grill" className="beer-image beer" style={{
             zIndex: 10,
           }} />
           <img src="./assets/beer_grill_bot.png" alt="Beer grill bot" className="beer-image beer" />
