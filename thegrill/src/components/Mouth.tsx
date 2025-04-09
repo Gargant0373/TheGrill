@@ -58,7 +58,7 @@ function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, view
         >
           <motion.img
             className="upper"
-            src={mobile ? "./assets/toplip_m.png" : "./assets/toplip.png"}
+            src={mobile ? "./assets/toplip_ms3.png" : "./assets/toplip.png"}
             alt="Top lip of The Grill Master"
             style={{ zIndex: 5, top: smoothedLipOffset }}
           />
