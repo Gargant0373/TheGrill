@@ -1,49 +1,36 @@
-import { MotionValue, motion, useSpring, useTransform } from "motion/react";
-import { useEffect, useState } from "react";
+import { MotionValue, motion, useTransform } from "motion/react";
 import "./About.css";
 
 function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, viewportHeight: number }) {
 
   const infoScale = useTransform(scrollY, [0, viewportHeight], [1.0, 1.1])
-  const smoothedInfoScale = useSpring(infoScale, { stiffness: 1000, damping: 50 })
-  const [isFixed, setIsFixed] = useState(true); // ✅ State to track position
-
-  useEffect(() => {
-    const updatePosition = () => {
-      setIsFixed(scrollY.get() <= viewportHeight);
-    };
-
-    const unsubscribe = scrollY.on("change", updatePosition);
-
-    return () => unsubscribe();
-  }, [scrollY, viewportHeight]);
 
   return (
-    <motion.div
-      className="about"
-      style={{
-        position: isFixed ? 'fixed' : 'absolute',
-        top: isFixed ? '0' : '100vh',
-        scale: smoothedInfoScale
-      }}
-    >
-      <motion.img
-        className="inside-mouth"
-        src="./assets/inside_mouth_anim.webp"
-        alt="Inside of The Grill Master's mouth"
-        style={{ zIndex: 1 }}
-      />
+    <div className="about-wrapper">
       <motion.div
-        className="about-content"
-        style={{ zIndex: 3 }}
+        className="about"
+        style={{
+          scale: infoScale
+        }}
       >
-        <h1>Here's what you need to know!</h1>
-        <p>On May 1st, we feast for the 5th time at Delftse Hout.</p>
-        <p>The fire will char the meat, and the mere sight of beer will make us salivate.</p>
-        <p>Bring your grill, your food, your fire, but most importantly, your thirst.</p>
-        <p>If you don’t feed the flames, the flames won’t feed you!</p>
+        <motion.img
+          className="inside-mouth"
+          src="./assets/inside_mouth_anim.webp"
+          alt="Inside of The Grill Master's mouth"
+          style={{ zIndex: 1 }}
+        />
+        <motion.div
+          className="about-content"
+          style={{ zIndex: 3 }}
+        >
+          <h1>Here's what you need to know!</h1>
+          <p>On May 1st, we feast for the 5th time at Delftse Hout.</p>
+          <p>The fire will char the meat, and the mere sight of beer will make us salivate.</p>
+          <p>Bring your grill, your food, your fire, but most importantly, your thirst.</p>
+          <p>If you don’t feed the flames, the flames won’t feed you!</p>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 

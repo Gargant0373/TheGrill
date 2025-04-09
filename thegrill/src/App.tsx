@@ -1,15 +1,17 @@
+import { useScroll } from "motion/react";
 import { useEffect, useState } from 'react';
 import './App.css';
+import AboutSection from './components/About';
 import EventMap from './components/EventMap';
 import Rules from './components/Guidelines';
-import { useScroll } from "motion/react"
 import ImageCarousel from './components/ImageCarousel';
-import Mouth from './components/Mouth'
-import AboutSection from './components/About';
-import DropletAnimation from './components/DropletAnimation';
+import Mouth from './components/Mouth';
 
 function App() {
   const { scrollY } = useScroll();
+
+  // tried to do this without rerender but it has issues on my stupid phone
+  // cause my browser does funny things
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
   useEffect(() => {
@@ -24,15 +26,13 @@ function App() {
       <Mouth scrollY={scrollY} viewportHeight={viewportHeight} />
       <AboutSection scrollY={scrollY} viewportHeight={viewportHeight} />
 
-      <div style={{ height: 2.1 * viewportHeight }} />
-
       <div className="content">
         <div className="lhs-content">
           <div className="beer-drop-container">
             &nbsp;
-            <DropletAnimation />
+            <img src="./assets/droplet.webp" alt="Droplet" className="beer-drop" />
           </div>
-          <img src="./assets/beer_grill_top.png" alt="Beer grill" className="beer-image beer" style={{
+          <img src="./assets/beer_grill_top.webp" alt="Beer grill" className="beer-image beer" style={{
             zIndex: 10,
           }} />
           <img src="./assets/beer_grill_bot.png" alt="Beer grill bot" className="beer-image beer" />
