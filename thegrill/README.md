@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# TheGrill
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web experience for the TheGrill event. This project celebrates the 1st of May with a unique grilling experience at Delftse Hout, featuring interactive animations, an image carousel, event guidelines, and more.
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** with TypeScript
+- **Vite** as the build tool
+- **React Router** for routing
+- **Motion & Framer Motion** for animations and transitions
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository.
+2. Install dependencies:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+   ```sh
+   npm install
+   ```
+
+## Development
+
+To run the project in development mode:
+
+```sh
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then browse to [http://localhost:3000](http://localhost:3000) (or the port Vite uses).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Building for Production
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Build the project by running:
+
+```sh
+npm run build
 ```
+
+## Project Structure
+
+- **[index.html](index.html)**  
+  The main HTML file defining meta tags, viewport settings, and linking the entry script.
+
+- **[package.json](package.json)**  
+  Contains scripts, dependencies, and project configuration.
+
+- **[vite.config.ts](vite.config.ts)**  
+  Vite configuration including React and SVGR plugin support.
+
+- **TypeScript Configuration Files**
+
+  - [tsconfig.json](tsconfig.json)
+  - [tsconfig.app.json](tsconfig.app.json)
+  - [tsconfig.node.json](tsconfig.node.json)
+
+- **Source Code (in [src](src/))**
+  - [App.tsx](src/App.tsx): Main application component integrating components like [AboutSection](src/components/About.tsx), [EventMap](src/components/EventMap.tsx), [Guidelines](src/components/Guidelines.tsx), [ImageCarousel](src/components/ImageCarousel.tsx), and [Mouth](src/components/Mouth.tsx).
+  - [main.tsx](src/main.tsx): The entry point that initializes the React application and sets up routing.
+  - [components](src/components/): Reusable UI components.
+  - Assets, styles, and fonts to enhance the experience.
+
+## Linting & Code Quality
+
+Lint your code using:
+
+```sh
+npm run lint
+```
+
+The project uses ESLint with rules configured in [eslint.config.js](eslint.config.js).
+
+## Deployment
+
+After running the production build (`npm run build`), deploy the generated static files following your preferred hosting solution.
+
+## Contributing
+
+Contributions are welcome! Please follow the coding styles and run lint checks before submitting your pull requests.
+
+## License
+
+This project is licensed under the MIT License.

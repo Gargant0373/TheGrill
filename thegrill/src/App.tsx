@@ -1,12 +1,11 @@
+import { useScroll } from "motion/react";
 import { useEffect, useState } from 'react';
 import './App.css';
+import AboutSection from './components/About';
 import EventMap from './components/EventMap';
 import Rules from './components/Guidelines';
-import { useScroll } from "motion/react"
 import ImageCarousel from './components/ImageCarousel';
-import Mouth from './components/Mouth'
-import AboutSection from './components/About';
-import DropletAnimation from './components/DropletAnimation';
+import Mouth from './components/Mouth';
 
 function App() {
   const { scrollY } = useScroll();
