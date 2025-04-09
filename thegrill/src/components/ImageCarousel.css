@@ -78,6 +78,21 @@
   right: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .nav-button img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .left {
+    left: 0px;
+  }
+
+  .right {
+    right: 0px;
+  }
+}
+
 .fullscreen-container {
   position: fixed;
   top: 0;

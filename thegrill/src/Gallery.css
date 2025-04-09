@@ -133,6 +133,7 @@
 
     .gallery-section h2 {
         font-size: 2rem;
+        text-align: right;
     }
 
     .gallery-grid {
@@ -142,5 +143,12 @@
 
     .modal {
         display: flex;
+    }
+
+    .back-button {
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+        top: 5px;
+        left: 10px;
     }
 } 
