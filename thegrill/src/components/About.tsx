@@ -15,7 +15,7 @@ function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number
       >
         <motion.img
           className="inside-mouth"
-          src="./assets/inside_mouth_anim.webp"
+          src="./assets/hanging_guy_optimized.gif"
           alt="Inside of The Grill Master's mouth"
           style={{ zIndex: 1 }}
         />
