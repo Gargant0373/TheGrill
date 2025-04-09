@@ -10,6 +10,9 @@ import DropletAnimation from './components/DropletAnimation';
 
 function App() {
   const { scrollY } = useScroll();
+
+  // tried to do this without rerender but it has issues on my stupid phone
+  // cause my browser does funny things
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
   useEffect(() => {
@@ -18,6 +21,8 @@ function App() {
 
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
+
+  // const viewportHeight = window.innerHeight;
 
   return (
     <>
