@@ -47,6 +47,10 @@
   width: 100%;
 }
 
+.about-content b {
+  color: var(--accent-font-color);
+}
+
 @media (max-width: 768px) {
   .about-content {
     width: 80%;

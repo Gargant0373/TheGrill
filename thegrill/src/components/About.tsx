@@ -24,9 +24,9 @@ function AboutSection({ scrollY, viewportHeight }: { scrollY: MotionValue<number
           style={{ zIndex: 3 }}
         >
           <h1>Here's what you need to know!</h1>
-          <p>On May 1st, we feast for the 5th time at Delftse Hout.</p>
+          <p>On <b>May 1st</b>, we feast for the 5th time at <b>Delftse Hout.</b></p>
           <p>The fire will char the meat, and the mere sight of beer will make us salivate.</p>
-          <p>Bring your grill, your food, your fire, but most importantly, your thirst.</p>
+          <p>Bring your <b>own grill</b>, your <b>own food</b>, your <b>own fire</b>, but most importantly, <b>your thirst</b>.</p>
           <p>If you don’t feed the flames, the flames won’t feed you!</p>
         </motion.div>
       </motion.div>
