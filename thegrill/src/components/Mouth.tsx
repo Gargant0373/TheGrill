@@ -1,6 +1,6 @@
 import { motion, useTransform, useSpring, MotionValue } from "motion/react"
 import "./Mouth.css"
-
+import { useState, useEffect } from "react"
 function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, viewportHeight: number }) {
   const lipOffset = useTransform(scrollY, [0, viewportHeight], [0, -1 * viewportHeight])
   const lipTransitionOpacity = useTransform(scrollY, [0, 0.5 * viewportHeight], [1, 0])
@@ -16,12 +16,23 @@ function Mouth({ scrollY, viewportHeight }: { scrollY: MotionValue<number>, view
     window.scrollTo({ top: viewportHeight, behavior: "smooth" });
   };
 
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY < 0.9 * viewportHeight); // adjust threshold here
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <motion.button
         onClick={scrollTo100vh}
         className="scroll-button"
-        style={{ opacity: lipTransitionOpacity }}
+        style={{ opacity: lipTransitionOpacity, display: isVisible ? 'block' : 'none' }}
       >
         <img
           src='./assets/arrow-down.svg'
