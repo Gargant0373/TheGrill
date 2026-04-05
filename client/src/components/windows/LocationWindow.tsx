@@ -3,7 +3,7 @@ import { Window } from "../Window";
 
 function LocationWindow(props: WindowManagerRenderProps) {
   return (
-    <Window {...props}>
+    <Window {...props} aspectRatio="4-3">
       <div className="flex flex-col gap-3">
         <div>
           <p className="m-0">126 Market Street, Riverside.</p>

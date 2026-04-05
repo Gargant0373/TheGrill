@@ -3,7 +3,7 @@ import { Window } from "../Window";
 
 function AboutWindow(props: WindowManagerRenderProps) {
   return (
-    <Window {...props}>
+    <Window {...props} aspectRatio="1-1">
       <p className="m-0">
         The Grill is a neighborhood spot focused on open-flame cooking and seasonal ingredients.
       </p>

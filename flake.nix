@@ -11,26 +11,26 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       devShells.default = pkgs.mkShell {
-      buildInputs = [
-        pkgs.nodejs_25
-        pkgs.nodePackages.npm
-        pkgs.nodePackages.pnpm
-        pkgs.nodePackages.yarn
+        buildInputs = [
+          pkgs.nodejs_25
+          pkgs.nodePackages.npm
+          pkgs.nodePackages.pnpm
+          pkgs.nodePackages.yarn
 
-        # TypeScript tooling
-        pkgs.nodePackages.typescript
+          # TypeScript tooling
+          pkgs.nodePackages.typescript
 
-        pkgs.git
-        pkgs.openssl
-        # pkgs.postgresql
-      ];
+          pkgs.git
+          pkgs.openssl
+          # pkgs.postgresql
+        ];
 
-      shellHook = ''
-        echo "Dev environment ready"
-        node -v
-        npm -v
-      '';
-    };
+        shellHook = ''
+          echo "Dev environment ready"
+          node -v
+          npm -v
+        '';
+      };
   });
 }
 

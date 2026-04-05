@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+
+import { useIsMobile } from "../hooks/useIsMobile";
 import { WindowFocusEvent } from "../types/window";
 import windowsRegistry from "./windows/registry";
 import { Countdown } from "./Countdown";
@@ -7,6 +9,7 @@ import { BACKGROUND_VIDEO_SOURCE, WINDOW_FOCUS_EVENT } from "../constants";
 export function WindowManager() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [windowOrder, setWindowOrder] = useState(() => windowsRegistry.map(({ id }) => id));
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handler: EventListener = (e) => {
@@ -18,17 +21,24 @@ export function WindowManager() {
   }, []);
 
   return (
-    <section className="relative size-full overflow-hidden bg-red px-8 py-6">
+    <section className="relative size-full overflow-hidden bg-teal-900 px-0 sm:p-6">
       <div
         ref={containerRef}
-        className="relative z-10 size-full overflow-hidden rounded-md border-[3px] border-blue bg-beige"
+        className="relative z-10 size-full overflow-hidden sm:rounded-[100px] sm:border-3 border-emerald-600 bg-beige"
       >
-        <h1
-          className="pointer-events-none absolute left-1/2 top-1 z-20 -translate-x-1/2 whitespace-nowrap text-[clamp(3.2rem,12vw,9rem)] font-bold uppercase tracking-[0.02em] text-[#70ae03]"
-          style={{ WebkitTextStroke: "3px #0D3B89" }}
-        >
-          The grill
-        </h1>
+        {isMobile ? (
+          <img 
+            src="/assets/TheGrillLogo_Full_Background.svg"
+            className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 w-full h-auto"
+            alt="The Grill logo (mobile)"
+          />
+        ) : (
+          <img 
+            src="/assets/TheGrillLogo_Full.svg"
+            className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 w-6/10 h-auto mt-4"
+            alt="The Grill logo"
+          />
+        )}
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 px-4">
           <Countdown />
         </div>

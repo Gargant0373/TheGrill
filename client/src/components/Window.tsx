@@ -11,6 +11,20 @@ import { WINDOW_OPEN_EVENT } from "../constants";
 import usePositionedOverlay from "../hooks/usePositionedOverlay";
 import { PositionedOverlay } from "./PositionedOverlay";
 
+export type WindowAspectRatio = "1-1" | "4-3" | "16-10";
+
+const FRAME_SVGS: Record<WindowAspectRatio, string> = {
+  "1-1": "/assets/frames/Frame_1_1.svg",
+  "4-3": "/assets/frames/Frame_4_3.svg",
+  "16-10": "/assets/frames/Frame_16_10.svg",
+};
+
+const ASPECT_RATIO_VALUES: Record<WindowAspectRatio, number> = {
+  "1-1": 1,
+  "4-3": 4/3,
+  "16-10": 16/10,
+};
+
 type WindowProps = {
   id: WindowType;
   children: ReactNode;
@@ -18,6 +32,7 @@ type WindowProps = {
   containerRef: RefObject<HTMLDivElement | null>;
   zIndex: number;
   defaultPosition?: Position;
+  aspectRatio?: WindowAspectRatio;
 };
 
 export function Window({
@@ -27,6 +42,7 @@ export function Window({
   containerRef,
   zIndex,
   defaultPosition,
+  aspectRatio = "1-1",
 }: WindowProps) {
   const { position, setPosition, isClosing, closeOverlay } = usePositionedOverlay();
   const windowRef = useRef<HTMLDivElement | null>(null);
@@ -157,8 +173,17 @@ export function Window({
         )
           beginDrag(e);
       }}
-      className="absolute w-105 max-w-[calc(100%-1rem)] cursor-move rounded-md border-2 border-blue bg-[#f7edd4] p-1.5"
+      className={`absolute w-105 max-w-[calc(100%-1rem)] cursor-move rounded-md bg-[#f7edd4] p-1.5 window-frame-svg ${className ?? ""}`}
+      style={{
+        '--window-frame-image': `url('${FRAME_SVGS[aspectRatio]}')`,
+        aspectRatio: ASPECT_RATIO_VALUES[aspectRatio],
+      } as React.CSSProperties}
     >
+      {/* SVG frame overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -m-4 inset-0 z-20 window-frame-svg-overlay"
+      />
       <header className="mb-1 flex select-none items-center gap-2">
         <button
           type="button"

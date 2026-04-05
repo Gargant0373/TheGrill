@@ -7,6 +7,31 @@
   src: url("/fonts/Ishmeria.ttf") format("truetype");
 }
 
+/* Window SVG frame styling */
+.window-frame-svg {
+  position: relative;
+  border: none !important;
+  padding: 2.5rem !important;
+  background-color: #f7edd4;
+  aspect-ratio: var(--window-aspect-ratio, 1/1);
+  min-width: 12rem;
+  min-height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.window-frame-svg-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background-image: var(--window-frame-image);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.75rem;
+}
+
 @layer base {
   html,
   body,
