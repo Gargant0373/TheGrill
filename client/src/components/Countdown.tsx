@@ -18,10 +18,10 @@ function getTimeRemainingParts(now: Date): CountdownPart[] {
   const seconds = totalSeconds % 60;
 
   return [
-    { label: "zile", value: days },
-    { label: "ore", value: hours },
-    { label: "minute", value: minutes },
-    { label: "secunde", value: seconds },
+    { label: "days", value: days },
+    { label: "hours", value: hours },
+    { label: "minutes", value: minutes },
+    { label: "seconds", value: seconds },
   ];
 }
 
@@ -29,7 +29,7 @@ function formatValue(value: number): string {
   return value.toString().padStart(2, "0");
 }
 
-export function Countdown() {
+export default function Countdown() {
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
@@ -56,22 +56,16 @@ export function Countdown() {
 
   if (state === "meal-time") {
     return (
-      <p
-        className="text-center text-4xl font-black uppercase text-[#70ae03]"
-        style={{ WebkitTextStroke: "1.75px #0D3B89" }}
-      >
-        Poftă bună!
+      <p className="text-outline-green-light text-center font-black uppercase text-green-dark leading-none text-[clamp(3rem,10vw,6rem)] [@supports(font-size:1cqw)]:text-[min(16cqw,6rem)]">
+        Enjoy your meal!
       </p>
     );
   }
 
   if (state === "next-year") {
     return (
-      <p
-        className="text-center text-3xl font-black uppercase text-[#70ae03]"
-        style={{ WebkitTextStroke: "1.5px #0D3B89" }}
-      >
-        Ne vedem anul viitor
+      <p className="text-outline-green-light text-center font-black uppercase text-green-dark leading-none text-[clamp(3rem,10vw,6rem)] [@supports(font-size:1cqw)]:text-[min(16cqw,6rem)]">
+        See you next year
       </p>
     );
   }
@@ -79,19 +73,16 @@ export function Countdown() {
   const parts = getTimeRemainingParts(now);
 
   return (
-    <div className="flex items-center justify-center gap-4 sm:gap-6">
+    <div className="flex items-center justify-center gap-3 sm:gap-6">
       {parts.map(({ label, value }) => (
         <div
           key={label}
-          className="flex min-w-17 flex-col items-center rounded-md border-2 border-blue/70 bg-beige/70 px-3 py-3 backdrop-blur-[1px] sm:min-w-20 sm:px-4"
+          className="flex min-w-17 flex-col items-center px-2 py-1 sm:min-w-20 sm:px-3"
         >
-          <span
-            className="text-3xl font-black leading-none text-[#70ae03]"
-            style={{ WebkitTextStroke: "1px #0D3B89" }}
-          >
+          <span className="text-outline-green-light font-black leading-none text-green-dark text-[clamp(3rem,10vw,6rem)] [@supports(font-size:1cqw)]:text-[min(16cqw,6rem)]">
             {formatValue(value)}
           </span>
-          <span className="mt-1 text-[0.72rem] font-bold uppercase tracking-[0.08em] text-blue sm:text-sm">
+          <span className="text-outline-pink-light mt-1 font-bold uppercase tracking-[0.08em] text-purple-dark leading-none text-[clamp(0.95rem,2.8vw,1.25rem)] [@supports(font-size:1cqw)]:text-[min(4.6cqw,1.25rem)]">
             {label}
           </span>
         </div>

@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { WindowType } from "../types/window";
-import usePositionedOverlay from "../hooks/usePositionedOverlay";
-import { PositionedOverlay } from "./PositionedOverlay";
-import { WindowButton } from "./WindowButton";
+import usePositionedOverlay from "../../hooks/usePositionedOverlay";
+import PositionedOverlay from "./PositionedOverlay";
+import WindowButton from "./WindowButton";
+import { PageType } from "../../types/page";
 
-export function ContextMenu() {
+export default function ContextMenu() {
   const { position, setPosition, isClosing, closeOverlay } = usePositionedOverlay();
 
   useEffect(() => {
@@ -26,15 +26,15 @@ export function ContextMenu() {
     <PositionedOverlay
       position={position}
       isClosing={isClosing}
-      className="pointer-events-auto fixed z-50 w-40 rounded-md border border-blue bg-[#f7edd4] p-2"
+      className="pointer-events-auto fixed z-50 w-40 rounded-md border border-green-light bg-yellow-surface p-2"
       onClick={(e) => e.stopPropagation()}
     >
-      {[WindowType.ABOUT, WindowType.SETTINGS].map((e) => (
+      {[PageType.ABOUT].map((e) => (
         <WindowButton
           key={e}
           event={e}
           label={e[0].toUpperCase() + e.slice(1)}
-          className="block w-full cursor-pointer px-2 py-1 text-left text-xs text-blue-dark hover:bg-blue/10 transition"
+          className="block w-full cursor-pointer px-2 py-1 text-left text-xs text-purple-dark hover:bg-purple/10 transition"
           onClick={closeOverlay}
         />
       ))}

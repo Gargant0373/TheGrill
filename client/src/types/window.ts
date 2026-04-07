@@ -1,24 +1,16 @@
 import type { RefObject } from "react";
 import { WINDOW_FOCUS_EVENT, WINDOW_OPEN_EVENT } from "../constants";
-
-export enum WindowType {
-  ABOUT = "about",
-  LOCATION = "location",
-  GUIDELINES = "guidelines",
-  PICTURES = "pictures",
-  CONTACT = "contact",
-  SETTINGS = "settings",
-}
+import type { PageType } from "./page";
 
 export type WindowOpenMode = "default" | "center";
 
 export type WindowOpenPayload = {
-  type: WindowType;
+  type: PageType;
   openMode?: WindowOpenMode;
 };
 
 export type WindowFocusPayload = {
-  type: WindowType;
+  type: PageType;
 };
 
 export class WindowOpenEvent extends CustomEvent<WindowOpenPayload> {
@@ -32,16 +24,6 @@ export class WindowFocusEvent extends CustomEvent<WindowFocusPayload> {
     super(WINDOW_FOCUS_EVENT, { detail });
   }
 }
-
-export type WindowManagerRenderProps = {
-  id: WindowType;
-  containerRef: RefObject<HTMLDivElement | null>;
-  zIndex: number;
-};
-
-export type WindowModule = {
-  default: (props: WindowManagerRenderProps) => React.JSX.Element;
-};
 
 export type Position = {
   x: number;

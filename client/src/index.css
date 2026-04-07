@@ -1,35 +1,16 @@
-@import url("https://fonts.cdnfonts.com/css/everyday");
 @config "../tailwind.config.js";
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Ishmeria";
-  src: url("/fonts/Ishmeria.ttf") format("truetype");
+  font-family: "Retro Wild";
+  src: url("/fonts/retro-wild.otf") format("opentype");
+  font-display: swap;
 }
 
-/* Window SVG frame styling */
-.window-frame-svg {
-  position: relative;
-  border: none !important;
-  padding: 2.5rem !important;
-  background-color: #f7edd4;
-  aspect-ratio: var(--window-aspect-ratio, 1/1);
-  min-width: 12rem;
-  min-height: 12rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.window-frame-svg-overlay {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-  background-image: var(--window-frame-image);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 0.75rem;
+@font-face {
+  font-family: "Bellybeans";
+  src: url("/fonts/bellybeans.ttf") format("truetype");
+  font-display: swap;
 }
 
 @layer base {
@@ -39,7 +20,11 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: "Everyday", "Trebuchet MS", "Segoe UI", sans-serif;
+    font-family: "Retro Wild", "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
@@ -52,5 +37,52 @@
     font-family: inherit;
     user-select: none;
     -webkit-user-select: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bellybeans", "Retro Wild", "Trebuchet MS", "Segoe UI", sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-outline-green-light {
+    -webkit-text-stroke: 2px var(--color-green-light, #8ab468);
+    paint-order: stroke fill;
+    text-shadow:
+      1px 0 var(--color-green-light, #8ab468),
+      -1px 0 var(--color-green-light, #8ab468),
+      0 1px var(--color-green-light, #8ab468),
+      0 -1px var(--color-green-light, #8ab468),
+      1px 1px var(--color-green-light, #8ab468),
+      -1px -1px var(--color-green-light, #8ab468),
+      1px -1px var(--color-green-light, #8ab468),
+      -1px 1px var(--color-green-light, #8ab468),
+      2px 0 var(--color-green-light, #8ab468),
+      -2px 0 var(--color-green-light, #8ab468),
+      0 2px var(--color-green-light, #8ab468),
+      0 -2px var(--color-green-light, #8ab468);
+  }
+
+  .text-outline-pink-light {
+    -webkit-text-stroke: 1.5px var(--color-purple-light, #d979a2);
+    paint-order: stroke fill;
+    text-shadow:
+      1px 0 var(--color-purple-light, #d979a2),
+      -1px 0 var(--color-purple-light, #d979a2),
+      0 1px var(--color-purple-light, #d979a2),
+      0 -1px var(--color-purple-light, #d979a2),
+      1px 1px var(--color-purple-light, #d979a2),
+      -1px -1px var(--color-purple-light, #d979a2),
+      1px -1px var(--color-purple-light, #d979a2),
+      -1px 1px var(--color-purple-light, #d979a2),
+      2px 0 var(--color-purple-light, #d979a2),
+      -2px 0 var(--color-purple-light, #d979a2),
+      0 2px var(--color-purple-light, #d979a2),
+      0 -2px var(--color-purple-light, #d979a2);
   }
 }

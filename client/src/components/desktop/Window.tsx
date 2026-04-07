@@ -6,10 +6,11 @@ import {
   type ReactNode,
   type RefObject,
 } from "react";
-import { WindowFocusEvent, WindowOpenEvent, type Position, type WindowType } from "../types/window";
-import { WINDOW_OPEN_EVENT } from "../constants";
-import usePositionedOverlay from "../hooks/usePositionedOverlay";
-import { PositionedOverlay } from "./PositionedOverlay";
+import { WindowFocusEvent, WindowOpenEvent, type Position } from "../../types/window";
+import { WINDOW_OPEN_EVENT } from "../../constants";
+import usePositionedOverlay from "../../hooks/usePositionedOverlay";
+import PositionedOverlay from "./PositionedOverlay";
+import type { PageType } from "../../types/page";
 
 export type WindowAspectRatio = "1-1" | "4-3" | "16-10";
 
@@ -21,12 +22,12 @@ const FRAME_SVGS: Record<WindowAspectRatio, string> = {
 
 const ASPECT_RATIO_VALUES: Record<WindowAspectRatio, number> = {
   "1-1": 1,
-  "4-3": 4/3,
-  "16-10": 16/10,
+  "4-3": 4 / 3,
+  "16-10": 16 / 10,
 };
 
 type WindowProps = {
-  id: WindowType;
+  id: PageType;
   children: ReactNode;
   className?: string;
   containerRef: RefObject<HTMLDivElement | null>;
@@ -35,7 +36,7 @@ type WindowProps = {
   aspectRatio?: WindowAspectRatio;
 };
 
-export function Window({
+export default function Window({
   id,
   children,
   className,
@@ -173,23 +174,25 @@ export function Window({
         )
           beginDrag(e);
       }}
-      className={`absolute w-105 max-w-[calc(100%-1rem)] cursor-move rounded-md bg-[#f7edd4] p-1.5 window-frame-svg ${className ?? ""}`}
-      style={{
-        '--window-frame-image': `url('${FRAME_SVGS[aspectRatio]}')`,
-        aspectRatio: ASPECT_RATIO_VALUES[aspectRatio],
-      } as React.CSSProperties}
+      className={`absolute w-105 max-w-[calc(100%-1rem)] min-w-48 min-h-48 cursor-move rounded-md bg-yellow-surface p-10 flex flex-col justify-start ${className ?? ""}`}
+      style={
+        {
+          "--window-frame-image": `url('${FRAME_SVGS[aspectRatio]}')`,
+          aspectRatio: ASPECT_RATIO_VALUES[aspectRatio],
+        } as React.CSSProperties
+      }
     >
-      {/* SVG frame overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -m-4 inset-0 z-20 window-frame-svg-overlay"
+        className="pointer-events-none absolute -m-4 inset-0 z-20 rounded-[0.75rem] bg-no-repeat bg-center bg-[length:100%_100%]"
+        style={{ backgroundImage: "var(--window-frame-image)" }}
       />
       <header className="mb-1 flex select-none items-center gap-2">
         <button
           type="button"
           data-window-close="true"
           onClick={closeOverlay}
-          className="group inline-flex cursor-pointer items-center justify-center rounded-sm bg-transparent p-1 text-lg font-black leading-none outline-none transition-colors duration-150 active:bg-blue-dark"
+          className="group inline-flex cursor-pointer items-center justify-center rounded-sm bg-transparent p-1 text-lg font-black leading-none outline-none transition-colors duration-150 active:bg-purple-dark"
         >
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAQMAAAAlhr+SAAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAAB1JREFUCNdjOMADQgYGIMRzAISYGYAIwoaIQ9QAAKYLB+eSH+asAAAAAElFTkSuQmCC"
@@ -198,11 +201,11 @@ export function Window({
           />
         </button>
         <div className="flex min-h-7 flex-1 cursor-move items-center" />
-        <span className="text-lg uppercase tracking-tight text-blue-dark font-ishmeria">{id}</span>
+        <span className="text-lg uppercase tracking-tight text-purple-dark font-title">{id}</span>
       </header>
       <div
         data-window-content="true"
-        className={`cursor-auto rounded-md border border-blue bg-[#f9f6ee] p-3 ${className ?? ""}`.trim()}
+        className={`cursor-auto rounded-md border border-green-light bg-yellow-paper p-3 ${className ?? ""}`.trim()}
       >
         {children}
       </div>

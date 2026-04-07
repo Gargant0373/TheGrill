@@ -5,8 +5,10 @@ import { useState, useEffect } from "react";
  * @param breakpoint - The max width in px to consider as mobile (default: 640)
  * @returns boolean - true if mobile, false otherwise
  */
-export function useIsMobile(breakpoint = 640) {
-  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth < breakpoint : false);
+export default function useIsMobile(breakpoint = 640) {
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth < breakpoint : false,
+  );
 
   useEffect(() => {
     function handleResize() {

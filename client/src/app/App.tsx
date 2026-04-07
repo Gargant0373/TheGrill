@@ -1,25 +1,32 @@
 import { useEffect } from "react";
-import { ContextMenu } from "../components/ContextMenu";
-import { Navbar } from "../components/Navbar.tsx";
-import { WindowManager } from "../components/WindowManager";
-import { WindowOpenEvent, WindowType } from "../types/window";
+import ContextMenu from "../components/desktop/ContextMenu.tsx";
+import Navbar from "../components/desktop/Navbar.tsx";
+import PageManager from "../components/PageManager.tsx";
+import useIsMobile from "../hooks/useIsMobile";
+import { WindowOpenEvent } from "../types/window";
+import { PageType } from "../types/page.ts";
 
-export function App() {
+export default function App() {
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     const normalized = decodeURIComponent(window.location.pathname)
       .replace(/^\/+|\/+$/g, "")
-      .toLowerCase() as WindowType;
+      .toLowerCase() as PageType;
 
-    if (normalized && !normalized.includes("/") && Object.values(WindowType).includes(normalized)) {
+    if (Object.values(PageType).includes(normalized)) {
       window.dispatchEvent(new WindowOpenEvent({ type: normalized, openMode: "center" }));
     }
   }, []);
 
   return (
-    <div className="relative size-full overflow-hidden bg-beige-dark">
-      <WindowManager />
-      <Navbar />
-      <ContextMenu />
+    <div className="relative size-full overflow-hidden bg-yellow-dark">
+      <PageManager />
+      {!isMobile && (
+        <>
+          <Navbar /> <ContextMenu />
+        </>
+      )}
     </div>
   );
 }

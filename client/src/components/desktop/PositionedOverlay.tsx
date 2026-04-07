@@ -1,6 +1,6 @@
 import { forwardRef, type ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
-import type { Position } from "../types/window";
+import type { Position } from "../../types/window";
 
 type PositionedOverlayProps = {
   position: Position | null;
@@ -8,7 +8,7 @@ type PositionedOverlayProps = {
   zIndex?: number;
 } & ComponentPropsWithoutRef<"div">;
 
-export const PositionedOverlay = forwardRef<HTMLDivElement, PositionedOverlayProps>(
+export default forwardRef<HTMLDivElement, PositionedOverlayProps>(
   ({ position, isClosing, children, className = "", zIndex, style, ...props }, ref) => {
     if (!position && !isClosing) return null;
     return (
@@ -29,4 +29,3 @@ export const PositionedOverlay = forwardRef<HTMLDivElement, PositionedOverlayPro
     );
   },
 );
-PositionedOverlay.displayName = "PositionedOverlay";

@@ -1,12 +1,13 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { WindowOpenEvent, type WindowType } from "../types/window";
+import { WindowOpenEvent } from "../../types/window";
+import type { PageType } from "../../types/page";
 
-type WindowButtonProps = { event: WindowType; icon?: ReactNode; label: string } & Omit<
+type WindowButtonProps = { event: PageType; icon?: ReactNode; label: string } & Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
   "children"
 >;
 
-export function WindowButton({ event, icon, label, onClick, ...props }: WindowButtonProps) {
+export default function WindowButton({ event, icon, label, onClick, ...props }: WindowButtonProps) {
   return (
     <button
       {...props}

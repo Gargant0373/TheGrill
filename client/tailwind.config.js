@@ -4,25 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        red: {
-          light: "#ff667b",
-          DEFAULT: "#f60820",
-          dark: "#aa0617",
-        },
         green: {
-          light: "#96ce2f",
-          DEFAULT: "#70ae03",
-          dark: "#4a7302",
+          light: "#8ab468",
+          dark: "#0c5454",
+          darkest: "#083838",
         },
-        blue: {
-          light: "#2fc9e0",
-          DEFAULT: "#0197af",
-          dark: "#016678",
+        yellow: {
+          light: "#fbe2a0",
+          DEFAULT: "#f5c12d",
+          dark: "#cc9a1f",
+          surface: "#f7edd4",
+          paper: "#f9f6ee",
         },
-        beige: {
-          light: "#f6e8d8",
-          DEFAULT: "#f2e3d0",
-          dark: "#bfae9f",
+        purple: {
+          light: "#d979a2",
+          DEFAULT: "#b25085",
+          dark: "#6f2d54",
         },
       },
       keyframes: {
@@ -52,7 +49,8 @@ export default {
         "window-close": "windowClose 160ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards",
       },
       fontFamily: {
-        ishmeria: ['"Ishmeria"', "serif"],
+        sans: ['"Retro Wild"', "Trebuchet MS", "Segoe UI", "sans-serif"],
+        title: ['"Bellybeans"', '"Retro Wild"', "Trebuchet MS", "Segoe UI", "sans-serif"],
       },
     },
   },
