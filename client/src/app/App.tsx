@@ -3,19 +3,17 @@ import ContextMenu from "../components/desktop/ContextMenu.tsx";
 import Navbar from "../components/desktop/Navbar.tsx";
 import PageManager from "../components/PageManager.tsx";
 import useIsMobile from "../hooks/useIsMobile";
+import { getPageTypeFromPath } from "../utils/misc.util";
 import { WindowOpenEvent } from "../types/window";
-import { PageType } from "../types/page.ts";
 
 export default function App() {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const normalized = decodeURIComponent(window.location.pathname)
-      .replace(/^\/+|\/+$/g, "")
-      .toLowerCase() as PageType;
+    const pageType = getPageTypeFromPath(window.location.pathname);
 
-    if (Object.values(PageType).includes(normalized)) {
-      window.dispatchEvent(new WindowOpenEvent({ type: normalized, openMode: "center" }));
+    if (pageType) {
+      window.dispatchEvent(new WindowOpenEvent({ type: pageType, openMode: "center" }));
     }
   }, []);
 

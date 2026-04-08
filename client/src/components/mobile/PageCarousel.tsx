@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent, ReactNode } from "react";
 
+import { PageType } from "../../types/page";
+import { getPageTypeFromPath, isPageType } from "../../utils/misc.util";
 import pageRegistry from "../pages/registry";
 import HomeSlide from "./HomeSlide";
 import PageSlide from "./PageSlide";
@@ -32,13 +34,18 @@ export default function PageCarousel() {
     [],
   );
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(() =>
+    Math.max(
+      0,
+      pages.findIndex((p) => p.id === getPageTypeFromPath(location.pathname)),
+    ),
+  );
   const [transition, setTransition] = useState<{
     next: number;
     dir: SwipeDirection;
     started: boolean;
   } | null>(null);
-  const activeRef = useRef(0);
+  const activeRef = useRef(active);
   const queuedDir = useRef<SwipeDirection | null>(null);
   const pointerStart = useRef<number | null>(null);
 
@@ -69,9 +76,18 @@ export default function PageCarousel() {
       return;
     }
 
-    activeRef.current = transition.next;
-    setActive(transition.next);
+    const next = transition.next;
+
+    activeRef.current = next;
+    setActive(next);
     setTransition(null);
+
+    const nextId = pages[next].id;
+    const nextPath = isPageType(nextId) ? `/${nextId}` : "/";
+
+    if (location.pathname !== nextPath) {
+      history.replaceState(null, "", nextPath);
+    }
 
     const queued = queuedDir.current;
     queuedDir.current = null;
