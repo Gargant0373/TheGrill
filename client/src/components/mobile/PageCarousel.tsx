@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent, ReactNode } from "react";
 
-import { PageType } from "../../types/page";
 import { getPageTypeFromPath, isPageType } from "../../utils/misc.util";
 import pageRegistry from "../pages/registry";
 import HomeSlide from "./HomeSlide";
@@ -134,26 +133,26 @@ export default function PageCarousel() {
       className="relative size-full overflow-hidden bg-teal-900"
       style={{ perspective: "1200px" }}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-40">
-        <div className="relative w-full aspect-[507.9408/186.47556]">
-          <div
-            className="absolute inset-0 bg-green-darkest [mask-image:url('/assets/TheGrillLogo_Full_Background.svg')] [mask-size:100%_100%] [mask-repeat:no-repeat] [mask-position:center] [-webkit-mask-image:url('/assets/TheGrillLogo_Full_Background.svg')] [-webkit-mask-size:100%_100%] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center]"
+      <div className="pointer-events-none absolute bottom-0 inset-x-0 z-40 w-full text-center [container-type:inline-size]">
+        <div className="relative w-full overflow-hidden">
+          <svg
+            viewBox="0 0 507.9408 186.47556"
+            preserveAspectRatio="none"
             aria-hidden="true"
-          />
-          <img
-            src="/assets/TheGrillLogo_Full_Background.svg"
-            className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] object-contain"
-            alt="The Grill logo (mobile)"
-          />
+            className="block h-20 w-full text-green-darkest"
+            style={{ transform: "scaleY(-1)" }}
+          >
+            <path
+              d="m 0,0 h 507.9408 l -2e-5,127.43765 C 435.02022,175.05885 368.23046,186.47556 253.97039,186.47556 146.062,186.51633 75.486219,171.45717 0,127.43765 Z"
+              fill="currentColor"
+            />
+          </svg>
+          <div className="absolute inset-x-0 top-0 flex flex-col items-center justify-center px-2 pt-2 pb-16">
+            <p className="text-outline-green-light font-black uppercase tracking-[0.08em] text-green-dark leading-none text-[clamp(3rem,10vw,6rem)] [@supports(font-size:1cqw)]:text-[min(16cqw,6rem)]">
+              Swipe
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="pointer-events-none absolute bottom-10 inset-x-0 z-40 w-full px-4 text-center [container-type:inline-size]">
-        <p className="text-outline-green-light font-black uppercase tracking-[0.08em] text-green-dark leading-none text-[clamp(3rem,10vw,6rem)] [@supports(font-size:1cqw)]:text-[min(16cqw,6rem)]">
-          Swipe
-        </p>
-        <p className="text-outline-green-light -mt-2 font-title text-green-dark leading-none rotate-2 text-[clamp(3rem,10vw,6rem)] [@supports(font-size:1cqw)]:text-[min(16cqw,6rem)]">
-          ➜
-        </p>
       </div>
       <div
         className="relative size-full touch-none"
