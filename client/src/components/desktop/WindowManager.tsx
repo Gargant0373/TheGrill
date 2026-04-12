@@ -4,7 +4,16 @@ import type { WindowFocusEvent } from "../../types/window";
 import BackgroundVideo from "../BackgroundVideo";
 import Countdown from "../Countdown";
 import pageRegistry from "../pages/registry";
-import Window from "./Window";
+import Window, { type WindowAspectRatio } from "./Window";
+import type { PageType } from "../../types/page";
+
+const WINDOW_RATIOS: Record<PageType, WindowAspectRatio> = {
+  about: "1-1",
+  contact: "1-1",
+  guidelines: "1-1",
+  location: "3-4",
+  pictures: "10-16",
+};
 
 export default function WindowManager() {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -42,6 +51,7 @@ export default function WindowManager() {
             id={id}
             containerRef={containerRef}
             zIndex={(windowOrder.indexOf(id) ?? 1) + 30}
+            aspectRatio={WINDOW_RATIOS[id] || "1-1"}
           >
             <Component />
           </Window>

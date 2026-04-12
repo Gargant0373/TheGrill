@@ -135,23 +135,10 @@ export default function PageCarousel() {
     >
       <div className="pointer-events-none absolute bottom-0 inset-x-0 z-40 w-full text-center [container-type:inline-size]">
         <div className="relative w-full overflow-hidden">
-          <svg
-            viewBox="0 0 507.9408 186.47556"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-            className="block h-20 w-full text-green-darkest"
-            style={{ transform: "scaleY(-1)" }}
-          >
-            <path
-              d="m 0,0 h 507.9408 l -2e-5,127.43765 C 435.02022,175.05885 368.23046,186.47556 253.97039,186.47556 146.062,186.51633 75.486219,171.45717 0,127.43765 Z"
-              fill="currentColor"
-            />
-          </svg>
-          <div className="absolute inset-x-0 top-0 flex flex-col items-center justify-center px-2 pt-2 pb-16">
-            <p className="text-outline-green-light font-black uppercase tracking-[0.08em] text-green-dark leading-none text-[clamp(3rem,10vw,6rem)] [@supports(font-size:1cqw)]:text-[min(16cqw,6rem)]">
-              Swipe
-            </p>
-          </div>
+          <img
+            src="/assets/swipe.svg"
+            alt="Swipe indicator"
+          />
         </div>
       </div>
       <div

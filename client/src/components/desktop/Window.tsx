@@ -12,17 +12,21 @@ import usePositionedOverlay from "../../hooks/usePositionedOverlay";
 import PositionedOverlay from "./PositionedOverlay";
 import type { PageType } from "../../types/page";
 
-export type WindowAspectRatio = "1-1" | "4-3" | "16-10";
+export type WindowAspectRatio = "1-1" | "3-4" | "4-3" | "10-16" | "16-10";
 
 const FRAME_SVGS: Record<WindowAspectRatio, string> = {
   "1-1": "/assets/frames/Frame_1_1.svg",
+  "3-4": "/assets/frames/Frame_3_4.svg",
   "4-3": "/assets/frames/Frame_4_3.svg",
+  "10-16": "/assets/frames/Frame_10_16.svg",
   "16-10": "/assets/frames/Frame_16_10.svg",
 };
 
 const ASPECT_RATIO_VALUES: Record<WindowAspectRatio, number> = {
   "1-1": 1,
+  "3-4": 3 / 4,
   "4-3": 4 / 3,
+  "10-16": 10 / 16,
   "16-10": 16 / 10,
 };
 
@@ -184,7 +188,7 @@ export default function Window({
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -m-4 inset-0 z-20 rounded-[0.75rem] bg-no-repeat bg-center bg-[length:100%_100%]"
+        className="pointer-events-none absolute -m-10 inset-0 z-20 bg-no-repeat bg-center bg-[length:100%_100%]"
         style={{ backgroundImage: "var(--window-frame-image)" }}
       />
       <header className="mb-1 flex select-none items-center gap-2">
@@ -205,7 +209,7 @@ export default function Window({
       </header>
       <div
         data-window-content="true"
-        className={`cursor-auto rounded-md border border-green-light bg-yellow-paper p-3 ${className ?? ""}`.trim()}
+        className={`cursor-auto rounded-md border border-green-light bg-yellow-paper p-3 overflow-auto ${className ?? ""}`.trim()}
       >
         {children}
       </div>
