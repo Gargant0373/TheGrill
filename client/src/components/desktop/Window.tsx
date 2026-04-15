@@ -178,7 +178,7 @@ export default function Window({
         )
           beginDrag(e);
       }}
-      className={`absolute w-105 max-w-[calc(100%-1rem)] min-w-48 min-h-48 cursor-move rounded-md bg-yellow-surface p-10 flex flex-col justify-start ${className ?? ""}`}
+      className={`absolute w-105 max-w-[calc(100%-1rem)] min-w-48 min-h-48 cursor-move rounded-md bg-yellow-light p-10 flex flex-col justify-start ${className ?? ""}`}
       style={
         {
           "--window-frame-image": `url('${FRAME_SVGS[aspectRatio]}')`,
@@ -209,7 +209,7 @@ export default function Window({
       </header>
       <div
         data-window-content="true"
-        className={`cursor-auto rounded-md border border-green-light bg-yellow-paper p-3 overflow-auto ${className ?? ""}`.trim()}
+        className={`cursor-auto rounded-md border border-green-light bg-yellow-surface p-3 overflow-auto ${className ?? ""}`.trim()}
       >
         {children}
       </div>

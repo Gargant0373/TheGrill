@@ -7,7 +7,7 @@ type PageSlideProps = {
 
 export default function PageSlide({ title, children }: PageSlideProps) {
   return (
-    <div className="absolute inset-0 z-30 overflow-auto bg-yellow text-lg text-purple">
+    <div className="absolute inset-0 z-30 overflow-auto bg-yellow-light text-lg text-purple">
       <div className="relative min-h-full px-20 pt-14 pb-40">
         <div className="pointer-events-none mx-auto mt-4 w-full max-w-[30rem]">
           <img
