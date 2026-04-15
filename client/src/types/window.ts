@@ -1,4 +1,3 @@
-import type { RefObject } from "react";
 import { WINDOW_FOCUS_EVENT, WINDOW_OPEN_EVENT } from "../constants";
 import type { PageType } from "./page";
 
