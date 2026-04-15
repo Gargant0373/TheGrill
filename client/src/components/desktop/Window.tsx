@@ -51,7 +51,16 @@ export default function Window({
 }: WindowProps) {
   const { position, setPosition, isClosing, closeOverlay } = usePositionedOverlay();
   const windowRef = useRef<HTMLDivElement | null>(null);
+  const scrollContentRef = useRef<HTMLDivElement | null>(null);
   const lastPositionRef = useRef<Position | null>(defaultPosition ?? null);
+
+  const resetScroll = useCallback(() => {
+    const content = scrollContentRef.current;
+    if (!content) return;
+
+    content.scrollTop = 0;
+    content.scrollLeft = 0;
+  }, []);
 
   const emitFocus = useCallback(
     () => window.dispatchEvent(new WindowFocusEvent({ type: id })),
@@ -120,11 +129,13 @@ export default function Window({
         setPosition(pos);
         lastPositionRef.current = pos;
       }
+
+      requestAnimationFrame(resetScroll);
       emitFocus();
     };
     window.addEventListener(WINDOW_OPEN_EVENT, handler);
     return () => window.removeEventListener(WINDOW_OPEN_EVENT, handler);
-  }, [centerPos, randomPos, id, emitFocus, setPosition]);
+  }, [centerPos, randomPos, id, emitFocus, setPosition, resetScroll]);
 
   useEffect(() => {
     const handler = () =>
@@ -169,6 +180,7 @@ export default function Window({
       position={position}
       isClosing={isClosing}
       zIndex={zIndex}
+      onDragStart={(e) => e.preventDefault()}
       onPointerDown={(e) => {
         emitFocus();
         if (
@@ -191,27 +203,29 @@ export default function Window({
         className="pointer-events-none absolute -m-10 inset-0 z-20 bg-no-repeat bg-center bg-[length:100%_100%]"
         style={{ backgroundImage: "var(--window-frame-image)" }}
       />
-      <header className="mb-1 flex select-none items-center gap-2">
-        <button
-          type="button"
-          data-window-close="true"
-          onClick={closeOverlay}
-          className="group inline-flex cursor-pointer items-center justify-center rounded-sm bg-transparent p-1 text-lg font-black leading-none outline-none transition-colors duration-150 active:bg-purple-dark"
-        >
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAQMAAAAlhr+SAAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAAB1JREFUCNdjOMADQgYGIMRzAISYGYAIwoaIQ9QAAKYLB+eSH+asAAAAAElFTkSuQmCC"
-            alt="Close"
-            className="h-2.5 w-2.5 transition-[filter] duration-150 filter-[brightness(0)_saturate(100%)_invert(18%)_sepia(88%)_saturate(1796%)_hue-rotate(207deg)_brightness(90%)_contrast(106%)] group-active:filter-[brightness(0)_saturate(100%)_invert(92%)_sepia(25%)_saturate(577%)_hue-rotate(330deg)_brightness(100%)_contrast(95%)]"
-          />
-        </button>
-        <div className="flex min-h-7 flex-1 cursor-move items-center" />
-        <span className="text-lg uppercase tracking-tight text-purple-dark font-title">{id}</span>
-      </header>
       <div
         data-window-content="true"
-        className={`cursor-auto rounded-md border border-green-light bg-yellow-surface p-3 overflow-auto ${className ?? ""}`.trim()}
+        className={`window-scroll-green flex flex-col flex-1 cursor-auto rounded-md border border-green-light bg-yellow-surface p-3 overflow-auto ${className ?? ""}`.trim()}
       >
-        {children}
+        <header className="flex select-none items-center flex-shrink-0">
+          <div className="flex flex-1 cursor-move items-center" />
+        </header>
+        <div
+          data-window-content="true"
+          onDragStartCapture={(e) => e.preventDefault()}
+          className="cursor-auto flex-1"
+        >
+          {children}
+        </div>
+        <div className="mt-6 flex justify-center pb-2">
+          <button
+            type="button"
+            onClick={closeOverlay}
+            className="cursor-pointer rounded-full border border-purple px-5 py-1 text-purple"
+          >
+            Close window
+          </button>
+        </div>
       </div>
     </PositionedOverlay>
   );

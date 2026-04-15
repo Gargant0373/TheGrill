@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import useIsMobile from "../../hooks/useIsMobile";
 
 function PicturesPage() {
@@ -91,9 +92,10 @@ function PicturesPage() {
 
   return (
     <div className="m-0 w-full text-center space-y-4">
-      {isLoading && <p className="text-purple-dark">Loading photos...</p>}
+      <h3 className="text-2xl mb-4">Pictures</h3>
+      {isLoading && <p className="text-purple">Loading photos...</p>}
 
-      {loadError && <p className="text-purple-dark">{loadError}</p>}
+      {loadError && <p className="text-purple">{loadError}</p>}
 
       {!isLoading && !loadError && (
         <div
@@ -121,38 +123,39 @@ function PicturesPage() {
         </div>
       )}
 
-      {selectedImage && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Fullscreen image preview"
-          className={`fixed inset-0 z-10 flex items-center justify-center overflow-auto bg-green-dark/80 p-4 ${isViewerClosing ? "animate-window-close" : "animate-window-open"}`}
-          onClick={(event) => {
-            if (event.target === event.currentTarget) {
-              closeViewer();
-            }
-          }}
-        >
-          <img
-            src={`/gallery/${selectedImage}`}
-            alt={selectedImage}
-            className="max-h-[90vh] max-w-[95vw] rounded-md border border-yellow-light bg-yellow-paper shadow-2xl object-contain"
-          />
-          {!isMobile && (
-            <button
-              type="button"
-              aria-label="Close fullscreen image"
-              onClick={closeViewer}
-              className="fixed top-10 right-15 z-10 rounded-md border border-yellow-light bg-yellow-paper px-3 py-1 text-purple-dark transition-colors hover:bg-yellow-light [right:calc(env(safe-area-inset-right)+0.75rem)] [top:calc(env(safe-area-inset-top)+0.75rem)]"
-            >
-              Close
-            </button>
-          )}
-        </div>
-      )}
+      {selectedImage &&
+        createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Fullscreen image preview"
+            className={`fixed inset-0 z-[2000] flex items-center justify-center overflow-auto bg-green-dark/80 p-4 ${isViewerClosing ? "animate-window-close" : "animate-window-open"}`}
+            onClick={(event) => {
+              if (event.target === event.currentTarget) {
+                closeViewer();
+              }
+            }}
+          >
+            <img
+              src={`/gallery/${selectedImage}`}
+              alt={selectedImage}
+              className="max-h-[90vh] max-w-[95vw] rounded-md border border-yellow-light bg-yellow-paper shadow-2xl object-contain"
+            />
+            {!isMobile && (
+              <button
+                type="button"
+                aria-label="Close fullscreen image"
+                onClick={closeViewer}
+                className="fixed top-10 right-15 z-[2010] rounded-md border border-yellow-light bg-yellow-paper px-3 py-1 text-purple-dark transition-colors hover:bg-yellow-light [right:calc(env(safe-area-inset-right)+0.75rem)] [top:calc(env(safe-area-inset-top)+0.75rem)]"
+              >
+                Close
+              </button>
+            )}
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }
 
 export default PicturesPage;
-

@@ -56,6 +56,14 @@
 }
 
 @layer utilities {
+  .icon-green-outline {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(47%) saturate(1067%) hue-rotate(135deg)
+      brightness(88%) contrast(94%) drop-shadow(1px 0 0 var(--color-green-light, #8ab468))
+      drop-shadow(-1px 0 0 var(--color-green-light, #8ab468))
+      drop-shadow(0 1px 0 var(--color-green-light, #8ab468))
+      drop-shadow(0 -1px 0 var(--color-green-light, #8ab468));
+  }
+
   .text-outline-green-light {
     -webkit-text-stroke: 2px var(--color-green-light, #8ab468);
     paint-order: stroke fill;
@@ -90,5 +98,32 @@
       -2px 0 var(--color-purple-light, #d979a2),
       0 2px var(--color-purple-light, #d979a2),
       0 -2px var(--color-purple-light, #d979a2);
+  }
+
+  .window-scroll-green {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-green-dark, #0c5454) var(--color-green-light, #8ab468);
+    scroll-behavior: smooth;
+  }
+
+  .window-scroll-green::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .window-scroll-green::-webkit-scrollbar-track {
+    background: var(--color-green-light, #8ab468);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 2px;
+  }
+
+  .window-scroll-green::-webkit-scrollbar-thumb {
+    background: var(--color-green-dark, #0c5454);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 2px;
   }
 }

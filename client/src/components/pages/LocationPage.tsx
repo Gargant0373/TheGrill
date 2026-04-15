@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d146.06180812122417!2d4.381849020458697!3d52.02005098552107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d52.02005820686467!2d4.381998553612656!5e1!3m2!1sen!2snl!4v1746032547216!5m2!1sen!2snl";
+  "https://maps.google.com/maps?q=52.02005820686467,4.381998553612656&t=k&z=16&output=embed";
 
 let mapWarmupDone = false;
 
@@ -44,9 +44,10 @@ function LocationPage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col">
+      <h3 className="text-2xl mb-4 text-center">Location</h3>
       <div>
-        <p className="mb-0 mt-2">1st of May @ Delftse Hout</p>
+        <p className="mb-2">1st of May @ Delftse Hout</p>
       </div>
       <iframe
         width="100%"

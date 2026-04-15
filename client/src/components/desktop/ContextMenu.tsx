@@ -34,7 +34,7 @@ export default function ContextMenu() {
           key={e}
           event={e}
           label={e[0].toUpperCase() + e.slice(1)}
-          className="block w-full cursor-pointer px-2 py-1 text-left text-xs text-purple-dark hover:bg-purple/10 transition"
+          className="block w-full cursor-pointer px-2 py-1 text-left text-xs text-purple hover:bg-purple/10 transition"
           onClick={closeOverlay}
         />
       ))}

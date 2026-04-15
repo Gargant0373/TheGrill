@@ -24,7 +24,7 @@ export default function PageCarousel() {
       ...pageRegistry.map(({ id, Component }) => ({
         id,
         content: (
-          <PageSlide title={id}>
+          <PageSlide>
             <Component />
           </PageSlide>
         ),
@@ -134,24 +134,11 @@ export default function PageCarousel() {
       style={{ perspective: "1200px" }}
     >
       <div className="absolute bottom-0 inset-x-0 z-40 w-full text-center [container-type:inline-size] flex flex-row">
-        <div 
-          className="relative w-1/2 overflow-hidden"
-          onClick={() => triggerSwipe(-1)}
-        >
-          <img
-            src="/assets/swipe.svg"
-            alt="Swipe left indicator"
-            className="scale-x-[-1]"
-          />
+        <div className="relative w-1/2 overflow-hidden" onClick={() => triggerSwipe(-1)}>
+          <img src="/assets/swipe.svg" alt="Swipe left indicator" className="scale-x-[-1]" />
         </div>
-        <div 
-          className="relative w-1/2 overflow-hidden"
-          onClick={() => triggerSwipe(1)}
-        >
-          <img
-            src="/assets/swipe.svg"
-            alt="Swipe right indicator"
-          />
+        <div className="relative w-1/2 overflow-hidden" onClick={() => triggerSwipe(1)}>
+          <img src="/assets/swipe.svg" alt="Swipe right indicator" />
         </div>
       </div>
       <div

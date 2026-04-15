@@ -1,11 +1,10 @@
 import type { ReactNode } from "react";
 
 type PageSlideProps = {
-  title: string;
   children: ReactNode;
 };
 
-export default function PageSlide({ title, children }: PageSlideProps) {
+export default function PageSlide({ children }: PageSlideProps) {
   return (
     <div className="absolute inset-0 z-30 overflow-auto bg-yellow-light text-lg text-purple">
       <div className="relative min-h-full px-20 pt-14 pb-40">
@@ -18,7 +17,6 @@ export default function PageSlide({ title, children }: PageSlideProps) {
         </div>
         <div className="relative z-20 mt-6 flex w-full items-center justify-center">
           <div className="w-full">
-            <h2 className="mb-4 text-center text-4xl font-title uppercase text-purple">{title}</h2>
             <div className="flex items-center justify-center">{children}</div>
           </div>
         </div>
@@ -40,7 +38,7 @@ export default function PageSlide({ title, children }: PageSlideProps) {
           />
           <div className="absolute top-0 bottom-0 left-0 w-12 overflow-hidden">
             <div
-              className="absolute left-0 top-0 h-12 w-[220vmax] bg-repeat-x"
+              className="absolute left-0 top-0 h-12 w-[20000px] bg-repeat-x"
               style={{
                 backgroundImage: "url('/assets/border.svg')",
                 backgroundSize: "auto 100%",
@@ -51,7 +49,7 @@ export default function PageSlide({ title, children }: PageSlideProps) {
           </div>
           <div className="absolute top-0 bottom-0 right-0 w-12 overflow-hidden">
             <div
-              className="absolute right-0 top-0 h-12 w-[220vmax] bg-repeat-x"
+              className="absolute right-0 top-0 h-12 w-[20000px] bg-repeat-x"
               style={{
                 backgroundImage: "url('/assets/border.svg')",
                 backgroundSize: "auto 100%",

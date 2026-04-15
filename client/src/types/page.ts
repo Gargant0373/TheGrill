@@ -9,7 +9,6 @@ export enum PageType {
   LOCATION = "location",
   GUIDELINES = "guidelines",
   PICTURES = "pictures",
-  CONTACT = "contact",
 }
 
 export type PageManagerRenderProps = {

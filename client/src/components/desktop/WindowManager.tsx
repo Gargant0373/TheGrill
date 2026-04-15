@@ -9,7 +9,6 @@ import type { PageType } from "../../types/page";
 
 const WINDOW_RATIOS: Record<PageType, WindowAspectRatio> = {
   about: "1-1",
-  contact: "1-1",
   guidelines: "1-1",
   location: "3-4",
   pictures: "10-16",
@@ -50,7 +49,7 @@ export default function WindowManager() {
             className="w-full flex justify-center z-30 mt-6 text-green-dark text-outline-green-light text-xl cursor-pointer absolute bottom-22"
             aria-label="Visit our Instagram"
           >
-            <img src="/assets/instagram.svg" alt="Instagram" className="w-7 h-7 invert" />
+            <img src="/assets/instagram.svg" alt="Instagram" className="w-7 h-7 invert icon-green-outline" />
             <span className="font-semibold ml-2">@thegrill.live</span>
           </a>
         </div>

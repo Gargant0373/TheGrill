@@ -12,7 +12,7 @@ export default function Navbar() {
                 event={id}
                 label={id.charAt(0).toUpperCase() + id.slice(1)}
                 icon={<img src="/assets/Placeholder.svg" alt="" className="mb-2 h-10 w-10" />}
-                className="flex h-20 w-20 cursor-pointer flex-col items-center justify-center gap-1 border-l border-r border-t border-l-white/70 border-r-black/45 border-t-white/70 bg-yellow px-1 py-0.5 text-center text-sm text-purple-dark transition select-none active:translate-y-px active:border-l-black/45 active:border-r-white/70 active:border-t-black/45"
+                className="flex h-20 w-20 cursor-pointer flex-col items-center justify-center gap-1 border-l border-r border-t border-l-white/70 border-r-black/45 border-t-white/70 bg-yellow px-1 py-0.5 text-center text-sm text-purple transition select-none active:translate-y-px active:border-l-black/45 active:border-r-white/70 active:border-t-black/45"
               />
             </li>
           ))}
