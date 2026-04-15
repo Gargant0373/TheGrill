@@ -4,7 +4,7 @@ import pageRegistry from "../pages/registry";
 export default function Navbar() {
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-999 flex justify-center">
-      <nav className="pointer-events-auto overflow-hidden rounded-t-md border-x-2 border-t-2 border-green-light bg-yellow-dark">
+      <nav className="pointer-events-auto overflow-hidden rounded-t-3xl border-x-2 border-t-2 border-green-light bg-yellow-dark">
         <ul className="flex divide-x-2 divide-green-light">
           {pageRegistry.map(({ id }) => (
             <li key={id}>

@@ -4,7 +4,7 @@ import BackgroundVideo from "../BackgroundVideo";
 export default function HomeSlide() {
   return (
     <div className="absolute inset-0">
-      <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center">
+      <div className="absolute inset-0 z-20 flex flex-col items-center">
         <div className="relative w-full aspect-[507.9408/186.47556]" aria-hidden="true">
           <div
             className="absolute inset-0 bg-green-darkest [mask-image:url('/assets/TheGrillLogo_Full_Background.svg')] [mask-size:100%_100%] [mask-repeat:no-repeat] [mask-position:center] [-webkit-mask-image:url('/assets/TheGrillLogo_Full_Background.svg')] [-webkit-mask-size:100%_100%] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center]"
@@ -18,6 +18,16 @@ export default function HomeSlide() {
         <div className="mt-4 w-full px-4 [container-type:inline-size]">
           <Countdown />
         </div>
+        <a
+          href="https://www.instagram.com/thegrill.life/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex justify-center z-30 mt-6 text-green-dark text-outline-green-light text-xl"
+          aria-label="Visit our Instagram"
+        >
+          <img src="/assets/instagram.svg" alt="Instagram" className="w-7 h-7 invert" />
+          <span className="font-semibold ml-2">@thegrill.life</span>
+        </a>
       </div>
       <BackgroundVideo />
     </div>

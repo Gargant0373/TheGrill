@@ -34,15 +34,25 @@ export default function WindowManager() {
         ref={containerRef}
         className="relative z-10 size-full overflow-hidden sm:rounded-[100px] sm:border-3 border-green-light bg-yellow"
       >
-        <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center">
+        <div className="absolute inset-0 z-20 flex flex-col items-center">
           <img
             src="/assets/TheGrillLogo_Full.svg"
             className="mt-4 w-6/10 h-auto"
             alt="The Grill logo"
           />
-          <div className="mt-6 w-6/10 px-4 [container-type:inline-size]">
+          <div className="absolute bottom-32 mt-6 w-6/10 px-4 [container-type:inline-size]">
             <Countdown />
           </div>
+          <a
+            href="https://www.instagram.com/thegrill.life/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex justify-center z-30 mt-6 text-green-dark text-outline-green-light text-xl cursor-pointer absolute bottom-22"
+            aria-label="Visit our Instagram"
+          >
+            <img src="/assets/instagram.svg" alt="Instagram" className="w-7 h-7 invert" />
+            <span className="font-semibold ml-2">@thegrill.life</span>
+          </a>
         </div>
         <BackgroundVideo />
         {pageRegistry.map(({ id, Component }) => (
