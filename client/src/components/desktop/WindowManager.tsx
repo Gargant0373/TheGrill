@@ -36,7 +36,7 @@ export default function WindowManager() {
       >
         <div className="absolute inset-0 z-20 flex flex-col items-center">
           <img
-            src="/assets/TheGrillLogo_Full.svg"
+            src="/assets/wavy_logo_colors.svg"
             className="mt-4 w-6/10 h-auto"
             alt="The Grill logo"
           />
