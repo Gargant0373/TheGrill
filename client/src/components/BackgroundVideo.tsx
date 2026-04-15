@@ -1,4 +1,4 @@
-import { BACKGROUND_VIDEO_SOURCE } from "../constants";
+import { BACKGROUND_POSTER_SOURCE, BACKGROUND_VIDEO_SOURCE } from "../constants";
 
 export default function BackgroundVideo() {
   return (
@@ -11,8 +11,9 @@ export default function BackgroundVideo() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
+        poster={BACKGROUND_POSTER_SOURCE}
       />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_28%,rgba(30,20,10,0.34)_100%)]" />
       <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(255,220,175,0.08)_0px,rgba(255,220,175,0.08)_1px,transparent_2px,transparent_3px)]" />
