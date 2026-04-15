@@ -13,6 +13,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Buhun Retro";
+  src: url("/fonts/buhun-retro.otf") format("opentype");
+  font-display: swap;
+}
+
 @layer base {
   html,
   body,
@@ -20,7 +26,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: "Retro Wild", "Trebuchet MS", "Segoe UI", sans-serif;
+    font-family: "Buhun Retro", "Trebuchet MS", "Segoe UI", sans-serif;
     font-size: 15px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -45,7 +51,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Bellybeans", "Retro Wild", "Trebuchet MS", "Segoe UI", sans-serif;
+    font-family: "Buhun Retro", "Trebuchet MS", "Segoe UI", sans-serif;
   }
 }
 
