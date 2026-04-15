@@ -221,7 +221,7 @@ export default function Window({
           <button
             type="button"
             onClick={closeOverlay}
-            className="cursor-pointer rounded-full border border-purple px-5 py-1 text-purple"
+            className="cursor-pointer rounded-full border border-purple-dark px-5 py-1 text-purple-dark"
           >
             Close window
           </button>

@@ -92,7 +92,7 @@ function PicturesPage() {
 
   return (
     <div className="m-0 w-full text-center space-y-4">
-      <h3 className="text-2xl mb-4">Pictures</h3>
+      <h3 className="text-2xl mb-4 text-purple-light">Pictures</h3>
       {isLoading && <p className="text-purple">Loading photos...</p>}
 
       {loadError && <p className="text-purple">{loadError}</p>}
