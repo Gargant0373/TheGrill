@@ -5,6 +5,7 @@ import PageManager from "../components/PageManager.tsx";
 import useIsMobile from "../hooks/useIsMobile";
 import { getPageTypeFromPath } from "../utils/misc.util";
 import { WindowOpenEvent } from "../types/window";
+import { preloadGalleryImages } from "../utils/gallery.util";
 
 const STATIC_ASSET_PATHS = [
   "/thegrill2025.mp4",
@@ -28,6 +29,7 @@ const STATIC_ASSET_PATHS = [
 ];
 
 let staticAssetsWarmed = false;
+let galleryImagesWarmed = false;
 
 function warmStaticAssets() {
   STATIC_ASSET_PATHS.forEach((path) => {
@@ -78,6 +80,13 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if (!galleryImagesWarmed) {
+      galleryImagesWarmed = true;
+      preloadGalleryImages().catch(() => {
+        // Ignore warmup failures; normal loading path still works.
+      });
+    }
+
     if (staticAssetsWarmed) {
       return;
     }

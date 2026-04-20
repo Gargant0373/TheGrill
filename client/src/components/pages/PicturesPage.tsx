@@ -1,13 +1,19 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import useIsMobile from "../../hooks/useIsMobile";
+import {
+  type GalleryImage,
+  getCachedGalleryImages,
+  preloadGalleryImages,
+} from "../../utils/gallery.util";
 
 function PicturesPage() {
-  const [images, setImages] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const cachedImages = getCachedGalleryImages();
+  const [images, setImages] = useState<GalleryImage[]>(cachedImages ?? []);
+  const [isLoading, setIsLoading] = useState(!cachedImages);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [isViewerClosing, setIsViewerClosing] = useState(false);
   const closeTimeoutRef = useRef<number | null>(null);
   const isMobile = useIsMobile();
@@ -15,47 +21,34 @@ function PicturesPage() {
   useEffect(() => {
     let isActive = true;
 
-    const loadImages = async () => {
-      try {
-        const response = await fetch("/gallery/images.json");
-        if (!response.ok) {
-          throw new Error(`Could not load gallery (${response.status})`);
-        }
-
-        const payload = (await response.json()) as unknown;
-        if (!Array.isArray(payload) || !payload.every((entry) => typeof entry === "string")) {
-          throw new Error("Gallery data has an invalid shape");
-        }
-
-        if (isActive) {
-          setImages(payload);
-          setLoadError(null);
-        }
-      } catch (error) {
+    preloadGalleryImages()
+      .then((loadedImages) => {
+        if (!isActive) return;
+        setImages(loadedImages);
+        setLoadError(null);
+      })
+      .catch((error) => {
         if (!isActive) return;
         setLoadError(error instanceof Error ? error.message : "Failed to load gallery");
-      } finally {
-        if (isActive) {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    loadImages();
+      })
+      .finally(() => {
+        if (!isActive) return;
+        setIsLoading(false);
+      });
 
     return () => {
       isActive = false;
     };
   }, []);
 
-  const openViewer = useCallback((imageName: string) => {
+  const openViewer = useCallback((image: GalleryImage) => {
     if (closeTimeoutRef.current !== null) {
       window.clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
     }
 
     setIsViewerClosing(false);
-    setSelectedImage(imageName);
+    setSelectedImage(image);
   }, []);
 
   const closeViewer = useCallback(() => {
@@ -105,16 +98,16 @@ function PicturesPage() {
               : "grid grid-cols-[repeat(auto-fill,minmax(7.5rem,1fr))] gap-3 overflow-y-auto pr-1 h-full"
           }
         >
-          {images.map((img) => (
+          {images.map((image) => (
             <button
-              key={img}
+              key={image.compressedName}
               type="button"
-              onClick={() => openViewer(img)}
+              onClick={() => openViewer(image)}
               className="overflow-hidden rounded-lg border border-yellow-light bg-yellow-paper shadow cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
             >
               <img
-                src={`/gallery/${img}`}
-                alt={img}
+                src={image.compressedUrl}
+                alt={image.fullSizeName}
                 className="w-full aspect-[4/3] object-cover object-center transition-transform duration-200 hover:scale-105"
                 loading="lazy"
               />
@@ -136,11 +129,21 @@ function PicturesPage() {
               }
             }}
           >
-            <img
-              src={`/gallery/${selectedImage}`}
-              alt={selectedImage}
-              className="max-h-[90vh] max-w-[95vw] rounded-md border border-yellow-light bg-yellow-paper shadow-2xl object-contain"
-            />
+            <div className="z-[2010] flex max-w-[95vw] flex-col items-center gap-3">
+              <img
+                src={selectedImage.compressedUrl}
+                alt={selectedImage.fullSizeName}
+                className="max-h-[86vh] max-w-[95vw] rounded-md border border-yellow-light bg-yellow-paper shadow-2xl object-contain"
+              />
+              <a
+                href={selectedImage.fullSizeUrl}
+                download={selectedImage.fullSizeName}
+                onClick={(event) => event.stopPropagation()}
+                className="rounded-md border border-yellow-light bg-yellow-paper px-4 py-1 text-purple-dark transition-colors hover:bg-yellow-light"
+              >
+                Download
+              </a>
+            </div>
             {!isMobile && (
               <button
                 type="button"
