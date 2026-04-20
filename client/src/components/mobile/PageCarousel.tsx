@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent, ReactNode } from "react";
 
 import { getPageTypeFromPath, isPageType } from "../../utils/misc.util";
+import BackgroundVideo from "../BackgroundVideo";
 import pageRegistry from "../pages/registry";
 import HomeSlide from "./HomeSlide";
 import PageSlide from "./PageSlide";
@@ -133,6 +134,7 @@ export default function PageCarousel() {
       className="relative size-full overflow-hidden bg-teal-900"
       style={{ perspective: "1200px" }}
     >
+      <BackgroundVideo />
       <div className="absolute bottom-0 inset-x-0 z-40 w-full text-center [container-type:inline-size] flex flex-row">
         <div className="relative w-1/2 overflow-hidden" onClick={() => triggerSwipe(-1)}>
           <img src="/assets/swipe.svg" alt="Swipe left indicator" className="scale-x-[-1]" />

@@ -1,5 +1,4 @@
 import Countdown from "../Countdown";
-import BackgroundVideo from "../BackgroundVideo";
 
 export default function HomeSlide() {
   return (
@@ -29,7 +28,6 @@ export default function HomeSlide() {
           <span className="font-semibold ml-2">@thegrill.live</span>
         </a>
       </div>
-      <BackgroundVideo />
     </div>
   );
 }
