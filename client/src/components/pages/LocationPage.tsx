@@ -47,7 +47,7 @@ function LocationPage() {
     <div className="flex flex-col">
       <h3 className="text-2xl mb-4 text-center text-purple-dark">Location</h3>
       <div>
-      <p className="mb-2 text-purple-light">1st of May @ Delftse Hout</p>
+        <p className="mb-2 text-purple-light">1st of May @ Delftse Hout</p>
       </div>
       <iframe
         width="100%"

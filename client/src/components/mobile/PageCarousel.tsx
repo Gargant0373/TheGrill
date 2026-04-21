@@ -27,21 +27,27 @@ function wrapIndex(index: number, length: number) {
 const TRANSITION_CSS = "transform 260ms cubic-bezier(0.2, 0.65, 0.15, 1)";
 
 function getSlideProps(index: number, active: number, t: Transition | null) {
-  if (index === active) return {
-    style: {
-      transform: !t?.started ? "rotateY(0deg)" : t.dir === 1 ? "rotateY(-90deg)" : "rotateY(90deg)",
-      transformOrigin: t?.dir === 1 ? "left center" : "right center",
-      transition: t ? TRANSITION_CSS : "none",
-    } as React.CSSProperties,
-  };
+  if (index === active)
+    return {
+      style: {
+        transform: !t?.started
+          ? "rotateY(0deg)"
+          : t.dir === 1
+            ? "rotateY(-90deg)"
+            : "rotateY(90deg)",
+        transformOrigin: t?.dir === 1 ? "left center" : "right center",
+        transition: t ? TRANSITION_CSS : "none",
+      } as React.CSSProperties,
+    };
 
-  if (t?.next === index) return {
-    style: {
-      transform: t.started ? "rotateY(0deg)" : t.dir === 1 ? "rotateY(90deg)" : "rotateY(-90deg)",
-      transformOrigin: t.dir === 1 ? "right center" : "left center",
-      transition: TRANSITION_CSS,
-    } as React.CSSProperties,
-  };
+  if (t?.next === index)
+    return {
+      style: {
+        transform: t.started ? "rotateY(0deg)" : t.dir === 1 ? "rotateY(90deg)" : "rotateY(-90deg)",
+        transformOrigin: t.dir === 1 ? "right center" : "left center",
+        transition: TRANSITION_CSS,
+      } as React.CSSProperties,
+    };
 
   return {
     style: {
@@ -131,7 +137,10 @@ export default function PageCarousel() {
   };
 
   return (
-    <section className="relative size-full overflow-hidden bg-teal-900" style={{ perspective: "1200px" }}>
+    <section
+      className="relative size-full overflow-hidden bg-teal-900"
+      style={{ perspective: "1200px" }}
+    >
       <BackgroundVideo />
       <div className="absolute bottom-0 inset-x-0 z-40 w-full text-center [container-type:inline-size] flex flex-row">
         <div className="relative w-1/2 overflow-hidden" onClick={() => triggerSwipe(-1)}>
@@ -146,7 +155,9 @@ export default function PageCarousel() {
         className="relative size-full touch-none"
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
-        onPointerCancel={() => { pointerStart.current = null; }}
+        onPointerCancel={() => {
+          pointerStart.current = null;
+        }}
       >
         {pages.map((page, index) => (
           <article
